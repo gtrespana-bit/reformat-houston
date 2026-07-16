@@ -14,14 +14,14 @@ const services = [
 ];
 ---
 
-<BaseLayout title="Servicios | ReformaT Venezuela" description="Soluciones completas en reformas." activePage="servicios">
+<BaseLayout title="Services | ReformaT Houston" description="Complete home remodeling solutions in Houston, TX." activePage="servicios">
   <header class="page-hero">
     <!-- LCP IMAGE: Local, discoverable immediately from HTML -->
     <img
       src="/images/integrales-800.webp"
       srcset="/images/integrales-400.webp 400w, /images/integrales-800.webp 800w"
       sizes="100vw"
-      alt="Interior moderno después de reforma integral"
+      alt="Modern interior after whole home remodeling"
       fetchpriority="high"
       loading="eager"
       decoding="async"
@@ -31,18 +31,18 @@ const services = [
     />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">Lo Que Hacemos</span>
-      <h1 class="page-title">Soluciones de <span class="gold">Reforma Integral</span></h1>
-      <p class="page-subtitle">Más de 20 años transformando espacios en Valencia y San Diego.</p>
+      <span class="hero-tag">What We Do</span>
+      <h1 class="page-title">Complete <span class="gold">Remodeling Solutions</span></h1>
+      <p class="page-subtitle">Over 20 years transforming spaces in Houston and surrounding areas.</p>
     </div>
   </header>
 
   <section class="services-page">
     <div class="container">
       <div class="section-header">
-        <span class="tag">Nuestros Servicios</span>
-        <h2 class="section-title">Transformamos Cada Rincón de Tu Hogar</h2>
-        <p class="section-desc">Soluciones completas desde reformas parciales hasta proyectos integrales.</p>
+        <span class="tag">Our Services</span>
+        <h2 class="section-title">Transforming Every Corner of Your Home</h2>
+        <p class="section-desc">Complete solutions from partial renovations to whole home remodeling projects.</p>
       </div>
       <div class="services-vertical-grid">
         {services.map((svc, index) => (
@@ -65,7 +65,7 @@ const services = [
               <h3>{svc.title}</h3>
               <p>{svc.desc}</p>
               <ul class="card-features">{svc.features.map(f => <li>{f}</li>)}</ul>
-              <span class="card-link">Ver más detalles <span class="arrow">→</span></span>
+              <span class="card-link">View details <span class="arrow">→</span></span>
             </div>
           </a>
         ))}
@@ -75,10 +75,10 @@ const services = [
 
   <section class="cta-section">
     <div class="cta-wrapper">
-      <h2 class="cta-title">¿Listo Para Transformar Tu Espacio?</h2>
-      <p class="cta-text">Solicita una consulta gratuita y recibe un presupuesto detallado.</p>
+      <h2 class="cta-title">Ready to Transform Your Space?</h2>
+      <p class="cta-text">Request a free consultation and receive a detailed quote.</p>
       <a href="/contacto" class="btn-premium btn-primary-premium">
-        <span class="btn-content">Agendar Consulta Gratuita</span><span class="btn-border"></span><span class="btn-shine"></span><span class="btn-arrow">→</span>
+        <span class="btn-content">Schedule Free Consultation</span><span class="btn-border"></span><span class="btn-shine"></span><span class="btn-arrow">→</span>
       </a>
     </div>
   </section>
