@@ -1,14 +1,14 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-const getSrcSet = (baseName, widths, ext = 'webp') => {
+import BaseLayout from '../layouts/BaseLayout.astro';
+const getSrcSet = (baseName: string, widths: number[], ext = 'webp') => {
   return widths.map(w => `/images/${baseName}-${w}.${ext} ${w}w`).join(', ');
 };
 ---
 
 <BaseLayout
-  title="About Us | ReformaT Houston — European Experience, Local Execution"
-  description="ReformaT was born in Spain with over 20 years of experience. For nearly 2 years we've been operating in Houston, applying European standards in whole-home renovations, kitchens and bathrooms in Houston, The Woodlands, Sugar Land and Katy."
-  activePage="home"
+  title="Sobre Nosotros | ReformaT Venezuela — Experiencia Europea, Ejecución Local"
+  description="ReformaT nace en España con más de 20 años de trayectoria. Desde hace 2 años operamos en Venezuela aplicando estándares europeos en reformas integrales, cocinas y baños en Valencia, San Diego, Carabobo y Caracas."
+  activePage="inicio"
 >
 
 <!-- HERO -->
@@ -17,52 +17,52 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
     src="/images/integrales-800.webp"
     srcset="/images/integrales-400.webp 400w, /images/integrales-800.webp 800w"
     sizes="100vw"
-    alt="Whole-home renovation with European standards in Houston"
+    alt="Reforma integral con estándares europeos en Venezuela"
     class="hero-img"
     width="1200" height="600"
     fetchpriority="high"
   />
   <div class="hero-overlay"></div>
     <div class="hero-content">
-    <span class="tag">About Us</span>
-    <h1 class="hero-title">European Experience,<br/><span class="gold">Local Execution</span></h1>
-    <p class="hero-subtitle">Over 20 years of experience in Spain. For nearly 2 years we've been bringing European standards to the Houstonn market, transforming homes with luxury finishes and certified techniques.</p>
+    <span class="tag">Sobre Nosotros</span>
+    <h1 class="hero-title">Experiencia Europea,<br/><span class="gold">Ejecución Local</span></h1>
+    <p class="hero-subtitle">Más de 20 años de trayectoria en España. Desde hace 2 años llevamos estándares europeos al mercado venezolano, transformando hogares con acabados de lujo y técnicas certificadas.</p>
   </div>
 </header>
 
-<!-- STORY + IMAGE -->
+<!-- HISTORIA + IMAGEN -->
 <section class="story-section">
   <div class="container">
     <div class="story-grid">
       <div class="story-text">
-        <span class="section-tag">Our Story</span>
-        <h2>From Spain to Houston:<br/>Excellence Without Borders</h2>
-        <p>ReformaT was born in Spain as a company specialized in high-quality whole-home renovations. For over two decades, we built a reputation based on precision, reliability and the impeccable finishes that define European construction.</p>
-        <p>Nearly 2 years ago we decided to bring our expertise to the Houstonn market, identifying a real need: the lack of companies that apply European regulations, respect deadlines and deliver luxury finishes with full transparency.</p>
-        <p>Today we operate in <strong>Houston, The Woodlands, Sugar Land and Katy</strong>, adapting advanced European construction techniques to local architecture — without sacrificing the quality that defines us.</p>
+        <span class="section-tag">Nuestra Historia</span>
+        <h2>De España a Venezuela:<br/>Excelencia Sin Fronteras</h2>
+        <p>ReformaT nació en España como una empresa especializada en reformas integrales de alta calidad. Durante más de dos décadas, construimos una reputación basada en la precisión, el cumplimiento y los acabados impecables que caracterizan la construcción europea.</p>
+        <p>Hace casi 2 años decidimos expandir nuestra experiencia al mercado venezolano, detectando una necesidad real: la falta de empresas que apliquen normativas europeas, respeten los plazos y entreguen acabados de lujo con total transparencia.</p>
+        <p>Hoy operamos en <strong>Valencia, San Diego, Carabobo y Caracas</strong>, adaptando técnicas avanzadas de construcción europea a la arquitectura local, sin sacrificar la calidad que nos define.</p>
       </div>
       <div class="story-image">
         <img
           src="/images/cocina-800.webp"
-          alt="Kitchen renovation with European finishes in Houston"
+          alt="Cocina reformada con acabados europeos en Venezuela"
           width="600" height="450"
           loading="lazy"
         />
         <div class="image-badge">
           <span class="badge-number">20+</span>
-          <span class="badge-text">Years of<br/>Experience</span>
+          <span class="badge-text">Años de<br/>Experiencia</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DIFFERENTIATION -->
+<!-- DIFERENCIACIÓN -->
 <section class="difference-section">
   <div class="container">
-    <span class="section-tag light">Why Choose Us</span>
-    <h2 class="section-title">European Standards in Houston</h2>
-    <p class="section-subtitle">The construction and renovation market in Houston is known for informality, missed deadlines and poor finishes. ReformaT breaks that pattern.</p>
+    <span class="section-tag light">Por Qué Elegirnos</span>
+    <h2 class="section-title">Estándares Europeos en Venezuela</h2>
+    <p class="section-subtitle">El mercado de construcción y reforma en Venezuela es conocido por la informalidad, los incumplimientos y los acabados deficientes. ReformaT rompe ese patrón.</p>
 
     <div class="difference-grid">
       <div class="diff-card">
@@ -71,8 +71,8 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
-        <h3>European Regulations</h3>
-        <p>We apply Spanish and European regulations on every project: certified electrical installations, standard-compliant plumbing, professional waterproofing and approved materials.</p>
+        <h3>Normativas Europeas</h3>
+        <p>Aplicamos normativas españolas y europeas en cada proyecto: instalaciones eléctricas certificadas, fontanería según estándar, impermeabilización profesional y materiales homologados.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
@@ -81,8 +81,8 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
             <polyline points="12 6 12 12 16 14"/>
           </svg>
         </div>
-        <h3>On-Time Delivery</h3>
-        <p>Every project has a defined, contractual timeline. We deliver on date because we plan with precision and supervise every phase. No excuses, no unjustified delays.</p>
+        <h3>Cumplimiento de Plazos</h3>
+        <p>Cada proyecto tiene un cronograma definido y contractual. Entregamos en fecha porque planificamos con precisión y supervisamos cada fase. Sin excusas, sin retrasos injustificados.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
@@ -93,8 +93,8 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
             <line x1="16" y1="17" x2="8" y2="17"/>
           </svg>
         </div>
-        <h3>Transparent Budgets</h3>
-        <p>Detailed, itemized budgets from day one. No hidden costs or surprises. Every dollar and every bolívar is justified and documented.</p>
+        <h3>Presupuestos Transparentes</h3>
+        <p>Presupuestos detallados e itemizados desde el primer día. Sin costos ocultos ni sorpresas. Cada euro y cada bolívar están justificados y documentados.</p>
       </div>
       <div class="diff-card">
         <div class="diff-icon">
@@ -102,19 +102,19 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
         </div>
-        <h3>Luxury Finishes</h3>
-        <p>Large-format porcelain, premium fixtures, custom carpentry, professional LED lighting. Every detail reflects the quality that only European experience can deliver.</p>
+        <h3>Acabados de Lujo</h3>
+        <p>Porcelanato de gran formato, grifería premium, carpintería a medida, iluminación LED profesional. Cada detalle refleja la calidad que solo la experiencia europea puede ofrecer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALERÍA DE TRABAJOS -->
 <section class="gallery-section">
   <div class="container">
-    <span class="section-tag">Our Work</span>
-    <h2 class="section-title">Projects That Speak for Themselves</h2>
-    <p class="section-subtitle">Every project showcases our commitment to excellence. Perfect finishes, premium materials and attention to detail.</p>
+    <span class="section-tag">Nuestro Trabajo</span>
+    <h2 class="section-title">Proyectos que Hablan por Nosotros</h2>
+    <p class="section-subtitle">Cada proyecto es una muestra de nuestro compromiso con la excelencia. Acabados perfectos, materiales premium y atención al detalle.</p>
 
     <div class="gallery-grid">
       <div class="gallery-item large">
@@ -122,126 +122,126 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
           src="/images/cocina.webp"
           srcset={getSrcSet('cocina', [400, 800])}
           sizes="(max-width: 768px) 100vw, 50vw"
-          alt="Kitchen renovation with luxury finishes"
+          alt="Cocina reformada con acabados de lujo"
           width="800" height="600"
           loading="lazy"
         />
         <div class="gallery-caption">
-          <span>Kitchen Renovation</span>
-          <p>Modern design with premium materials</p>
+          <span>Reforma de Cocina</span>
+          <p>Diseño moderno con materiales premium</p>
         </div>
       </div>
       <div class="gallery-item">
         <img
           src="/images/bano-terminado-final.webp"
-          alt="Bathroom renovation with porcelain and premium fixtures"
+          alt="Baño reformado con porcelanato y grifería premium"
           width="400" height="300"
           loading="lazy"
         />
         <div class="gallery-caption">
-          <span>Complete Bathroom</span>
-          <p>XL porcelain and walk-in shower</p>
+          <span>Baño Completo</span>
+          <p>Porcelanato XL y ducha walk-in</p>
         </div>
       </div>
       <div class="gallery-item">
         <img
           src="/images/cocina2.webp"
-          alt="Modern kitchen with European design"
+          alt="Cocina moderna con diseño europeo"
           width="400" height="300"
           loading="lazy"
         />
         <div class="gallery-caption">
-          <span>Whole-Home Renovation</span>
-          <p>Complete space transformation</p>
+          <span>Reforma Integral</span>
+          <p>Transformación completa del espacio</p>
         </div>
       </div>
       <div class="gallery-item">
         <img
           src="/images/revestimiento-wall-panels.webp"
-          alt="Wall coverings with wall panels"
+          alt="Revestimiento de paredes con wall panels"
           width="400" height="300"
           loading="lazy"
         />
         <div class="gallery-caption">
-          <span>Wall Coverings</span>
-          <p>Wall panels and decorative finishes</p>
+          <span>Revestimientos</span>
+          <p>Wall panels y acabados decorativos</p>
         </div>
       </div>
       <div class="gallery-item">
         <img
           src="/images/suelo-porcelanato.webp"
-          alt="Large-format porcelain flooring"
+          alt="Suelo de porcelanato de gran formato"
           width="400" height="300"
           loading="lazy"
         />
         <div class="gallery-caption">
-          <span>Premium Flooring</span>
-          <p>Large-format porcelain tiles</p>
+          <span>Suelos Premium</span>
+          <p>Porcelanato de gran formato</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- PROCESO -->
 <section class="process-section">
   <div class="container">
-    <span class="section-tag">How We Work</span>
-    <h2 class="section-title">Our Process</h2>
-    <p class="section-subtitle">Methodology proven across 500+ projects in Spain. Adapted to the Houstonn market without losing an ounce of rigor.</p>
+    <span class="section-tag">Cómo Trabajamos</span>
+    <h2 class="section-title">Nuestro Proceso</h2>
+    <p class="section-subtitle">Metodología probada en más de 500 proyectos en España. Adaptada al mercado venezolano sin perder un ápice de rigor.</p>
 
     <div class="process-steps">
       <div class="step">
         <span class="step-number">01</span>
         <div class="step-content">
-          <h3>Free Technical Visit</h3>
-          <p>We visit your home, listen to your needs, evaluate the space and take measurements. No cost, no commitment.</p>
+          <h3>Visita Técnica Gratuita</h3>
+          <p>Visitamos tu hogar, escuchamos tus necesidades, evaluamos el espacio y tomamos medidas. Sin costo ni compromiso.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-number">02</span>
         <div class="step-content">
-          <h3>Design & Detailed Budget</h3>
-          <p>We create 3D renders, an itemized budget with every line item and a defined timeline. Full transparency.</p>
+          <h3>Diseño y Presupuesto Detallado</h3>
+          <p>Elaboramos renders 3D, presupuesto itemizado con cada partida y cronograma definido. Total transparencia.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-number">03</span>
         <div class="step-content">
-          <h3>Supervised Execution</h3>
-          <p>Professional team with a dedicated supervisor. Weekly progress reports and quality control at every phase.</p>
+          <h3>Ejecución Supervisada</h3>
+          <p>Equipo profesional con supervisor dedicado. Reportes semanales de avance y control de calidad en cada fase.</p>
         </div>
       </div>
       <div class="step">
         <span class="step-number">04</span>
         <div class="step-content">
-          <h3>Delivery & Warranty</h3>
-          <p>Joint final inspection, complete documentation and a 2-year warranty on all workmanship.</p>
+          <h3>Entrega y Garantía</h3>
+          <p>Inspección final conjunta, documentación completa y garantía de 2 años en toda la mano de obra.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- CIFRAS -->
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item">
         <span class="stat-number">20+</span>
-        <span class="stat-label">Years of Experience</span>
+        <span class="stat-label">Años de Experiencia</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">500+</span>
-        <span class="stat-label">Projects in Spain</span>
+        <span class="stat-label">Proyectos en España</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">2</span>
-        <span class="stat-label">Years in Houston</span>
+        <span class="stat-label">Años en Venezuela</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">100%</span>
-        <span class="stat-label">European Standards</span>
+        <span class="stat-label">Normativa Europea</span>
       </div>
     </div>
   </div>
@@ -251,11 +251,11 @@ const getSrcSet = (baseName, widths, ext = 'webp') => {
 <section class="cta-section">
   <div class="container">
     <div class="cta-content">
-      <h2>Ready for a Renovation with European Standards?</h2>
-      <p>Schedule a free technical visit. We'll analyze your space and prepare a detailed proposal with transparent budgets and guaranteed timelines.</p>
+      <h2>¿Listo para una Reforma con Estándares Europeos?</h2>
+      <p>Agenda una visita técnica gratuita. Analizaremos tu espacio y prepararemos una propuesta detallada con presupuestos transparentes y plazos garantizados.</p>
       <div class="cta-buttons">
-        <a href="/en/contact" class="btn-premium btn-primary-premium">Request a Quote</a>
-        <a href="https://wa.me/584227997043?text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20renovation%20services" target="_blank" rel="noopener" class="btn-premium btn-outline-premium">WhatsApp Direct</a>
+        <a href="/contacto" class="btn-premium btn-primary-premium">Solicitar Presupuesto</a>
+        <a href="https://wa.me/584227997043?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20reforma" target="_blank" rel="noopener" class="btn-premium btn-outline-premium">WhatsApp Directo</a>
       </div>
     </div>
   </div>

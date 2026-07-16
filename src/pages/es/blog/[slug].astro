@@ -1,20 +1,20 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const englishSlugs = [
-    'kitchen-remodel-cost-caracas-valencia-2026',
-    'porcelain-tile-vs-ceramic-tile-guide',
-    'remodel-budget-mistakes-avoid',
-    'bathroom-remodel-carabobo-guide',
-    'kitchen-design-trends-2026'
+  const spanishSlugs = [
+    'cuanto-cuesta-reforma-cocina-valencia',
+    'porcelanato-vs-ceramica',
+    'presupuesto-reforma-errores',
+    'reformas-banos-carabobo',
+    'tendencias-cocinas-2025'
   ];
   
   const posts = await getCollection('blog');
-  const englishPosts = posts.filter(post => englishSlugs.includes(post.id));
+  const spanishPosts = posts.filter(post => spanishSlugs.includes(post.id));
   
-  return englishPosts.map((post) => ({
+  return spanishPosts.map((post) => ({
     params: { slug: post.id },
     props: { post },
   }));
@@ -25,16 +25,16 @@ const { Content } = await render(post);
 ---
 
 <BaseLayout 
-  title={`${post.data.title} | ReformaT Houston Blog`} 
+  title={`${post.data.title} | Blog ReformaT Venezuela`} 
   description={post.data.excerpt} 
   image={post.data.image}
   activePage="blog"
   articleType="article"
   publishedTime={post.data.date.toISOString()}
   modifiedTime={post.data.date.toISOString()}
-  author="ReformaT Houston"
+  author="ReformaT Venezuela"
   articleSection={post.data.category}
-  tags={[post.data.category, 'remodeling', 'Houston', 'Houston', 'Katy', 'The Woodlands', 'Sugar Land']}
+  tags={[post.data.category, 'reformas', 'Venezuela', 'Valencia', 'Caracas', 'San Diego', 'Carabobo']}
 >
   <article class="blog-post">
     <header class="post-hero">
@@ -50,12 +50,12 @@ const { Content } = await render(post);
       />
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <a href="/en/blog" class="back-link">← Back to Blog</a>
+        <a href="/blog" class="back-link">← Volver al Blog</a>
         <span class="post-category">{post.data.category}</span>
         <h1 class="post-title">{post.data.title}</h1>
         <div class="post-meta">
-          <span>{post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-          <span>• {post.data.readTime} read</span>
+          <span>{post.data.date.toLocaleDateString('es-VE', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span>• {post.data.readTime} de lectura</span>
         </div>
       </div>
     </header>
@@ -64,14 +64,25 @@ const { Content } = await render(post);
       <div class="container">
         <Content />
       </div>
+    
+      <div class="related-services">
+        <h2>Servicios Relacionados</h2>
+        <p>Si este artículo te fue útil, explora nuestros servicios de reformas profesionales:</p>
+        <ul>
+          <li><a href="/servicios/cocinas/">Reformas de Cocina en Valencia</a></li>
+          <li><a href="/servicios/banos/">Reformas de Baño</a></li>
+          <li><a href="/servicios/integrales/">Reformas Integrales</a></li>
+          <li><a href="/servicios/">Ver todos los servicios</a></li>
+        </ul>
+      </div>
     </section>
 
     <section class="post-cta">
       <div class="cta-wrapper">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Schedule a free consultation and let us bring your vision to life.</p>
-        <a href="/en/contact" class="btn-premium btn-primary-premium">
-          <span class="btn-content">Schedule Free Consultation</span>
+        <h2>¿Listo Para Empezar Tu Proyecto?</h2>
+        <p>Agenda una consulta gratuita y hagamos realidad tu visión.</p>
+        <a href="/contacto" class="btn-premium btn-primary-premium">
+          <span class="btn-content">Agendar Consulta Gratuita</span>
           <span class="btn-border"></span>
           <span class="btn-shine"></span>
           <span class="btn-arrow">→</span>

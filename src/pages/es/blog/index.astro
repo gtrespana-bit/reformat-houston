@@ -2,33 +2,32 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const englishSlugs = [
-  'kitchen-remodel-cost-caracas-valencia-2026',
-  'porcelain-tile-vs-ceramic-tile-guide',
-  'remodel-budget-mistakes-avoid',
-  'bathroom-remodel-carabobo-guide',
-  'kitchen-design-trends-2026'
+const spanishSlugs = [
+  'cuanto-cuesta-reforma-cocina-valencia',
+  'porcelanato-vs-ceramica',
+  'presupuesto-reforma-errores',
+  'reformas-banos-carabobo',
+  'tendencias-cocinas-2025'
 ];
 
 // Mapeo de slugs a imágenes locales -400 para cards
 const cardImages = {
-  'kitchen-remodel-cost-caracas-valencia-2026': '/images/cocina-400.webp',
-  'porcelain-tile-vs-ceramic-tile-guide': '/images/revestimientos-400.webp',
-  'remodel-budget-mistakes-avoid': '/images/integrales-400.webp',
-  'bathroom-remodel-carabobo-guide': '/images/bano-400.webp',
-  'kitchen-design-trends-2026': '/images/cocina-400.webp'
+  'cuanto-cuesta-reforma-cocina-valencia': '/images/cocina-400.webp',
+  'porcelanato-vs-ceramica': '/images/revestimientos-400.webp',
+  'presupuesto-reforma-errores': '/images/integrales-400.webp',
+  'reformas-banos-carabobo': '/images/bano-400.webp',
+  'tendencias-cocinas-2025': '/images/cocina-400.webp'
 };
 
 const posts = await getCollection('blog');
-const englishPosts = posts.filter(post => englishSlugs.includes(post.id));
-const sortedPosts = englishPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const spanishPosts = posts.filter(post => spanishSlugs.includes(post.id));
+const sortedPosts = spanishPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
-
-<BaseLayout title="Blog | Home Remodeling Tips & Guides" description="Expert advice, trends, and practical guides for your remodeling project in Houston." activePage="blog">
+<BaseLayout title="Blog | Consejos de Reformas y Diseño" description="Ideas, tendencias y guías prácticas para tu proyecto de reforma." activePage="blog">
   <header class="page-hero">
     <img
       src="/images/arquitectura-600.webp"
-      alt="Home remodeling ideas and tips"
+      alt="Ideas y consejos para reformas del hogar"
       fetchpriority="high"
       loading="eager"
       decoding="async"
@@ -38,9 +37,9 @@ const sortedPosts = englishPosts.sort((a, b) => b.data.date.valueOf() - a.data.d
     />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">Blog & Tips</span>
-      <h1 class="page-title">Ideas for <span class="gold">Your Home</span></h1>
-      <p class="page-subtitle">Practical tips, trends, and guides to help you with your remodeling project.</p>
+      <span class="hero-tag">Blog y Consejos</span>
+      <h1 class="page-title">Ideas para <span class="gold">Tu Hogar</span></h1>
+      <p class="page-subtitle">Consejos, tendencias y guías prácticas para ayudarte en tu proyecto de reforma.</p>
     </div>
   </header>
 
@@ -48,7 +47,7 @@ const sortedPosts = englishPosts.sort((a, b) => b.data.date.valueOf() - a.data.d
     <div class="container">
       <div class="blog-grid">
         {sortedPosts.map(article => (
-          <a href={`/en/blog/${article.id}`} class="blog-card">
+          <a href={`/blog/${article.id}`} class="blog-card">
             <div class="blog-img">
               <img 
                 src={cardImages[article.id] || article.data.image} 
@@ -62,12 +61,12 @@ const sortedPosts = englishPosts.sort((a, b) => b.data.date.valueOf() - a.data.d
             </div>
             <div class="blog-content">
               <div class="blog-meta">
-                <span>{article.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                <span>• {article.data.readTime} read</span>
+                <span>{article.data.date.toLocaleDateString('es-VE', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <span>• {article.data.readTime} lectura</span>
               </div>
               <h3>{article.data.title}</h3>
               <p>{article.data.excerpt}</p>
-              <span class="blog-link">Read article →</span>
+              <span class="blog-link">Leer artículo →</span>
             </div>
           </a>
         ))}
@@ -77,10 +76,10 @@ const sortedPosts = englishPosts.sort((a, b) => b.data.date.valueOf() - a.data.d
 
   <section class="cta-section">
     <div class="cta-wrapper">
-      <h2 class="cta-title">Ready to Transform Your Space?</h2>
-      <p class="cta-text">Schedule a free consultation and receive a detailed no-obligation quote.</p>
-      <a href="/en/contact" class="btn-premium btn-primary-premium">
-        <span class="btn-content">Schedule Free Consultation</span>
+      <h2 class="cta-title">¿Listo Para Transformar Tu Espacio?</h2>
+      <p class="cta-text">Solicita una consulta gratuita y recibe un presupuesto detallado sin compromiso.</p>
+      <a href="/contacto" class="btn-premium btn-primary-premium">
+        <span class="btn-content">Agendar Consulta Gratuita</span>
         <span class="btn-border"></span>
         <span class="btn-shine"></span>
         <span class="btn-arrow">→</span>
