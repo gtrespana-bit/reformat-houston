@@ -1,37 +1,49 @@
 ---
 interface Props {
-  name: string;
-  description: string;
+  name?: string;
+  description?: string;
   serviceType: string;
-  areaServed?: string[];
+  areaServed?: string | string[];
   image?: string;
+  priceRange?: string;
 }
 
-const { name, description, serviceType, areaServed = ['Valencia', 'San Diego', 'Carabobo', 'Caracas'], image } = Astro.props;
+const { 
+  name = '', 
+  description = '', 
+  serviceType, 
+  areaServed = ['Houston', 'The Woodlands', 'Sugar Land', 'Katy', 'Cypress', 'Spring', 'Tomball'], 
+  image,
+  priceRange = '$$$'
+} = Astro.props;
+
+// Convertir a array si es string
+const areasArray = typeof areaServed === 'string' ? areaServed.split(',').map(s => s.trim()) : areaServed;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": serviceType,
-  "name": name,
-  "description": description,
+  ...(name && { "name": name }),
+  ...(description && { "description": description }),
   "provider": {
     "@type": "LocalBusiness",
-    "name": "ReformaT Venezuela",
-    "url": "https://reformat-venezuela.online",
-    "telephone": "+58 412-9449929",
+    "name": "ReformaT Houston",
+    "url": "https://reformat-houston.com",
+    "telephone": "+1 832-555-0100",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Valencia",
-      "addressRegion": "Carabobo",
-      "addressCountry": "VE"
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "addressCountry": "US"
     },
-    "areaServed": areaServed.map(city => ({
+    "areaServed": areasArray.map((area: string) => ({
       "@type": "City",
-      "name": city
-    }))
+      "name": area
+    })),
+    "priceRange": priceRange
   },
-  ...(image && { "image": `https://reformat-venezuela.online${image}` }),
+  ...(image && { "image": `https://reformat-houston.com${image}` }),
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
