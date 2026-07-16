@@ -2,19 +2,19 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const services = [
-  { slug: "cocinas", title: "Reformas de Cocina", desc: "Diseñamos cocinas funcionales.", image: "/images/cocina-800.webp", srcset: "/images/cocina-400.webp 400w, /images/cocina-800.webp 800w", features: ["Diseño personalizado", "Materiales premium"] },
-  { slug: "banos", title: "Reformas de Baño", desc: "Espacios de bienestar.", image: "/images/bano-800.webp", srcset: "/images/bano-400.webp 400w, /images/bano-800.webp 800w", features: ["Impermeabilización", "Diseño spa"] },
-  { slug: "integrales", title: "Reformas Integrales", desc: "Transformación completa.", image: "/images/integrales-800.webp", srcset: "/images/integrales-400.webp 400w, /images/integrales-800.webp 800w", features: ["Proyecto completo", "Gestión de permisos"] },
-  { slug: "electricidad", title: "Servicios Eléctricos", desc: "Instalaciones seguras.", image: "/images/electricidad-800.webp", srcset: "/images/electricidad-400.webp 400w, /images/electricidad-800.webp 800w", features: ["Certificada", "Domótica"] },
-  { slug: "fontaneria", title: "Fontanería", desc: "Soluciones profesionales.", image: "/images/fontaneria-800.webp", srcset: "/images/fontaneria-400.webp 400w, /images/fontaneria-800.webp 800w", features: ["Detección fugas", "Grifería"] },
-  { slug: "pintura-acabados", title: "Pintura y Acabados", desc: "Acabados perfectos.", image: "/images/pintura-800.webp", srcset: "/images/pintura-400.webp 400w, /images/pintura-800.webp 800w", features: ["Decorativa", "Microcemento"] },
-  { slug: "revestimientos", title: "Revestimientos", desc: "Paredes con estilo.", image: "/images/revestimientos-800.webp", srcset: "/images/revestimientos-400.webp 400w, /images/revestimientos-800.webp 800w", features: ["Porcelanato XL", "Wall Panels"] },
-  { slug: "suelos", title: "Suelos", desc: "Pavimentos duraderos.", image: "/images/suelo-porcelanato-800.webp", srcset: "/images/suelo-porcelanato-400.webp 400w, /images/suelo-porcelanato-800.webp 800w", features: ["Laminado", "Vinílico", "Madera"] },
-  { slug: "piscinas", title: "Piscinas", desc: "Construcción y mantenimiento.", image: "/images/piscinas-800.webp", srcset: "/images/piscinas-400.webp 400w, /images/piscinas-800.webp 800w", features: ["Construcción", "Filtración"] }
+  { slug: "kitchens", title: "Kitchen Remodeling", desc: "Custom design & premium finishes", image: "/images/kitchens-800.webp", srcset: "/images/kitchens-400.webp 400w, /images/kitchens-800.webp 800w", features: ["Custom Design", "Premium Materials"] },
+  { slug: "bathrooms", title: "Bathroom Remodeling", desc: "Spa-like retreats at home", image: "/images/bathrooms-800.webp", srcset: "/images/bathrooms-400.webp 400w, /images/bathrooms-800.webp 800w", features: ["Waterproofing", "Spa Design"] },
+  { slug: "whole-home", title: "Whole Home Remodeling", desc: "Complete home transformation", image: "/images/whole-home-800.webp", srcset: "/images/whole-home-400.webp 400w, /images/whole-home-800.webp 800w", features: ["Full Project", "Permit Management"] },
+  { slug: "electrical", title: "Electrical Services", desc: "Safe & certified installations", image: "/images/electrical-800.webp", srcset: "/images/electrical-400.webp 400w, /images/electrical-800.webp 800w", features: ["Certified", "Smart Home"] },
+  { slug: "plumbing", title: "Plumbing Services", desc: "Professional solutions", image: "/images/plumbing-800.webp", srcset: "/images/plumbing-400.webp 400w, /images/plumbing-800.webp 800w", features: ["Leak Detection", "Fixtures"] },
+  { slug: "painting", title: "Painting & Finishes", desc: "Perfect finishes every time", image: "/images/painting-800.webp", srcset: "/images/painting-400.webp 400w, /images/painting-800.webp 800w", features: ["Decorative", "Microcement"] },
+  { slug: "wall-coverings", title: "Wall Coverings", desc: "Stylish wall solutions", image: "/images/wall-coverings-800.webp", srcset: "/images/wall-coverings-400.webp 400w, /images/wall-coverings-800.webp 800w", features: ["Large Porcelain", "Wall Panels"] },
+  { slug: "flooring", title: "Flooring", desc: "Durable & beautiful floors", image: "/images/flooring-800.webp", srcset: "/images/flooring-400.webp 400w, /images/flooring-800.webp 800w", features: ["Laminate", "Vinyl", "Hardwood"] },
+  { slug: "pools", title: "Pools", desc: "Construction & maintenance", image: "/images/pools-800.webp", srcset: "/images/pools-400.webp 400w, /images/pools-800.webp 800w", features: ["Construction", "Filtration"] },
 ];
 ---
 
-<BaseLayout title="Services | ReformaT Houston" description="Complete home remodeling solutions in Houston, TX." activePage="servicios">
+<BaseLayout title="Services | ReformaT Houston" description="Complete home remodeling solutions in Houston, TX." activePage="services">
   <header class="page-hero">
     <!-- LCP IMAGE: Local, discoverable immediately from HTML -->
     <img
@@ -46,7 +46,7 @@ const services = [
       </div>
       <div class="services-vertical-grid">
         {services.map((svc, index) => (
-          <a href={`/servicios/${svc.slug}`} class="service-vertical-card">
+          <a href={`/services/${svc.slug}`} class="service-vertical-card">
             <div class="card-img-wrap">
               <img 
                 src={svc.image} 
@@ -77,7 +77,7 @@ const services = [
     <div class="cta-wrapper">
       <h2 class="cta-title">Ready to Transform Your Space?</h2>
       <p class="cta-text">Request a free consultation and receive a detailed quote.</p>
-      <a href="/contacto" class="btn-premium btn-primary-premium">
+      <a href="/contact" class="btn-premium btn-primary-premium">
         <span class="btn-content">Schedule Free Consultation</span><span class="btn-border"></span><span class="btn-shine"></span><span class="btn-arrow">→</span>
       </a>
     </div>
