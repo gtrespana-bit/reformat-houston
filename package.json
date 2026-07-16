@@ -1,5 +1,5 @@
 {
-  "name": "reformat-venezuela",
+  "name": "reformat-houston",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -14,5 +14,8 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
