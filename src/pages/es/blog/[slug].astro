@@ -54,7 +54,7 @@ const { Content } = await render(post);
         <span class="post-category">{post.data.category}</span>
         <h1 class="post-title">{post.data.title}</h1>
         <div class="post-meta">
-          <span>{post.data.date.toLocaleDateString('es-VE', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          <span>{post.data.date.toLocaleDateString('es-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
           <span>• {post.data.readTime} de lectura</span>
         </div>
       </div>
