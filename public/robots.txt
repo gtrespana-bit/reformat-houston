@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://reformat-venezuela.online/sitemap-index.xml

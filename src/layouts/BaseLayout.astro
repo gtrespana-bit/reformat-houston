@@ -1,0 +1,449 @@
+---
+import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  activePage?: 'inicio' | 'servicios' | 'proyectos' | 'blog' | 'contacto' | 'home' | 'services' | 'projects' | 'contact';
+  articleType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  articleSection?: string;
+  tags?: string[];
+}
+
+const { 
+  title, 
+  description, 
+  image = '', 
+  activePage = '',
+  articleType = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  articleSection,
+  tags
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+const lang = isEnglish ? 'en' : 'es';
+
+// Hreflang route mapping ES <-> EN
+const esToEnMap: Record<string, string> = {
+  '/': '/en/',
+  '/servicios/': '/en/services/',
+  '/servicios/cocinas/': '/en/services/kitchens/',
+  '/servicios/banos/': '/en/services/bathrooms/',
+  '/servicios/electricidad/': '/en/services/electrical/',
+  '/servicios/fontaneria/': '/en/services/plumbing/',
+  '/servicios/revestimientos/': '/en/services/wall-coverings/',
+  '/servicios/suelos/': '/en/services/flooring/',
+  '/servicios/piscinas/': '/en/services/pools/',
+  '/servicios/integrales/': '/en/services/whole-home/',
+  '/servicios/pintura-acabados/': '/en/services/painting/',
+  '/contacto/': '/en/contact/',
+  '/proyectos/': '/en/projects/',
+  '/blog/': '/en/blog/',
+  '/sobre-nosotros/': '/en/about-us/',
+};
+const enToEsMap: Record<string, string> = Object.fromEntries(
+  Object.entries(esToEnMap).map(([es, en]) => [en, es])
+);
+const siteBase = 'https://reformat-venezuela.online';
+const esHref = isEnglish ? `${siteBase}${enToEsMap[currentPath] || '/'}` : `${siteBase}${currentPath}`;
+const enHref = isEnglish ? `${siteBase}${currentPath}` : `${siteBase}${esToEnMap[currentPath] || '/en/'}`;
+
+const whatsappText = isEnglish
+  ? 'Hello,%20I%20am%20interested%20in%20a%20consultation%20for%20my%20project'
+  : 'Hola,%20me%20interesa%20una%20consulta%20para%20mi%20proyecto';
+
+const skipLinkText = isEnglish ? 'Skip to main content' : 'Saltar al contenido principal';
+const menuLabel = isEnglish ? 'Open navigation menu' : 'Abrir menú de navegación';
+const footerDesc = isEnglish
+  ? 'Transforming spaces with excellence since 2005.'
+  : 'Transformando espacios con excelencia desde 2005.';
+const footerRights = isEnglish
+  ? 'All rights reserved.'
+  : 'Todos los derechos reservados.';
+const footerLocations = isEnglish
+  ? 'Valencia, San Diego, Carabobo and Caracas.'
+  : 'Valencia, San Diego, Carabobo y Caracas.';
+
+const navItems = isEnglish
+  ? [
+      { label: 'Home', href: '/en', key: 'home' },
+      { label: 'Services', href: '/en/services', key: 'services' },
+      { label: 'Projects', href: '/en/projects', key: 'projects' },
+      { label: 'Blog', href: '/en/blog', key: 'blog' },
+      { label: 'Contact', href: '/en/contact', key: 'contact', premium: true }
+    ]
+  : [
+      { label: 'Inicio', href: '/', key: 'inicio' },
+      { label: 'Servicios', href: '/servicios', key: 'servicios' },
+      { label: 'Proyectos', href: '/proyectos', key: 'proyectos' },
+      { label: 'Blog', href: '/blog', key: 'blog' },
+      { label: 'Contacto', href: '/contacto', key: 'contacto', premium: true }
+    ];
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preload fuentes críticas (woff2 self-hosted) -->
+  <link rel="preload" href="/fonts/manrope-v15-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/manrope-v15-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/cormorant-garamond-v21-latin-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/cormorant-garamond-v21-latin-700.woff2" as="font" type="font/woff2" crossorigin />
+<!-- Hreflang: indicar a Google las versiones en cada idioma -->
+  <link rel="canonical" href={`${siteBase}${currentPath}`} />
+  <link rel="alternate" hreflang="es" href={esHref} />
+  <link rel="alternate" hreflang="en" href={enHref} />
+  <link rel="alternate" hreflang="x-default" href={esHref} />
+
+  
+  <SEO 
+    title={title}
+    description={description}
+    image={image}
+    type={articleType}
+    publishedTime={publishedTime}
+    modifiedTime={modifiedTime}
+    author={author}
+    articleSection={articleSection}
+    tags={tags}
+    activePage={activePage}
+  />
+
+  <Analytics />
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">{skipLinkText}</a>
+
+  <nav id="navbar" class="nav" role="navigation" aria-label={isEnglish ? 'Main navigation' : 'Menú principal'}>
+    <div class="nav-container">
+      <a href={isEnglish ? '/en' : '/'} class="logo">
+        <img
+          src="/images/logo-header.webp"
+          alt={isEnglish ? 'ReformaT Venezuela - Home Remodeling' : 'ReformaT Venezuela - Remodelación de Viviendas'}
+          width="200"
+          height="55"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </a>
+
+      <ul class="nav-links">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={[
+                activePage === item.key ? 'active' : '',
+                item.premium ? 'btn-nav-premium' : ''
+              ].filter(Boolean).join(' ')}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <button
+        type="button"
+        class="lang-switch-visible"
+        data-current-lang={lang}
+        aria-label={isEnglish ? 'Cambiar a español' : 'Switch to English'}
+      >
+        {isEnglish ? 'ES' : 'EN'}
+      </button>
+
+      <button id="menu-btn" class="menu-btn" aria-label={menuLabel} aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main-content">
+<slot />
+</main>
+
+  <a href={`https://wa.me/584227997043?text=${whatsappText}`} target="_blank" class="whatsapp-float" aria-label={isEnglish ? 'Contact via WhatsApp' : 'Contactar por WhatsApp'}>
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img
+          src="/images/logo-footer.webp"
+          alt={isEnglish ? 'ReformaT Venezuela - Home Remodeling' : 'ReformaT Venezuela - Remodelación de Viviendas'}
+          width="500"
+          height="137"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <p class="footer-desc">{footerDesc}</p>
+      <p class="footer-bottom">&copy; {new Date().getFullYear()} ReformaT Venezuela. {footerRights} | {footerLocations}</p>
+    </div>
+  </footer>
+<!-- Mobile Sticky CTA Bar -->
+<div class="mobile-cta-bar">
+  <a href="tel:+584227997043" class="mobile-cta-btn mobile-cta-call" aria-label={isEnglish ? 'Call us' : 'Llamar'}>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    <span>{isEnglish ? 'Call' : 'Llamar'}</span>
+  </a>
+  <a href={`https://wa.me/584227997043?text=${whatsappText}`} target="_blank" class="mobile-cta-btn mobile-cta-wa" aria-label={isEnglish ? 'WhatsApp' : 'WhatsApp'}>
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+  <script>
+    const routeMap = {
+      '/': '/en',
+      '/en': '/',
+      '/servicios': '/en/services',
+      '/en/services': '/servicios',
+      '/servicios/cocinas': '/en/services/kitchens',
+      '/en/services/kitchens': '/servicios/cocinas',
+      '/servicios/banos': '/en/services/bathrooms',
+      '/en/services/bathrooms': '/servicios/banos',
+      '/servicios/integrales': '/en/services/whole-home',
+      '/en/services/whole-home': '/servicios/integrales',
+      '/servicios/electricidad': '/en/services/electrical',
+      '/en/services/electrical': '/servicios/electricidad',
+      '/servicios/fontaneria': '/en/services/plumbing',
+      '/en/services/plumbing': '/servicios/fontaneria',
+      '/servicios/pintura-acabados': '/en/services/painting',
+      '/en/services/painting': '/servicios/pintura-acabados',
+      '/servicios/revestimientos': '/en/services/wall-coverings',
+      '/en/services/wall-coverings': '/servicios/revestimientos',
+      '/servicios/suelos': '/en/services/flooring',
+      '/en/services/flooring': '/servicios/suelos',
+      '/servicios/piscinas': '/en/services/pools',
+      '/en/services/pools': '/servicios/piscinas',
+      '/sobre-nosotros': '/en/about-us',
+      '/en/about-us': '/sobre-nosotros',
+      '/proyectos': '/en/projects',
+      '/en/projects': '/proyectos',
+      '/contacto': '/en/contact',
+      '/en/contact': '/contacto',
+      '/blog': '/en/blog',
+      '/en/blog': '/blog',
+      '/blog/cuanto-cuesta-reforma-cocina-valencia': '/en/blog/kitchen-remodel-cost-caracas-valencia-2026',
+      '/blog/porcelanato-vs-ceramica': '/en/blog/porcelain-tile-vs-ceramic-tile-guide',
+      '/blog/presupuesto-reforma-errores': '/en/blog/remodel-budget-mistakes-avoid',
+      '/blog/reformas-banos-carabobo': '/en/blog/bathroom-remodel-carabobo-guide',
+      '/blog/tendencias-cocinas-2025': '/en/blog/kitchen-design-trends-2026',
+      '/en/blog/kitchen-remodel-cost-caracas-valencia-2026': '/blog/cuanto-cuesta-reforma-cocina-valencia',
+      '/en/blog/porcelain-tile-vs-ceramic-tile-guide': '/blog/porcelanato-vs-ceramica',
+      '/en/blog/remodel-budget-mistakes-avoid': '/blog/presupuesto-reforma-errores',
+      '/en/blog/bathroom-remodel-carabobo-guide': '/blog/reformas-banos-carabobo',
+      '/en/blog/kitchen-design-trends-2026': '/blog/tendencias-cocinas-2025'
+    };
+
+    const langSwitchBtn = document.querySelector('.lang-switch-visible');
+    if (langSwitchBtn) {
+      langSwitchBtn.addEventListener('click', () => {
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        const newPath = routeMap[currentPath];
+        
+        if (newPath) {
+          const newLang = currentPath.startsWith('/en') ? 'es' : 'en';
+          localStorage.setItem('reformat-lang', newLang);
+          window.location.href = newPath;
+        } else {
+          if (currentPath.startsWith('/en')) {
+            localStorage.setItem('reformat-lang', 'es');
+            window.location.href = currentPath.replace(/^\/en/, '') || '/';
+          } else {
+            localStorage.setItem('reformat-lang', 'en');
+            window.location.href = '/en' + currentPath;
+          }
+        }
+      });
+    }
+
+    
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        navbar.classList.toggle('scrolled', window.scrollY > 80);
+      }
+    });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = navLinks.style.display === 'flex';
+        navLinks.style.display = isOpen ? 'none' : 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = '#0a0a0a';
+        navLinks.style.padding = '20px';
+        navLinks.style.textAlign = 'center';
+        navLinks.style.zIndex = '99';
+        menuBtn.setAttribute('aria-expanded', (!isOpen).toString());
+      });
+    }
+
+    window.shareArticle = (platform) => {
+      const url = window.location.href;
+      const title = document.title;
+      const links = {
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+      };
+      if (links[platform]) {
+        window.open(links[platform], '_blank', 'width=600,height=400');
+      }
+    };
+  </script>
+</body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute; top: -100px; left: 0; background: #0a0a0a; color: #fff;
+    padding: 12px 16px; z-index: 9999; transition: top 0.3s; text-decoration: none;
+  }
+  .skip-link:focus { top: 0; }
+  *:focus-visible { outline: 2px solid #C9A961; outline-offset: 2px; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #C9A961; outline-offset: 2px; }
+
+  .nav { position: fixed; top: 0; left: 0; width: 100%; background: transparent; z-index: 1000; padding: 20px 0; transition: background 0.4s, padding 0.4s; }
+  .nav.scrolled { background: rgba(10,10,10,0.95); padding: 15px 0; border-bottom: 1px solid rgba(201,169,97,0.2); }
+  .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .logo { display: flex; align-items: center; }
+  .logo img { height: 85px; width: auto; display: block; transition: height 0.3s; }
+  .nav.scrolled .logo img { height: 70px; }
+  .nav-links { display: flex; gap: 35px; list-style: none; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.9); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; position: relative; font-weight: 400; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-links a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--gold); }
+  .btn-nav-premium { border: 1px solid var(--gold); padding: 8px 22px; border-radius: 2px; color: var(--gold) !important; font-weight: 500; }
+  .btn-nav-premium:hover { background: var(--gold); color: var(--bg) !important; }
+  
+  .lang-switch-visible {
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px;
+    transition: all 0.3s !important;
+    color: rgba(255,255,255,0.9) !important;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-left: 12px;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .lang-switch-visible:hover {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+  }
+  
+  .menu-btn { display: none; background: none; border: none; color: var(--white); cursor: pointer; padding: 5px; margin-left: 8px; }
+  .menu-btn svg { width: 28px; height: 28px; display: block; }
+
+  .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s; z-index: 99; }
+  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6); }
+
+  .footer { background: var(--bg); color: rgba(255,255,255,0.7); padding: 90px 0 45px; text-align: center; }
+  .footer-logo { margin-bottom: 35px; display: flex; justify-content: center; }
+  .footer-logo img { max-width: 450px; height: auto; display: block; }
+  .footer-desc { max-width: 420px; margin: 0 auto 28px; font-size: 1rem; line-height: 1.6; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 28px; font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .menu-btn { display: flex; }
+    .lang-switch-visible {
+      margin-left: 8px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .logo img { height: 60px; }
+    .nav.scrolled .logo img { height: 55px; }
+    .footer-logo img { max-width: 350px; }
+    .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
+  }
+  @media (max-width: 480px) {
+    .logo img { height: 55px; }
+    .footer-logo img { max-width: 300px; }
+    .footer { padding: 70px 0 35px; }
+    .lang-switch-visible { padding: 4px 8px; font-size: 0.75rem; }
+  }
+
+/* Mobile Sticky CTA Bar */
+.mobile-cta-bar { display: none; }
+@media (max-width: 768px) {
+.mobile-cta-bar {
+  display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 100;
+  background: rgba(10,10,10,0.97); border-top: 1px solid rgba(201,169,97,0.3);
+  padding: 8px 12px; gap: 10px; backdrop-filter: blur(10px);
+}
+.mobile-cta-btn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 10px; border-radius: 8px; font-family: var(--font-sans);
+  font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.2s;
+}
+.mobile-cta-call {
+  background: transparent; color: var(--gold); border: 1.5px solid var(--gold);
+}
+.mobile-cta-call:active { background: rgba(201,169,97,0.15); }
+.mobile-cta-wa {
+  background: #0E8039; color: #fff; border: none;
+}
+.mobile-cta-wa:active { background: #1ebe5a; }
+.mobile-cta-btn svg { flex-shrink: 0; }
+.whatsapp-float { display: none !important; }
+body { padding-bottom: 65px; }
+}
+.skip-link {
+position: absolute;
+left: -9999px;
+top: auto;
+width: 1px;
+height: 1px;
+overflow: hidden;
+z-index: 9999;
+background: #c9a961;
+color: #1a1a2e;
+padding: 12px 24px;
+font-weight: 600;
+font-size: 0.95rem;
+text-decoration: none;
+border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+position: fixed;
+left: 0;
+top: 0;
+width: auto;
+height: auto;
+clip: auto;
+}
+</style>
