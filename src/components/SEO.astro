@@ -23,7 +23,7 @@ const normalizePath = (path: string): string => {
 
 const currentPath = normalizePath(Astro.url.pathname);
 const canonicalPath = Astro.url.pathname; // Preserve trailing slash for canonical
-const isEnglish = currentPath.startsWith('/en');
+const isEnglish = !currentPath.startsWith('/es');
 const lang = isEnglish ? 'en' : 'es';
 const locale = isEnglish ? 'en_US' : 'es_VE';
 const alternateLocale = isEnglish ? 'es_VE' : 'en_US';
@@ -49,48 +49,48 @@ const canonicalUrl = `${siteUrl}${canonicalPath}`;
 
 // Mapa de traducción de rutas para hreflang (sin trailing slash)
 const routeMap: Record<string, string> = {
-  '/': '/en',
-  '/en': '/',
-  '/servicios': '/en/services',
-  '/en/services': '/servicios',
-  '/servicios/cocinas': '/en/services/kitchens',
-  '/en/services/kitchens': '/servicios/cocinas',
-  '/servicios/banos': '/en/services/bathrooms',
-  '/en/services/bathrooms': '/servicios/banos',
-  '/servicios/integrales': '/en/services/whole-home',
-  '/en/services/whole-home': '/servicios/integrales',
-  '/servicios/electricidad': '/en/services/electrical',
-  '/en/services/electrical': '/servicios/electricidad',
-  '/servicios/fontaneria': '/en/services/plumbing',
-  '/en/services/plumbing': '/servicios/fontaneria',
-  '/servicios/pintura-acabados': '/en/services/painting',
-  '/en/services/painting': '/servicios/pintura-acabados',
-  '/servicios/revestimientos': '/en/services/wall-coverings',
-  '/en/services/wall-coverings': '/servicios/revestimientos',
-  '/servicios/suelos': '/en/services/flooring',
-  '/en/services/flooring': '/servicios/suelos',
-  '/servicios/piscinas': '/en/services/pools',
-  '/en/services/pools': '/servicios/piscinas',
-  '/proyectos': '/en/projects',
-  '/en/projects': '/proyectos',
-  '/contacto': '/en/contact',
-  '/en/contact': '/contacto',
-  '/blog': '/en/blog',
-  '/en/blog': '/blog',
-  '/blog/cuanto-cuesta-reforma-cocina-valencia': '/en/blog/kitchen-remodel-cost-caracas-valencia-2026',
-  '/blog/porcelanato-vs-ceramica': '/en/blog/porcelain-tile-vs-ceramic-tile-guide',
-  '/blog/presupuesto-reforma-errores': '/en/blog/remodel-budget-mistakes-avoid',
-  '/blog/reformas-banos-carabobo': '/en/blog/bathroom-remodel-carabobo-guide',
-  '/blog/tendencias-cocinas-2025': '/en/blog/kitchen-design-trends-2026',
-  '/en/blog/kitchen-remodel-cost-caracas-valencia-2026': '/blog/cuanto-cuesta-reforma-cocina-valencia',
-  '/en/blog/porcelain-tile-vs-ceramic-tile-guide': '/blog/porcelanato-vs-ceramica',
-  '/en/blog/remodel-budget-mistakes-avoid': '/blog/presupuesto-reforma-errores',
-  '/en/blog/bathroom-remodel-carabobo-guide': '/blog/reformas-banos-carabobo',
-  '/en/blog/kitchen-design-trends-2026': '/blog/tendencias-cocinas-2025',
-  '/privacidad': '/en/privacy',
-  '/en/privacy': '/privacidad',
-  '/terminos': '/en/terms',
-  '/en/terms': '/terminos'
+  '/': '/es',
+  '/es': '/',
+  '/services': '/es/servicios',
+  '/es/servicios': '/services',
+  '/services/kitchens': '/es/servicios/cocinas',
+  '/es/servicios/cocinas': '/services/kitchens',
+  '/services/bathrooms': '/es/servicios/banos',
+  '/es/servicios/banos': '/services/bathrooms',
+  '/services/whole-home': '/es/servicios/integrales',
+  '/es/servicios/integrales': '/services/whole-home',
+  '/services/electrical': '/es/servicios/electricidad',
+  '/es/servicios/electricidad': '/services/electrical',
+  '/services/plumbing': '/es/servicios/fontaneria',
+  '/es/servicios/fontaneria': '/services/plumbing',
+  '/services/painting': '/es/servicios/pintura-acabados',
+  '/es/servicios/pintura-acabados': '/services/painting',
+  '/services/wall-coverings': '/es/servicios/revestimientos',
+  '/es/servicios/revestimientos': '/services/wall-coverings',
+  '/services/flooring': '/es/servicios/suelos',
+  '/es/servicios/suelos': '/services/flooring',
+  '/services/pools': '/es/servicios/piscinas',
+  '/es/servicios/piscinas': '/services/pools',
+  '/projects': '/es/proyectos',
+  '/es/proyectos': '/projects',
+  '/contact': '/es/contacto',
+  '/es/contacto': '/contact',
+  '/blog': '/es/blog',
+  '/es/blog': '/blog',
+  '/blog/kitchen-remodel-cost-caracas-valencia-2026': '/blog/cuanto-cuesta-reforma-cocina-valencia',
+  '/blog/porcelain-tile-vs-ceramic-tile-guide': '/blog/porcelanato-vs-ceramica',
+  '/blog/remodel-budget-mistakes-avoid': '/blog/presupuesto-reforma-errores',
+  '/blog/bathroom-remodel-carabobo-guide': '/blog/reformas-banos-carabobo',
+  '/blog/kitchen-design-trends-2026': '/blog/tendencias-cocinas-2025',
+  '/blog/cuanto-cuesta-reforma-cocina-valencia': '/blog/kitchen-remodel-cost-caracas-valencia-2026',
+  '/blog/porcelanato-vs-ceramica': '/blog/porcelain-tile-vs-ceramic-tile-guide',
+  '/blog/presupuesto-reforma-errores': '/blog/remodel-budget-mistakes-avoid',
+  '/blog/reformas-banos-carabobo': '/blog/bathroom-remodel-carabobo-guide',
+  '/blog/tendencias-cocinas-2025': '/blog/kitchen-design-trends-2026',
+  '/privacy': '/es/privacidad',
+  '/es/privacidad': '/privacy',
+  '/terms': '/es/terminos',
+  '/es/terminos': '/terms'
 };
 
 // Obtener path alternativo (otro idioma)
@@ -100,12 +100,12 @@ const getAlternatePath = (): string => {
     return routeMap[currentPath];
   }
   
-  // Fallback: si es ruta en español, añadir /en; si es inglés, quitar /en
+  // Fallback: si es ruta en español, quitar /es; si es inglés, añadir /es
   if (isEnglish) {
-    const withoutEn = currentPath.replace(/^\/en/, '') || '/';
-    return withoutEn;
+    const withoutEs = currentPath.replace(/^\/es/, '') || '/';
+    return withoutEs;
   } else {
-    return currentPath === '/' ? '/en' : `/en${currentPath}`;
+    return currentPath === '/' ? '/es' : `/es${currentPath}`;
   }
 };
 
@@ -117,21 +117,21 @@ const enPath = isEnglish ? currentPath : alternatePath;
 
 // Breadcrumbs para Schema
 const breadcrumbItems = [];
-breadcrumbItems.push({ name: isEnglish ? 'Home' : 'Inicio', url: isEnglish ? '/en' : '/' });
+breadcrumbItems.push({ name: isEnglish ? 'Home' : 'Inicio', url: isEnglish ? '/es' : '/' });
 
-if (currentPath === '/blog' || currentPath === '/en/blog') {
+if (currentPath === '/blog' || currentPath === '/blog') {
   breadcrumbItems.push({ name: 'Blog', url: currentPath });
-} else if (currentPath.startsWith('/blog/') || currentPath.startsWith('/en/blog/')) {
-  breadcrumbItems.push({ name: 'Blog', url: isEnglish ? '/en/blog' : '/blog' });
+} else if (currentPath.startsWith('/blog/') || currentPath.startsWith('/blog/')) {
+  breadcrumbItems.push({ name: 'Blog', url: isEnglish ? '/blog' : '/blog' });
   breadcrumbItems.push({ name: title.split('|')[0].trim(), url: currentPath });
-} else if (currentPath === '/servicios' || currentPath === '/en/services') {
+} else if (currentPath === '/servicios' || currentPath === '/services') {
   breadcrumbItems.push({ name: isEnglish ? 'Services' : 'Servicios', url: currentPath });
-} else if (currentPath.startsWith('/servicios/') || currentPath.startsWith('/en/services/')) {
-  breadcrumbItems.push({ name: isEnglish ? 'Services' : 'Servicios', url: isEnglish ? '/en/services' : '/servicios' });
+} else if (currentPath.startsWith('/servicios/') || currentPath.startsWith('/services/')) {
+  breadcrumbItems.push({ name: isEnglish ? 'Services' : 'Servicios', url: isEnglish ? '/services' : '/servicios' });
   breadcrumbItems.push({ name: title.split('|')[0].trim(), url: currentPath });
-} else if (currentPath === '/proyectos' || currentPath === '/en/projects') {
+} else if (currentPath === '/proyectos' || currentPath === '/projects') {
   breadcrumbItems.push({ name: isEnglish ? 'Projects' : 'Proyectos', url: currentPath });
-} else if (currentPath === '/contacto' || currentPath === '/en/contact') {
+} else if (currentPath === '/contacto' || currentPath === '/contact') {
   breadcrumbItems.push({ name: isEnglish ? 'Contact' : 'Contacto', url: currentPath });
 }
 
