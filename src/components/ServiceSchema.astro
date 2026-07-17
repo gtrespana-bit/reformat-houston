@@ -12,7 +12,7 @@ const {
   name = '', 
   description = '', 
   serviceType, 
-  areaServed = ['Houston', 'The Woodlands', 'Sugar Land', 'Katy', 'Cypress', 'Spring', 'Tomball'], 
+  areaServed = ['Houston', 'The Woodlands', 'Sugar Land', 'Katy', 'Cypress', 'Spring', 'Tomball', 'Montrose', 'Houston Heights', 'River Oaks', 'Pearland', 'Bellaire', 'Memorial'], 
   image,
   priceRange = '$$$'
 } = Astro.props;
@@ -27,21 +27,33 @@ const schema = {
   ...(name && { "name": name }),
   ...(description && { "description": description }),
   "provider": {
-    "@type": "LocalBusiness",
-    "name": "ReformaT Houston",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Reformat Houston",
     "url": "https://reformat-houston.com",
-    "telephone": "+1 832-555-0100",
+    "telephone": "+1-832-555-0100",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Houston, TX",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77001",
       "addressCountry": "US"
     },
     "areaServed": areasArray.map((area: string) => ({
       "@type": "City",
-      "name": area
+      "name": area,
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Texas"
+      }
     })),
-    "priceRange": priceRange
+    "priceRange": priceRange,
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Houston,TX",
+    "sameAs": [
+      "https://www.houzz.com/pro/reformat-houston",
+      "https://www.linkedin.com/company/reformat-houston",
+      "https://www.instagram.com/reformat_houston"
+    ]
   },
   ...(image && { "image": `https://reformat-houston.com${image}` }),
   "aggregateRating": {

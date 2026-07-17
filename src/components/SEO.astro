@@ -13,7 +13,7 @@ interface Props {
 }
 
 const siteUrl = 'https://reformat-houston.vercel.app';
-const siteName = 'ReformaT Houston';
+const siteName = 'Reformat Houston';
 
 // Normalizar path: quitar trailing slash excepto en home
 const normalizePath = (path: string): string => {
@@ -25,8 +25,8 @@ const currentPath = normalizePath(Astro.url.pathname);
 const canonicalPath = Astro.url.pathname; // Preserve trailing slash for canonical
 const isEnglish = !currentPath.startsWith('/es');
 const lang = isEnglish ? 'en' : 'es';
-const locale = isEnglish ? 'en_US' : 'es_VE';
-const alternateLocale = isEnglish ? 'es_VE' : 'en_US';
+const locale = isEnglish ? 'en_US' : 'es_US';
+const alternateLocale = isEnglish ? 'es_US' : 'en_US';
 
 const {
   title,
@@ -77,16 +77,16 @@ const routeMap: Record<string, string> = {
   '/es/contacto': '/contact',
   '/blog': '/es/blog',
   '/es/blog': '/blog',
-  '/blog/kitchen-remodel-cost-caracas-valencia-2026': '/blog/cuanto-cuesta-reforma-cocina-valencia',
-  '/blog/porcelain-tile-vs-ceramic-tile-guide': '/blog/porcelanato-vs-ceramica',
-  '/blog/remodel-budget-mistakes-avoid': '/blog/presupuesto-reforma-errores',
-  '/blog/bathroom-remodel-carabobo-guide': '/blog/reformas-banos-carabobo',
-  '/blog/kitchen-design-trends-2026': '/blog/tendencias-cocinas-2025',
-  '/blog/cuanto-cuesta-reforma-cocina-valencia': '/blog/kitchen-remodel-cost-caracas-valencia-2026',
-  '/blog/porcelanato-vs-ceramica': '/blog/porcelain-tile-vs-ceramic-tile-guide',
-  '/blog/presupuesto-reforma-errores': '/blog/remodel-budget-mistakes-avoid',
-  '/blog/reformas-banos-carabobo': '/blog/bathroom-remodel-carabobo-guide',
-  '/blog/tendencias-cocinas-2025': '/blog/kitchen-design-trends-2026',
+  '/blog/kitchen-remodel-cost-houston-2025': '/blog/cuanto-cuesta-reforma-cocina-houston',
+  '/blog/porcelain-tile-vs-ceramic-tile-guide': '/blog/porcelanato-vs-ceramica-guia',
+  '/blog/remodel-budget-mistakes-avoid': '/blog/errores-presupuesto-reforma',
+  '/blog/bathroom-remodel-houston-humidity-guide': '/blog/reformas-banos-humedad-houston',
+  '/blog/kitchen-design-trends-2025': '/blog/tendencias-cocinas-2025',
+  '/blog/cuanto-cuesta-reforma-cocina-houston': '/blog/kitchen-remodel-cost-houston-2025',
+  '/blog/porcelanato-vs-ceramica-guia': '/blog/porcelain-tile-vs-ceramic-tile-guide',
+  '/blog/errores-presupuesto-reforma': '/blog/remodel-budget-mistakes-avoid',
+  '/blog/reformas-banos-humedad-houston': '/blog/bathroom-remodel-houston-humidity-guide',
+  '/blog/tendencias-cocinas-2025': '/blog/kitchen-design-trends-2025',
   '/privacy': '/es/privacidad',
   '/es/privacidad': '/privacy',
   '/terms': '/es/terminos',
@@ -151,17 +151,20 @@ const websiteSchema = {
 const areasServed = [
   { "@type": "City", "name": "Houston" },
   { "@type": "City", "name": "The Woodlands" },
-  { "@type": "City", "name": "Naguanagua" },
-  { "@type": "City", "name": "Guacara" },
-  { "@type": "City", "name": "Los Guayos" },
+  { "@type": "City", "name": "Sugar Land" },
+  { "@type": "City", "name": "Katy" },
+  { "@type": "City", "name": "Cypress" },
+  { "@type": "City", "name": "Spring" },
+  { "@type": "City", "name": "Tomball" },
+  { "@type": "City", "name": "Montrose" },
+  { "@type": "City", "name": "Houston Heights" },
+  { "@type": "City", "name": "River Oaks" },
+  { "@type": "City", "name": "Pearland" },
+  { "@type": "City", "name": "Bellaire" },
+  { "@type": "City", "name": "Memorial" },
   { "@type": "AdministrativeArea", "name": "Harris County" },
-  { "@type": "City", "name": "The Woodlands" },
-  { "@type": "AdministrativeArea", "name": "Chacao" },
-  { "@type": "AdministrativeArea", "name": "Baruta" },
-  { "@type": "AdministrativeArea", "name": "El Hatillo" },
-  { "@type": "AdministrativeArea", "name": "Sucre" },
-  { "@type": "AdministrativeArea", "name": "Libertador" },
-  { "@type": "City", "name": "La Guaira" }
+  { "@type": "AdministrativeArea", "name": "Fort Bend County" },
+  { "@type": "AdministrativeArea", "name": "Montgomery County" }
 ];
 
 const localBusinessSchema = {
@@ -169,22 +172,22 @@ const localBusinessSchema = {
   "@type": "HomeAndConstructionBusiness",
   "name": siteName,
   "image": `${siteUrl}/images/logo-header.webp`,
-  "url": isEnglish ? `${siteUrl}/en` : siteUrl,
-  "telephone": "+584227997043",
+  "url": siteUrl,
+  "telephone": "+1-832-555-0100",
   "email": "info@reformat-houston.com",
-  "priceRange": "$$",
+  "priceRange": "$$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Avenida Bolívar, Centro Profesional",
+    "streetAddress": "Houston, TX",
     "addressLocality": "Houston",
-    "addressRegion": "Harris County",
-    "postalCode": "2001",
-    "addressCountry": "VE"
+    "addressRegion": "TX",
+    "postalCode": "77001",
+    "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 10.1620,
-    "longitude": -68.0077
+    "latitude": 29.7604,
+    "longitude": -95.3698
   },
   "areaServed": areasServed,
   "availableLanguage": [
@@ -203,7 +206,12 @@ const localBusinessSchema = {
     "opens": "08:00",
     "closes": "18:00"
   },
-  "sameAs": [siteUrl]
+  "sameAs": [
+    siteUrl,
+    "https://www.houzz.com/pro/reformat-houston",
+    "https://www.linkedin.com/company/reformat-houston",
+    "https://www.instagram.com/reformat_houston"
+  ]
 };
 
 const breadcrumbSchema = {
@@ -259,10 +267,10 @@ const articleSchema = {
 <!-- LANGUAGE META -->
 <meta http-equiv="content-language" content={lang} />
 <meta name="language" content={lang} />
-<meta name="geo.region" content="VE" />
+<meta name="geo.region" content="US-TX" />
 <meta name="geo.placename" content="Houston, The Woodlands, Sugar Land, Katy, Texas" />
-<meta name="geo.position" content="10.1620;-68.0077" />
-<meta name="ICBM" content="10.1620, -68.0077" />
+<meta name="geo.position" content="29.7604;-95.3698" />
+<meta name="ICBM" content="29.7604, -95.3698" />
 
 <!-- HREFLANG (con self-referencing) -->
 <link rel="alternate" hreflang="es" href={`${siteUrl}${esPath}`} />
