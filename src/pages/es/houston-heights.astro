@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Remodelación de Cocinas y Baños en Houston Heights | Reformat Houston",
+  description: "Expertos en renovación de hogares históricos en Houston Heights. Especialistas en cocinas y baños que respetan la arquitectura victoriana con comodidades modernas.",
+  canonical: "/es/houston-heights/",
+  image: "/images/og-houston-heights.jpg",
+  locale: "es",
+  type: "website"
+};
+
+const neighborhoodInfo = {
+  name: "Houston Heights",
+  description: "El Houston Heights es el barrio histórico más grande de Houston, conocido por su arquitectura victoriana, calles arboladas y fuerte sentido de comunidad. Los propietarios aquí buscan preservar el encanto histórico mientras incorporan comodidades modernas.",
+  styles: ["Victoriano", "Craftsman", "Bungalow", "Tradicional"],
+  needs: ["Actualizaciones eléctricas para hogares antiguos", "Cimentaciones reforzadas por suelo expansivo", "Aislamiento mejorado para eficiencia energética", "Diseños que respetan la estética histórica"]
+};
+
+const services = [
+  {
+    title: "Remodelación de Cocinas en Houston Heights",
+    description: "Transformamos cocinas en hogares históricos manteniendo el carácter original. Gabinetes personalizados, encimeras de cuarzo y electrodomésticos modernos que complementan la arquitectura victoriana.",
+    features: ["Gabinetes estilo período", "Encimeras resistentes al calor y humedad", "Iluminación LED eficiente", "Distribuciones que maximizan espacios compactos"]
+  },
+  {
+    title: "Renovación de Baños en Houston Heights",
+    description: "Baños que combinan elegancia clásica con funcionalidad moderna. Desde baños tipo spa hasta actualizaciones de medio baño, respetando el estilo histórico de su hogar.",
+    features: ["Azulejos estilo vintage", "Grifería de acabado antiguo", "Duchas sin barrera accesibles", "Ventilación mejorada para clima húmedo"]
+  }
+];
+---
+
+<BaseLayout {...pageData}>
+  <main class="neighborhood-page">
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/heights-hero.jpg'); background-size: cover; background-position: center; color: white; padding: 100px 20px; text-align: center;">
+      <h1>Remodelación de Cocinas y Baños en Houston Heights</h1>
+      <p class="hero-subtitle">Preservando la historia, creando el futuro</p>
+      <a href="/es/contacto/" class="cta-button">Solicitar Presupuesto Gratuito</a>
+    </section>
+
+    <!-- Neighborhood Intro -->
+    <section class="neighborhood-intro" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+      <h2>Expertos en Renovación del Houston Heights</h2>
+      <p>{neighborhoodInfo.description}</p>
+      <p>En Reformat Houston, entendemos los desafíos únicos de remodelar hogares históricos en el Heights. Nuestro equipo combina técnicas tradicionales con tecnología moderna para entregar resultados que honran la arquitectura original mientras mejoran la funcionalidad para la vida contemporánea.</p>
+      
+      <div class="styles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+        {neighborhoodInfo.styles.map(style => (
+          <div class="style-card" style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+            <h3>{style}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" style="background-color: #f9f9f9; padding: 60px 20px;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 40px;">Nuestros Servicios en Houston Heights</h2>
+        
+        {services.map(service => (
+          <div class="service-card" style="background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <ul style="list-style: none; padding: 0;">
+              {service.features.map(feature => (
+                <li style="padding: 5px 0; display: flex; align-items: center;">
+                  <span style="color: #2563eb; margin-right: 10px;">✓</span> {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+      <h2>¿Por Qué Elegir Reformat Houston para su Proyecto en el Heights?</h2>
+      <div class="reasons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+        <div class="reason">
+          <h3>Experiencia en Históricos</h3>
+          <p>Más de 20 años renovando hogares victorianos y craftsman en el Houston Heights, respetando regulaciones históricas.</p>
+        </div>
+        <div class="reason">
+          <h3>Conocimiento Local</h3>
+          <p>Entendemos los requisitos de permisos de la Ciudad de Houston y las regulaciones específicas del Heights.</p>
+        </div>
+        <div class="reason">
+          <h3>Materiales Adecuados</h3>
+          <p>Seleccionamos materiales que resisten la humedad de Houston mientras mantienen la autenticidad histórica.</p>
+        </div>
+        <div class="reason">
+          <h3>Artesanía Tradicional</h3>
+          <p>Técnicas de construcción tradicionales combinadas con métodos modernos para resultados duraderos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-color: #2563eb; color: white; padding: 60px 20px; text-align: center;">
+      <h2>¿Listo para Transformar su Hogar en el Heights?</h2>
+      <p style="margin: 20px 0; font-size: 1.2em;">Obtenga una consulta gratuita y presupuesto personalizado para su proyecto de remodelación.</p>
+      <a href="/es/contacto/" class="cta-button" style="background: white; color: #2563eb; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">Contactar Ahora</a>
+    </section>
+  </main>
+
+  <ServiceSchema
+    name="Reformat Houston - Houston Heights"
+    description="Servicios profesionales de remodelación de cocinas y baños en el Houston Heights, especializados en hogares históricos."
+    areaServed={["Houston Heights", "Houston", "Harris County", "The Woodlands", "Sugar Land"]}
+    priceRange="$$"
+  />
+</BaseLayout>
