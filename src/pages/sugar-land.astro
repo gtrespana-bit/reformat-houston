@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Kitchen & Bathroom Remodeling in Sugar Land, TX | Reformat Houston",
+  description: "Expert home remodeling services in Sugar Land, TX. Specializing in kitchen renovations, bathroom upgrades, and whole-home transformations for modern families.",
+  keywords: "Kitchen Remodeling Sugar Land, Bathroom Renovation Sugar Land, Home Remodeler Sugar Land, Luxury Remodeling Texas, Reformat Houston",
+  canonical: "/sugar-land/",
+  locale: "en",
+  area: "Sugar Land"
+};
+
+const serviceDetails = {
+  name: "Reformat Houston - Sugar Land",
+  areaServed: "Sugar Land, TX",
+  description: "Premium remodeling services tailored for Sugar Land families. We understand the diverse community and modern architectural styles of this thriving suburb.",
+  address: {
+    streetAddress: "Serving Sugar Land Area",
+    addressLocality: "Sugar Land",
+    addressRegion: "TX",
+    postalCode: "77478",
+    addressCountry: "US"
+  },
+  geo: {
+    latitude: "29.6196",
+    longitude: "-95.6349"
+  }
+};
+---
+
+<BaseLayout title={pageData.title} description={pageData.description} keywords={pageData.keywords} canonical={pageData.canonical} locale={pageData.locale}>
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+
+      <!-- Hero Section -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Expert Remodeling in <span class="text-blue-600">Sugar Land</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Transform your home with premium renovation services designed for the vibrant and diverse community of Sugar Land.
+        </p>
+      </section>
+
+      <!-- Content Section -->
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Reformat Houston for Your Sugar Land Home?</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Sugar Land is known for its excellent schools, safe neighborhoods, and diverse culture. Your home deserves a remodeling partner who understands the unique needs of families in this dynamic suburb.
+        </p>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          From open-concept kitchen renovations perfect for family gatherings to luxurious bathroom upgrades that provide a personal spa experience, our team delivers quality craftsmanship that enhances your lifestyle. We handle all permits and ensure compliance with local Fort Bend County regulations.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Local Expertise</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Experience with Sugar Land's diverse architectural styles</li>
+              <li>Familiarity with Fort Bend County building codes</li>
+              <li>Materials suited for Texas climate conditions</li>
+              <li>Family-focused design solutions</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Services Offered</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Modern Kitchen Remodeling</li>
+              <li>Luxury Bathroom Renovations</li>
+              <li>Whole Home Upgrades</li>
+              <li>Custom Flooring Solutions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="text-center bg-blue-600 text-white rounded-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-4">Ready to Upgrade Your Sugar Land Home?</h2>
+        <p class="text-lg mb-8 opacity-90">
+          Schedule your free consultation today and discover how we can transform your space.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+          Get Your Free Estimate
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <ServiceSchema
+    name={serviceDetails.name}
+    areaServed={serviceDetails.areaServed}
+    description={serviceDetails.description}
+    streetAddress={serviceDetails.address.streetAddress}
+    addressLocality={serviceDetails.address.addressLocality}
+    addressRegion={serviceDetails.address.addressRegion}
+    postalCode={serviceDetails.address.postalCode}
+    addressCountry={serviceDetails.address.addressCountry}
+    latitude={serviceDetails.geo.latitude}
+    longitude={serviceDetails.geo.longitude}
+  />
+</BaseLayout>

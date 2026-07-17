@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Remodelación de Lujo en River Oaks Houston | Reformat Houston",
+  description: "Contratista de remodelación premium sirviendo River Oaks, Houston. Especialistas en renovaciones de cocinas de lujo, baños y mejoras para hogares exclusivos.",
+  keywords: "remodelación River Oaks, renovación de cocina de lujo Houston, remodelación de baño River Oaks, contratista River Oaks, mejoras personalizadas Houston",
+  canonical: "/es/river-oaks/",
+  lang: "es",
+  image: "/images/river-oaks-remodeling.jpg",
+  activePage: "areas"
+};
+
+const areaInfo = {
+  name: "River Oaks",
+  type: "Vecindario",
+  description: "River Oaks es el vecindario más exclusivo de Houston, conocido por sus mansiones, calles arboladas y residentes exigentes. Entendemos los estándares arquitectónicos únicos y las expectativas de lujo de River Oaks.",
+  highlights: [
+    "Mansiones históricas y casas señoriales",
+    "Estrictas pautas arquitectónicas y estándares de preservación",
+    "Requisitos de materiales de alta gama y artesanía personalizada",
+    "Proximidad al centro de Houston y la Galleria"
+  ],
+  services: [
+    "Renovaciones de Cocina de Lujo con electrodomésticos premium",
+    "Remodelaciones de Baño tipo spa con mármol y accesorios personalizados",
+    "Remodelación Completa del Hogar preservando carácter histórico",
+    "Ebanistería Personalizada y muebles empotrados",
+    "Espacios de Vida al Aire Libre y Áreas de Piscina"
+  ]
+};
+---
+
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <section class="hero-area">
+      <div class="container">
+        <h1>Remodelación Experta en River Oaks, Houston</h1>
+        <p class="lead">Ofreciendo artesanía excepcional y renovaciones de lujo para el vecindario más prestigioso de Houston.</p>
+        <a href="/es/contacto" class="btn btn-primary">Solicite Su Consulta Privada</a>
+      </div>
+    </section>
+
+    <section class="area-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Excelencia en Remodelación en River Oaks</h2>
+            <p>En Reformat Houston, nos especializamos en transformar hogares en River Oaks con la sofisticación y atención al detalle que esta comunidad exclusiva demanda. Con más de 20 años de experiencia trabajando en propiedades prestigiosas, entendemos la combinación única de preservación histórica y lujo moderno que define la arquitectura de River Oaks.</p>
+            
+            <p>Desde restaurar meticulosamente fachadas coloniales clásicas hasta crear interiores ultramodernos, nuestro equipo navega por las estrictas pautas arquitectónicas de River Oaks mientras da vida a su visión. Trabajamos sin problemas con historiadores locales, arquitectos y la Comisión Arquitectónica para garantizar que cada proyecto cumpla con los más altos estándares.</p>
+
+            <h3>Nuestros Servicios en River Oaks</h3>
+            <ul class="services-list">
+              {areaInfo.services.map((service) => (
+                <li>{service}</li>
+              ))}
+            </ul>
+
+            <h3>¿Por Qué Elegir Reformat Houston para Su Hogar en River Oaks?</h3>
+            <ul class="features-list">
+              <li><strong>Experiencia Histórica:</strong> Profundo conocimiento de estilos arquitectónicos de River Oaks (Colonial, Georgiano, Normando Francés).</li>
+              <li><strong>Servicio Premium:</strong> Servicio discreto y profesional respetando su privacidad y propiedad.</li>
+              <li><strong>Materiales Premium:</strong> Acceso a proveedores exclusivos para mármol, maderas y accesorios personalizados.</li>
+              <li><strong>Gestión de Proyectos:</strong> Supervisión integral garantizando cronogramas y presupuestos sin compromisos.</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>¿Listo para Transformar Su Mansión en River Oaks?</h3>
+              <p>Programe una consulta confidencial con nuestro equipo senior de diseño.</p>
+              <a href="/es/contacto" class="btn btn-secondary">Contáctenos Hoy</a>
+            </div>
+            
+            <div class="local-info">
+              <h4>Sirviendo River Oaks y Áreas Circundantes</h4>
+              <p>Servimos orgullosamente a propietarios en River Oaks, Highland Village, Afton Oaks y comunidades prestigiosas vecinas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-teaser">
+      <div class="container">
+        <h2>Proyectos Recientes en River Oaks</h2>
+        <p>Explore nuestro portafolio de renovaciones de lujo en los vecindarios más exclusivos de Houston.</p>
+        <a href="/es/proyectos" class="btn btn-outline">Ver Nuestro Portafolio</a>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Remodelación del Hogar"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$$"
+    latitude={29.7544}
+    longitude={-95.4365}
+  />
+</BaseLayout>
+
+<style>
+  .area-page { padding-top: 80px; }
+  .hero-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/river-oaks-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero-area h1 { font-size: 3rem; margin-bottom: 20px; }
+  .area-content { padding: 80px 0; }
+  .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .hero-area h1 { font-size: 2rem; }
+  }
+  .services-list, .features-list { list-style: none; padding: 0; }
+  .services-list li, .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+  .features-list li strong { color: #2c3e50; }
+  .cta-box { background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+  .local-info { background: #fff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
+  .projects-teaser { background: #2c3e50; color: white; padding: 60px 0; text-align: center; }
+</style>

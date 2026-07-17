@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Home Remodeling in Houston Heights | Reformat Houston",
+  description: "Expert remodeling contractor serving Houston Heights. Specializing in historic home renovations, modern kitchen upgrades, and bathroom remodels that respect Victorian charm.",
+  keywords: "Houston Heights remodeling, historic home renovation Houston, kitchen remodel Heights, bathroom renovation Houston Heights, contractor Heights TX",
+  canonical: "/houston-heights/",
+  lang: "en",
+  image: "/images/houston-heights-remodeling.jpg",
+  activePage: "areas"
+};
+
+const areaInfo = {
+  name: "Houston Heights",
+  type: "Neighborhood",
+  description: "The Houston Heights is one of Houston's most historic and vibrant neighborhoods, known for its Victorian architecture, tree-lined streets, and strong community spirit. We specialize in preserving historic character while adding modern functionality.",
+  highlights: [
+    "Historic Victorian and Craftsman homes",
+    "Strict historic preservation guidelines",
+    "Walkable community with local shops and restaurants",
+    "Strong neighborhood association and community pride"
+  ],
+  services: [
+    "Historic Home Restoration and Renovation",
+    "Modern Kitchen Upgrades in Period Homes",
+    "Bathroom Remodels with Vintage Fixtures",
+    "Foundation Repair and Structural Updates",
+    "Energy Efficiency Improvements for Older Homes"
+  ]
+};
+---
+
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <section class="hero-area">
+      <div class="container">
+        <h1>Expert Home Remodeling in Houston Heights</h1>
+        <p class="lead">Preserving historic charm while creating modern living spaces in Houston's most beloved neighborhood.</p>
+        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+      </div>
+    </section>
+
+    <section class="area-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Remodeling Houston Heights Homes with Care</h2>
+            <p>At Reformat Houston, we understand the unique character of Houston Heights homes. With over 20 years of experience working on historic properties, we know how to balance preservation with modernization, ensuring your home maintains its Victorian charm while meeting today's lifestyle needs.</p>
+            
+            <p>We work closely with the Houston Heights Association and navigate historic preservation requirements to ensure your renovation meets all guidelines. From restoring original hardwood floors to installing modern kitchens that complement period architecture, our team has the expertise to handle every detail.</p>
+
+            <h3>Our Houston Heights Services</h3>
+            <ul class="services-list">
+              {areaInfo.services.map((service) => (
+                <li>{service}</li>
+              ))}
+            </ul>
+
+            <h3>Why Choose Reformat Houston?</h3>
+            <ul class="features-list">
+              <li><strong>Historic Expertise:</strong> Deep knowledge of Victorian, Craftsman, and bungalow architecture.</li>
+              <li><strong>Preservation Focus:</strong> Commitment to maintaining original character and details.</li>
+              <li><strong>Local Knowledge:</strong> Understanding of Heights-specific regulations and community standards.</li>
+              <li><strong>Quality Craftsmanship:</strong> Traditional techniques combined with modern materials.</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>Ready to Renovate Your Heights Home?</h3>
+              <p>Schedule a consultation with our historic renovation specialists.</p>
+              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
+            </div>
+            
+            <div class="local-info">
+              <h4>Serving Houston Heights & Surrounding Areas</h4>
+              <p>We proudly serve homeowners in Houston Heights, Garden Oaks, Oak Forest, and nearby historic neighborhoods.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-teaser">
+      <div class="container">
+        <h2>Recent Projects in Houston Heights</h2>
+        <p>See how we've helped Heights homeowners blend historic charm with modern living.</p>
+        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={29.7994}
+    longitude={-95.4016}
+  />
+</BaseLayout>
+
+<style>
+  .area-page {
+    padding-top: 80px;
+  }
+  .hero-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/houston-heights-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero-area h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .area-content {
+    padding: 80px 0;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+  }
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-area h1 {
+      font-size: 2rem;
+    }
+  }
+  .services-list, .features-list {
+    list-style: none;
+    padding: 0;
+  }
+  .services-list li, .features-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .features-list li strong {
+    color: #2c3e50;
+  }
+  .cta-box {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  .local-info {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+  }
+  .projects-teaser {
+    background: #2c3e50;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+</style>

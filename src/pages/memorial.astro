@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Home Remodeling in Memorial Houston | Reformat Houston",
+  description: "Expert remodeling contractor serving Memorial area, Houston. Specializing in luxury home renovations, kitchen upgrades, and bathroom remodels for established neighborhoods.",
+  keywords: "Memorial remodeling, home renovation Memorial Houston, kitchen remodel Memorial, bathroom renovation Memorial TX, contractor Memorial Village",
+  canonical: "/memorial/",
+  lang: "en",
+  image: "/images/memorial-remodeling.jpg",
+  activePage: "areas"
+};
+
+const areaInfo = {
+  name: "Memorial",
+  type: "Neighborhood",
+  description: "The Memorial area is one of Houston's most desirable communities, known for its excellent schools, parks, and spacious family homes. We specialize in updating classic homes while maintaining their timeless appeal.",
+  highlights: [
+    "Top-rated schools and family-friendly environment",
+    "Spacious lots with mature trees and green spaces",
+    "Mix of traditional and contemporary architecture",
+    "Close proximity to Memorial Park and downtown"
+  ],
+  services: [
+    "Whole Home Renovations",
+    "Gourmet Kitchen Remodels",
+    "Luxury Bathroom Additions",
+    "Family Room Expansions",
+    "Outdoor Living and Pool Areas"
+  ]
+};
+---
+
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <section class="hero-area">
+      <div class="container">
+        <h1>Expert Home Remodeling in Memorial, Houston</h1>
+        <p class="lead">Transforming family homes in Houston's most sought-after school district.</p>
+        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+      </div>
+    </section>
+
+    <section class="area-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Remodeling Memorial Homes for Modern Families</h2>
+            <p>At Reformat Houston, we understand what makes Memorial homes special. With top-rated schools and a strong sense of community, families choose Memorial for its quality of life. Our renovations help you maximize your investment while creating spaces that work for today's lifestyle.</p>
+            
+            <p>Whether you're updating a 1970s ranch to open concept living, adding a master suite expansion, or creating a chef's kitchen for family gatherings, our team brings expertise in both structural improvements and design aesthetics. We work efficiently to minimize disruption to your family's routine.</p>
+
+            <h3>Our Memorial Services</h3>
+            <ul class="services-list">
+              {areaInfo.services.map((service) => (
+                <li>{service}</li>
+              ))}
+            </ul>
+
+            <h3>Why Choose Reformat Houston?</h3>
+            <ul class="features-list">
+              <li><strong>Family-Focused:</strong> Renovations designed for how families actually live.</li>
+              <li><strong>School District Knowledge:</strong> Understanding what adds value in Memorial ISD.</li>
+              <li><strong>Quality Materials:</strong> Durable solutions that stand up to family life.</li>
+              <li><strong>Project Management:</strong> Clean, efficient work with minimal disruption.</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>Ready to Update Your Memorial Home?</h3>
+              <p>Schedule a consultation with our family home specialists.</p>
+              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
+            </div>
+            
+            <div class="local-info">
+              <h4>Serving Memorial & Surrounding Areas</h4>
+              <p>We proudly serve homeowners in Memorial, Memorial Village, Spring Branch, and nearby family communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-teaser">
+      <div class="container">
+        <h2>Recent Projects in Memorial</h2>
+        <p>See how we've helped Memorial families create their dream homes.</p>
+        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={29.7833}
+    longitude={-95.5167}
+  />
+</BaseLayout>
+
+<style>
+  .area-page { padding-top: 80px; }
+  .hero-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/memorial-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero-area h1 { font-size: 3rem; margin-bottom: 20px; }
+  .area-content { padding: 80px 0; }
+  .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .hero-area h1 { font-size: 2rem; }
+  }
+  .services-list, .features-list { list-style: none; padding: 0; }
+  .services-list li, .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+  .features-list li strong { color: #2c3e50; }
+  .cta-box { background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+  .local-info { background: #fff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
+  .projects-teaser { background: #2c3e50; color: white; padding: 60px 0; text-align: center; }
+</style>

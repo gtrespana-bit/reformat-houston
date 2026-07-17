@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Home Remodeling in Montrose Houston | Reformat Houston",
+  description: "Expert remodeling contractor serving Montrose, Houston. Specializing in eclectic home renovations, modern kitchen upgrades, and bathroom remodels for artistic community.",
+  keywords: "Montrose remodeling, home renovation Montrose Houston, kitchen remodel Montrose, bathroom renovation Montrose TX, contractor Montrose Houston",
+  canonical: "/montrose/",
+  lang: "en",
+  image: "/images/montrose-remodeling.jpg",
+  activePage: "areas"
+};
+
+const areaInfo = {
+  name: "Montrose",
+  type: "Neighborhood",
+  description: "Montrose is Houston's arts district, known for its eclectic mix of historic bungalows, modern condos, galleries, and vibrant culture. We specialize in creative renovations that reflect the neighborhood's artistic spirit.",
+  highlights: [
+    "Historic bungalows and modern contemporary homes",
+    "Walkable arts district with galleries and cafes",
+    "Diverse, inclusive community with creative energy",
+    "Mix of preservation and modern architectural styles"
+  ],
+  services: [
+    "Bungalow Restoration and Modernization",
+    "Contemporary Kitchen Design",
+    "Artistic Bathroom Renovations",
+    "Open Concept Living Spaces",
+    "Outdoor Patios and Entertainment Areas"
+  ]
+};
+---
+
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <section class="hero-area">
+      <div class="container">
+        <h1>Expert Home Remodeling in Montrose, Houston</h1>
+        <p class="lead">Creative renovations for Houston's most artistic and eclectic neighborhood.</p>
+        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+      </div>
+    </section>
+
+    <section class="area-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Remodeling Montrose Homes with Character</h2>
+            <p>At Reformat Houston, we embrace the unique character of Montrose homes. Whether you're restoring a 1920s bungalow or updating a modern condo, we understand the blend of historic charm and contemporary flair that defines this vibrant neighborhood.</p>
+            
+            <p>Our team works closely with Montrose homeowners to create spaces that reflect their individuality while respecting the area's architectural diversity. From preserving original hardwood floors in historic bungalows to creating sleek, modern kitchens in new constructions, we bring creativity and craftsmanship to every project.</p>
+
+            <h3>Our Montrose Services</h3>
+            <ul class="services-list">
+              {areaInfo.services.map((service) => (
+                <li>{service}</li>
+              ))}
+            </ul>
+
+            <h3>Why Choose Reformat Houston?</h3>
+            <ul class="features-list">
+              <li><strong>Creative Vision:</strong> Innovative designs that match Montrose's artistic spirit.</li>
+              <li><strong>Historic Sensitivity:</strong> Respect for bungalow architecture and period details.</li>
+              <li><strong>Modern Expertise:</strong> Contemporary solutions for today's lifestyle.</li>
+              <li><strong>Local Connection:</strong> We live and work in the Montrose community.</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>Ready to Transform Your Montrose Home?</h3>
+              <p>Schedule a consultation with our design team.</p>
+              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
+            </div>
+            
+            <div class="local-info">
+              <h4>Serving Montrose & Surrounding Areas</h4>
+              <p>We proudly serve homeowners in Montrose, Museum District, Midtown, and nearby creative communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-teaser">
+      <div class="container">
+        <h2>Recent Projects in Montrose</h2>
+        <p>See how we've helped Montrose residents create unique, expressive living spaces.</p>
+        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={29.7372}
+    longitude={-95.3908}
+  />
+</BaseLayout>
+
+<style>
+  .area-page { padding-top: 80px; }
+  .hero-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/montrose-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero-area h1 { font-size: 3rem; margin-bottom: 20px; }
+  .area-content { padding: 80px 0; }
+  .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .hero-area h1 { font-size: 2rem; }
+  }
+  .services-list, .features-list { list-style: none; padding: 0; }
+  .services-list li, .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+  .features-list li strong { color: #2c3e50; }
+  .cta-box { background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+  .local-info { background: #fff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
+  .projects-teaser { background: #2c3e50; color: white; padding: 60px 0; text-align: center; }
+</style>

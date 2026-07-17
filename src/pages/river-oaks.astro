@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Luxury Home Remodeling in River Oaks, Houston | Reformat Houston",
+  description: "Exclusive remodeling services in River Oaks, Houston. Specializing in high-end kitchen renovations, luxury bathroom upgrades, and custom home transformations.",
+  keywords: "Kitchen Remodeling River Oaks, Luxury Bathroom Renovation Houston, High-End Home Remodeler River Oaks, Custom Remodeling Texas, Reformat Houston",
+  canonical: "/river-oaks/",
+  locale: "en",
+  area: "River Oaks"
+};
+
+const serviceDetails = {
+  name: "Reformat Houston - River Oaks",
+  areaServed: "River Oaks, Houston, TX",
+  description: "Bespoke remodeling services for River Oaks estates. We deliver exceptional craftsmanship and attention to detail for Houston's most prestigious neighborhood.",
+  address: {
+    streetAddress: "Serving River Oaks Area",
+    addressLocality: "Houston",
+    addressRegion: "TX",
+    postalCode: "77019",
+    addressCountry: "US"
+  },
+  geo: {
+    latitude: "29.7604",
+    longitude: "-95.4307"
+  }
+};
+---
+
+<BaseLayout title={pageData.title} description={pageData.description} keywords={pageData.keywords} canonical={pageData.canonical} locale={pageData.locale}>
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+
+      <!-- Hero Section -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Luxury Remodeling in <span class="text-blue-600">River Oaks</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Exquisite renovation services tailored for the distinguished homes of River Oaks, Houston's most exclusive neighborhood.
+        </p>
+      </section>
+
+      <!-- Content Section -->
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Reformat Houston for Your River Oaks Estate?</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          River Oaks represents the pinnacle of Houston luxury living. Your estate deserves a remodeling partner who understands the architectural significance, historical preservation requirements, and exacting standards of this iconic neighborhood.
+        </p>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          From gourmet chef's kitchens with premium European appliances to spa-inspired master bathrooms featuring marble and custom fixtures, our team delivers white-glove service and unparalleled craftsmanship. We navigate HOA approvals and city permits with discretion and efficiency.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Exclusive Services</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Custom design consultation with luxury specialists</li>
+              <li>Historical preservation expertise</li>
+              <li>Premium imported materials and finishes</li>
+              <li>Concierge project management</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Specialties</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Gourmet Kitchen Renovations</li>
+              <li>Luxury Master Suite Upgrades</li>
+              <li>Wine Cellar & Entertainment Spaces</li>
+              <li>Smart Home Integration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="text-center bg-blue-600 text-white rounded-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-4">Elevate Your River Oaks Residence</h2>
+        <p class="text-lg mb-8 opacity-90">
+          Contact us for a private consultation and experience our commitment to excellence.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+          Schedule Private Consultation
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <ServiceSchema
+    name={serviceDetails.name}
+    areaServed={serviceDetails.areaServed}
+    description={serviceDetails.description}
+    streetAddress={serviceDetails.address.streetAddress}
+    addressLocality={serviceDetails.address.addressLocality}
+    addressRegion={serviceDetails.address.addressRegion}
+    postalCode={serviceDetails.address.postalCode}
+    addressCountry={serviceDetails.address.addressCountry}
+    latitude={serviceDetails.geo.latitude}
+    longitude={serviceDetails.geo.longitude}
+  />
+</BaseLayout>

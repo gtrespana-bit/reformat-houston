@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Home Remodeling in Pearland TX | Reformat Houston",
+  description: "Expert remodeling contractor serving Pearland, Texas. Specializing in family home renovations, kitchen upgrades, and bathroom remodels for diverse communities.",
+  keywords: "Pearland remodeling, home renovation Pearland TX, kitchen remodel Pearland, bathroom renovation Pearland Texas, contractor Pearland Houston",
+  canonical: "/pearland/",
+  lang: "en",
+  image: "/images/pearland-remodeling.jpg",
+  activePage: "areas"
+};
+
+const areaInfo = {
+  name: "Pearland",
+  type: "City",
+  description: "Pearland is a vibrant, diverse city south of Houston, known for its excellent schools, family-friendly neighborhoods, and strong community spirit. We specialize in helping homeowners update their spaces to match their evolving needs.",
+  highlights: [
+    "Highly rated Pearland ISD and private schools",
+    "Diverse, welcoming community with global culture",
+    "Mix of established neighborhoods and new developments",
+    "Convenient location with easy highway access"
+  ],
+  services: [
+    "Kitchen Modernization and Expansions",
+    "Spa Bathroom Renovations",
+    "Open Concept Living Areas",
+    "Covered Patios and Outdoor Living",
+    "Energy Efficient Upgrades"
+  ]
+};
+---
+
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <section class="hero-area">
+      <div class="container">
+        <h1>Expert Home Remodeling in Pearland, Texas</h1>
+        <p class="lead">Transforming homes for families in one of Houston's most diverse and welcoming communities.</p>
+        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+      </div>
+    </section>
+
+    <section class="area-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="text-content">
+            <h2>Remodeling Pearland Homes with Care</h2>
+            <p>At Reformat Houston, we appreciate what makes Pearland special. This diverse, family-oriented community offers top schools, great neighborhoods, and a welcoming atmosphere. Our renovations help you create a home that reflects your unique style and meets your family's needs.</p>
+            
+            <p>Whether you're updating a home in Shadow Creek Ranch, renovating in the established neighborhoods of Old Pearland, or modernizing in Silverlake, our team understands the variety of architectural styles and homeowner preferences in Pearland. We bring quality craftsmanship and personalized service to every project.</p>
+
+            <h3>Our Pearland Services</h3>
+            <ul class="services-list">
+              {areaInfo.services.map((service) => (
+                <li>{service}</li>
+              ))}
+            </ul>
+
+            <h3>Why Choose Reformat Houston?</h3>
+            <ul class="features-list">
+              <li><strong>Local Knowledge:</strong> Familiar with Pearland neighborhoods and regulations.</li>
+              <li><strong>Diverse Experience:</strong> Work with all architectural styles and preferences.</li>
+              <li><strong>Quality Focus:</strong> Craftsmanship that stands the test of time.</li>
+              <li><strong>Customer Service:</strong> Respectful, responsive communication throughout.</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar">
+            <div class="cta-box">
+              <h3>Ready to Renovate Your Pearland Home?</h3>
+              <p>Schedule a consultation with our Pearland remodeling team.</p>
+              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
+            </div>
+            
+            <div class="local-info">
+              <h4>Serving Pearland & Surrounding Areas</h4>
+              <p>We proudly serve homeowners in Pearland, Shadow Creek Ranch, Friendswood, Manvel, and nearby southern suburbs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-teaser">
+      <div class="container">
+        <h2>Recent Projects in Pearland</h2>
+        <p>See how we've helped Pearland families create beautiful, functional homes.</p>
+        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={29.5636}
+    longitude={-95.2861}
+  />
+</BaseLayout>
+
+<style>
+  .area-page { padding-top: 80px; }
+  .hero-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/pearland-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  .hero-area h1 { font-size: 3rem; margin-bottom: 20px; }
+  .area-content { padding: 80px 0; }
+  .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+  @media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .hero-area h1 { font-size: 2rem; }
+  }
+  .services-list, .features-list { list-style: none; padding: 0; }
+  .services-list li, .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+  .features-list li strong { color: #2c3e50; }
+  .cta-box { background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
+  .local-info { background: #fff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
+  .projects-teaser { background: #2c3e50; color: white; padding: 60px 0; text-align: center; }
+</style>
