@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Kitchen & Bathroom Remodeling in The Woodlands, TX | Reformat Houston",
+  description: "Expert home remodeling services in The Woodlands, TX. Specializing in kitchen renovations, bathroom upgrades, and whole-home transformations for luxury living.",
+  keywords: "Kitchen Remodeling The Woodlands, Bathroom Renovation The Woodlands, Home Remodeler The Woodlands, Luxury Remodeling Texas, Reformat Houston",
+  canonical: "/the-woodlands/",
+  locale: "en",
+  area: "The Woodlands"
+};
+
+const serviceDetails = {
+  name: "Reformat Houston - The Woodlands",
+  areaServed: "The Woodlands, TX",
+  description: "Premium remodeling services tailored for The Woodlands community. We understand the unique architectural styles and high standards of homeowners in this prestigious area.",
+  address: {
+    streetAddress: "Serving The Woodlands Area",
+    addressLocality: "The Woodlands",
+    addressRegion: "TX",
+    postalCode: "77380",
+    addressCountry: "US"
+  },
+  geo: {
+    latitude: "30.1658",
+    longitude: "-95.4613"
+  }
+};
+---
+
+<BaseLayout title={pageData.title} description={pageData.description} keywords={pageData.keywords} canonical={pageData.canonical} locale={pageData.locale}>
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      
+      <!-- Hero Section -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Expert Remodeling in <span class="text-blue-600">The Woodlands</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Transform your home with premium renovation services designed for the sophisticated lifestyle of The Woodlands community.
+        </p>
+      </section>
+
+      <!-- Content Section -->
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Reformat Houston for Your Woodlands Home?</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Living in The Woodlands means enjoying a unique blend of natural beauty and modern luxury. Your home deserves a remodeling partner who understands the specific architectural standards and lifestyle expectations of this prestigious community. 
+        </p>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          From custom kitchen renovations that become the heart of your family gatherings to spa-like bathroom retreats that offer relaxation after a long day, our team delivers craftsmanship that matches the quality of life in The Woodlands. We navigate local HOA requirements and building codes seamlessly, ensuring your project is both beautiful and compliant.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Local Expertise</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Deep understanding of The Woodlands architectural styles</li>
+              <li>Experience with local HOA guidelines and permits</li>
+              <li>Premium materials suited for Texas humidity</li>
+              <li>Transparent pricing and detailed timelines</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Services Offered</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Luxury Kitchen Remodeling</li>
+              <li>Master Bathroom Renovations</li>
+              <li>Whole Home Transformations</li>
+              <li>Custom Flooring & Finishes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="text-center bg-blue-600 text-white rounded-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-4">Ready to Upgrade Your Woodlands Home?</h2>
+        <p class="text-lg mb-8 opacity-90">
+          Schedule your free consultation today and discover how we can bring your vision to life.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+          Get Your Free Estimate
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <ServiceSchema 
+    name={serviceDetails.name}
+    areaServed={serviceDetails.areaServed}
+    description={serviceDetails.description}
+    streetAddress={serviceDetails.address.streetAddress}
+    addressLocality={serviceDetails.address.addressLocality}
+    addressRegion={serviceDetails.address.addressRegion}
+    postalCode={serviceDetails.address.postalCode}
+    addressCountry={serviceDetails.address.addressCountry}
+    latitude={serviceDetails.geo.latitude}
+    longitude={serviceDetails.geo.longitude}
+  />
+</BaseLayout>

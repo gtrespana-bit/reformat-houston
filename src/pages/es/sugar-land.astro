@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const pageData = {
+  title: "Remodelación de Cocinas y Baños en Sugar Land, TX | Reformat Houston",
+  description: "Servicios expertos de remodelación en Sugar Land, TX. Especialistas en renovación de cocinas, actualización de baños y transformaciones completas del hogar.",
+  keywords: "Remodelación de Cocinas Sugar Land, Renovación de Baños Sugar Land, Reformas Sugar Land, Reformat Houston, Constructora Sugar Land",
+  canonical: "/es/sugar-land/",
+  locale: "es",
+  area: "Sugar Land"
+};
+
+const serviceDetails = {
+  name: "Reformat Houston - Sugar Land",
+  areaServed: "Sugar Land, TX",
+  description: "Servicios de remodelación premium adaptados para la comunidad de Sugar Land. Entendemos los estilos arquitectónicos únicos y los altos estándares de los propietarios en esta prestigiosa área.",
+  address: {
+    streetAddress: "Sirviendo el Área de Sugar Land",
+    addressLocality: "Sugar Land",
+    addressRegion: "TX",
+    postalCode: "77479",
+    addressCountry: "US"
+  },
+  geo: {
+    latitude: "29.6196",
+    longitude: "-95.6349"
+  }
+};
+---
+
+<BaseLayout title={pageData.title} description={pageData.description} keywords={pageData.keywords} canonical={pageData.canonical} locale={pageData.locale}>
+  <main class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      
+      <!-- Hero Section -->
+      <section class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Remodelación Experta en <span class="text-blue-600">Sugar Land</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Transforme su hogar con servicios de renovación premium diseñados para el sofisticado estilo de vida de la comunidad de Sugar Land.
+        </p>
+      </section>
+
+      <!-- Content Section -->
+      <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Por Qué Elegir Reformat Houston para Su Hogar en Sugar Land?</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Vivir en Sugar Land significa disfrutar de una combinación única de diversidad cultural, excelentes escuelas y un ambiente familiar seguro. Su hogar merece un socio de remodelación que entienda los estándares arquitectónicos específicos y las expectativas de estilo de vida de esta prestigiosa comunidad.
+        </p>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Desde renovaciones de cocina personalizadas que se convierten en el corazón de sus reuniones familiares hasta retiros de baño tipo spa que ofrecen relajación después de un largo día, nuestro equipo ofrece una artesanía que coincide con la calidad de vida en Sugar Land. Navegamos sin problemas por los requisitos de HOA locales y los códigos de construcción, asegurando que su proyecto sea hermoso y cumpla con todas las normativas.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Nuestra Experiencia Local</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Profundo conocimiento de los estilos arquitectónicos de Sugar Land</li>
+              <li>Experiencia con directrices de HOA locales y permisos</li>
+              <li>Materiales premium adecuados para la humedad de Texas</li>
+              <li>Precios transparentes y cronogramas detallados</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Servicios Ofrecidos</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>Remodelación de Cocinas de Lujo</li>
+              <li>Renovación de Baños Principales</li>
+              <li>Transformaciones Completas del Hogar</li>
+              <li>Pisos y Acabados Personalizados</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="text-center bg-blue-600 text-white rounded-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-4">¿Listo para Mejorar Su Hogar en Sugar Land?</h2>
+        <p class="text-lg mb-8 opacity-90">
+          Programe su consulta gratuita hoy y descubra cómo podemos hacer realidad su visión.
+        </p>
+        <a href="/es/contacto" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+          Obtenga Su Presupuesto Gratis
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <ServiceSchema 
+    name={serviceDetails.name}
+    areaServed={serviceDetails.areaServed}
+    description={serviceDetails.description}
+    streetAddress={serviceDetails.address.streetAddress}
+    addressLocality={serviceDetails.address.addressLocality}
+    addressRegion={serviceDetails.address.addressRegion}
+    postalCode={serviceDetails.address.postalCode}
+    addressCountry={serviceDetails.address.addressCountry}
+    latitude={serviceDetails.geo.latitude}
+    longitude={serviceDetails.geo.longitude}
+  />
+</BaseLayout>
