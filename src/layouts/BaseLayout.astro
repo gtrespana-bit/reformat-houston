@@ -214,64 +214,91 @@ const navItems = isSpanish
 
   <script>
     // Mapeo correcto: EN (root) <-> ES (/es)
+    // Claves: ruta actual exacta (con trailing slash normalizado)
+    // Valores: ruta destino en el otro idioma
     const routeMap = {
+      // Home
       '/': '/es/',
       '/es/': '/',
-      '/servicios/': '/services/',
+      
+      // Servicios - Inglés a Español
       '/services/': '/es/servicios/',
-      '/servicios/cocinas/': '/services/kitchens/',
       '/services/kitchens/': '/es/servicios/cocinas/',
-      '/servicios/banos/': '/services/bathrooms/',
       '/services/bathrooms/': '/es/servicios/banos/',
-      '/servicios/integrales/': '/services/whole-home/',
-      '/services/whole-home/': '/es/servicios/integrales/',
-      '/servicios/electricidad/': '/services/electrical/',
       '/services/electrical/': '/es/servicios/electricidad/',
-      '/servicios/fontaneria/': '/services/plumbing/',
       '/services/plumbing/': '/es/servicios/fontaneria/',
-      '/servicios/pintura-acabados/': '/services/painting/',
-      '/services/painting/': '/es/servicios/pintura-acabados/',
-      '/servicios/revestimientos/': '/services/wall-coverings/',
       '/services/wall-coverings/': '/es/servicios/revestimientos/',
-      '/servicios/suelos/': '/services/flooring/',
       '/services/flooring/': '/es/servicios/suelos/',
-      '/servicios/piscinas/': '/services/pools/',
       '/services/pools/': '/es/servicios/piscinas/',
-      '/sobre-nosotros/': '/about-us/',
-      '/about-us/': '/es/sobre-nosotros/',
-      '/proyectos/': '/projects/',
+      '/services/whole-home/': '/es/servicios/integrales/',
+      '/services/painting/': '/es/servicios/pintura-acabados/',
+      
+      // Servicios - Español a Inglés
+      '/es/servicios/': '/services/',
+      '/es/servicios/cocinas/': '/services/kitchens/',
+      '/es/servicios/banos/': '/services/bathrooms/',
+      '/es/servicios/electricidad/': '/services/electrical/',
+      '/es/servicios/fontaneria/': '/services/plumbing/',
+      '/es/servicios/revestimientos/': '/services/wall-coverings/',
+      '/es/servicios/suelos/': '/services/flooring/',
+      '/es/servicios/piscinas/': '/services/pools/',
+      '/es/servicios/integrales/': '/services/whole-home/',
+      '/es/servicios/pintura-acabados/': '/services/painting/',
+      
+      // Proyectos
       '/projects/': '/es/proyectos/',
+      '/es/proyectos/': '/projects/',
+      
+      // Blog
       '/blog/': '/es/blog/',
       '/es/blog/': '/blog/',
-      '/blog/cuanto-cuesta-reforma-cocina-valencia/': '/blog/kitchen-remodel-cost-houston-2026/',
       '/blog/kitchen-remodel-cost-houston-2026/': '/es/blog/cuanto-cuesta-reforma-cocina-valencia/',
-      '/blog/porcelanato-vs-ceramica/': '/blog/porcelain-tile-vs-ceramic-tile-guide/',
+      '/es/blog/cuanto-cuesta-reforma-cocina-valencia/': '/blog/kitchen-remodel-cost-houston-2026/',
       '/blog/porcelain-tile-vs-ceramic-tile-guide/': '/es/blog/porcelanato-vs-ceramica/',
-      '/blog/presupuesto-reforma-errores/': '/blog/remodel-budget-mistakes-avoid/',
+      '/es/blog/porcelanato-vs-ceramica/': '/blog/porcelain-tile-vs-ceramic-tile-guide/',
       '/blog/remodel-budget-mistakes-avoid/': '/es/blog/presupuesto-reforma-errores/',
-      '/blog/reformas-banos-carabobo/': '/blog/bathroom-remodel-houston-guide/',
+      '/es/blog/presupuesto-reforma-errores/': '/blog/remodel-budget-mistakes-avoid/',
       '/blog/bathroom-remodel-houston-guide/': '/es/blog/reformas-banos-carabobo/',
-      '/blog/tendencias-cocinas-2025/': '/blog/kitchen-design-trends-2026/',
-      '/blog/kitchen-design-trends-2026/': '/es/blog/tendencias-cocinas-2025/'
+      '/es/blog/reformas-banos-carabobo/': '/blog/bathroom-remodel-houston-guide/',
+      '/blog/kitchen-design-trends-2026/': '/es/blog/tendencias-cocinas-2025/',
+      '/es/blog/tendencias-cocinas-2025/': '/blog/kitchen-design-trends-2026/',
+      
+      // Contacto
+      '/contact/': '/es/contacto/',
+      '/es/contacto/': '/contact/',
+      
+      // About
+      '/about-us/': '/es/sobre-nosotros/',
+      '/es/sobre-nosotros/': '/about-us/'
     };
 
     const langSwitchBtn = document.querySelector('.lang-switch-visible');
     if (langSwitchBtn) {
       langSwitchBtn.addEventListener('click', () => {
-        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-        const newPath = routeMap[currentPath + '/'] || routeMap[currentPath];
+        // Normalizar path: quitar trailing slash excepto si es root
+        let currentPath = window.location.pathname;
+        if (currentPath !== '/' && currentPath.endsWith('/')) {
+          currentPath = currentPath.slice(0, -1);
+        }
+        
+        // Buscar en el mapa
+        const newPath = routeMap[currentPath];
         
         if (newPath) {
+          // Determinar nuevo idioma
           const newLang = currentPath.startsWith('/es') ? 'en' : 'es';
           localStorage.setItem('reformat-lang', newLang);
           window.location.href = newPath;
         } else {
+          // Fallback: si no está en el mapa, hacer conversión manual
           if (currentPath.startsWith('/es')) {
+            // De español a inglés: quitar /es
             localStorage.setItem('reformat-lang', 'en');
             window.location.href = currentPath.replace(/^\/es/, '') || '/';
           } else {
+            // De inglés a español: añadir /es
             localStorage.setItem('reformat-lang', 'es');
-            window.location.href = '/es' + (currentPath === '/' ? '' : currentPath);
+            window.location.href = '/es' + currentPath;
           }
         }
       });
