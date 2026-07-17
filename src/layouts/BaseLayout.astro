@@ -275,33 +275,62 @@ const navItems = isSpanish
     const langSwitchBtn = document.querySelector('.lang-switch-visible');
     if (langSwitchBtn) {
       langSwitchBtn.addEventListener('click', () => {
-        // Normalizar path: quitar trailing slash excepto si es root
+        // Normalizar path: asegurar trailing slash para consistencia
         let currentPath = window.location.pathname;
-        if (currentPath !== '/' && currentPath.endsWith('/')) {
-          currentPath = currentPath.slice(0, -1);
+        if (currentPath !== '/' && !currentPath.endsWith('/')) {
+          currentPath = currentPath + '/';
         }
-        
-        // Buscar en el mapa
-        const newPath = routeMap[currentPath];
-        
+
+        // Mapa completo de rutas EN <-> ES
+        const slugMap = {
+          // Español a Inglés
+          '/es/': '/',
+          '/es/servicios/': '/services/',
+          '/es/servicios/cocinas/': '/services/kitchens/',
+          '/es/servicios/banos/': '/services/bathrooms/',
+          '/es/servicios/electricidad/': '/services/electrical/',
+          '/es/servicios/fontaneria/': '/services/plumbing/',
+          '/es/servicios/revestimientos/': '/services/wall-coverings/',
+          '/es/servicios/suelos/': '/services/flooring/',
+          '/es/servicios/piscinas/': '/services/pools/',
+          '/es/servicios/integrales/': '/services/whole-home/',
+          '/es/servicios/pintura-acabados/': '/services/painting/',
+          '/es/proyectos/': '/projects/',
+          '/es/blog/': '/blog/',
+          '/es/contacto/': '/contact/',
+          '/es/sobre-nosotros/': '/about-us/',
+          // Inglés a Español
+          '/': '/es/',
+          '/services/': '/es/servicios/',
+          '/services/kitchens/': '/es/servicios/cocinas/',
+          '/services/bathrooms/': '/es/servicios/banos/',
+          '/services/electrical/': '/es/servicios/electricidad/',
+          '/services/plumbing/': '/es/servicios/fontaneria/',
+          '/services/wall-coverings/': '/es/servicios/revestimientos/',
+          '/services/flooring/': '/es/servicios/suelos/',
+          '/services/pools/': '/es/servicios/piscinas/',
+          '/services/whole-home/': '/es/servicios/integrales/',
+          '/services/painting/': '/es/servicios/pintura-acabados/',
+          '/projects/': '/es/proyectos/',
+          '/blog/': '/es/blog/',
+          '/contact/': '/es/contacto/',
+          '/about-us/': '/es/sobre-nosotros/'
+        };
+
+        const newPath = slugMap[currentPath];
         if (newPath) {
-          // Determinar nuevo idioma
           const newLang = currentPath.startsWith('/es') ? 'en' : 'es';
           localStorage.setItem('reformat-lang', newLang);
           window.location.href = newPath;
         } else {
-          // Fallback: si no está en el mapa, hacer conversión manual
-          if (currentPath.startsWith('/es')) {
-            // De español a inglés: quitar /es
-            localStorage.setItem('reformat-lang', 'en');
-            window.location.href = currentPath.replace(/^\/es/, '') || '/';
-          } else {
-            // De inglés a español: añadir /es
-            localStorage.setItem('reformat-lang', 'es');
-            window.location.href = '/es' + currentPath;
-          }
+          // Fallback último: ir al home del otro idioma
+          const newLang = currentPath.startsWith('/es') ? 'en' : 'es';
+          localStorage.setItem('reformat-lang', newLang);
+          window.location.href = newLang === 'es' ? '/es/' : '/';
         }
       });
+    }
+
     }
 
     window.addEventListener('scroll', () => {
