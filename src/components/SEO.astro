@@ -13,7 +13,7 @@ interface Props {
 }
 
 const siteUrl = 'https://reformat-venezuela.online';
-const siteName = 'ReformaT Venezuela';
+const siteName = 'ReformaT Houston';
 
 // Normalizar path: quitar trailing slash excepto en home
 const normalizePath = (path: string): string => {
@@ -35,7 +35,7 @@ const {
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = 'ReformaT Venezuela',
+  author = 'ReformaT Houston',
   articleSection,
   tags = [],
   activePage = ''
@@ -149,13 +149,13 @@ const websiteSchema = {
 };
 
 const areasServed = [
-  { "@type": "City", "name": "Valencia" },
+  { "@type": "City", "name": "Houston" },
   { "@type": "City", "name": "San Diego" },
   { "@type": "City", "name": "Naguanagua" },
   { "@type": "City", "name": "Guacara" },
   { "@type": "City", "name": "Los Guayos" },
   { "@type": "AdministrativeArea", "name": "Carabobo" },
-  { "@type": "City", "name": "Caracas" },
+  { "@type": "City", "name": "The Woodlands" },
   { "@type": "AdministrativeArea", "name": "Chacao" },
   { "@type": "AdministrativeArea", "name": "Baruta" },
   { "@type": "AdministrativeArea", "name": "El Hatillo" },
@@ -176,7 +176,7 @@ const localBusinessSchema = {
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Avenida Bolívar, Centro Profesional",
-    "addressLocality": "Valencia",
+    "addressLocality": "Houston",
     "addressRegion": "Carabobo",
     "postalCode": "2001",
     "addressCountry": "VE"
@@ -260,7 +260,7 @@ const articleSchema = {
 <meta http-equiv="content-language" content={lang} />
 <meta name="language" content={lang} />
 <meta name="geo.region" content="VE" />
-<meta name="geo.placename" content="Valencia, San Diego, Caracas, Carabobo" />
+<meta name="geo.placename" content="Houston, The Woodlands, Sugar Land, Katy, Texas" />
 <meta name="geo.position" content="10.1620;-68.0077" />
 <meta name="ICBM" content="10.1620, -68.0077" />
 
