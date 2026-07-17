@@ -7,10 +7,10 @@ export default defineConfig({
   integrations: [
     sitemap({
       i18n: {
-        defaultLocale: 'es',
+        defaultLocale: 'en',
         locales: {
-          es: 'es',
-          en: 'en'
+          en: 'en',
+          es: 'es'
         },
       },
       changefreq: 'weekly',
@@ -19,8 +19,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    defaultLocale: 'es',
-    locales: ['es', 'en'],
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
     routing: {
       prefixDefaultLocale: false,
     },
