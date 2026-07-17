@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://reformat-venezuela.online',
+  site: 'https://reformat-houston.vercel.app',
   viewTransitions: false,
   integrations: [
     sitemap({
