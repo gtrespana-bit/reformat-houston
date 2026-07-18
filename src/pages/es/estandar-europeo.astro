@@ -1,0 +1,475 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const pageTitle = "El Estándar Europeo: Por Qué la Calidad Vence a la Velocidad";
+const pageDescription = "Descubre por qué el modelo de construcción europeo ofrece calidad superior, eficiencia energética y longevidad comparado con el estándar estadounidense. Mira la diferencia en materiales, técnicas y resultados.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} lang="es">
+  <ServiceSchema 
+    serviceName="Estándares de Construcción Europeos"
+    serviceType="Metodología de Construcción"
+    description="Comparando los estándares de construcción europeos y estadounidenses para una calidad y eficiencia superiores."
+  />
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="badge">Calidad Sobre Velocidad</span>
+      <h1>El Estándar Europeo:<br/><span class="text-gold">Por Qué la Calidad Vence a la Velocidad</span></h1>
+      <p class="hero-subtitle">Durante siglos, los constructores europeos han priorizado la longevidad y la precisión. Es hora de traer ese mismo estándar a Houston.</p>
+      <div class="hero-buttons">
+        <a href="/es/contacto" class="btn btn-primary">Obtén un Presupuesto Premium</a>
+        <a href="tel:+18329560797" class="btn btn-outline">Llama Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO COMPARISON -->
+  <section class="comparison-intro section-padding">
+    <div class="container">
+      <div class="grid-2-col">
+        <div class="content-col">
+          <h2 class="section-title">Dos Filosofías Diferentes</h2>
+          <p class="lead-text">El modelo de construcción estadounidense a menudo prioriza la velocidad y la reducción de costos, lo que lleva a casas que se deterioran en décadas. El modelo europeo, refinado durante siglos, se centra en la durabilidad, la eficiencia energética y la artesanía atemporal.</p>
+          <p>En <strong>Reformat Houston</strong>, no solo construimos; restauramos el arte de la construcción aplicando rigurosos estándares europeos a cada proyecto en Texas.</p>
+          
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-number text-gold">50+</span>
+              <span class="stat-label">Años de Diferencia en Vida Útil</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number text-gold">40%</span>
+              <span class="stat-label">Más Eficiente Energéticamente</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number text-gold">0%</span>
+              <span class="stat-label">Tolerancia a Defectos</span>
+            </div>
+          </div>
+        </div>
+        <div class="image-col">
+          <div class="image-wrapper">
+            <img src="/images/hero-lcp.webp" alt="Comparación Construcción Europea vs Estadounidense" loading="lazy" />
+            <div class="image-badge">Calidad Atemporal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DIFFERENCES GRID -->
+  <section class="differences-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Diferencias Clave Explicadas</h2>
+        <p class="section-subtitle">Mira exactamente dónde divergen los métodos y por qué importa para tu hogar.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Card 1: Materials -->
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2">
+              <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+            </svg>
+          </div>
+          <h3>Calidad de Materiales</h3>
+          <div class="vs-container">
+            <div class="us-side">
+              <span class="label bad">Estándar EE.UU.</span>
+              <p>Drywall ligero, puertas de núcleo hueco, pisos de vinilo delgado, gabinetes de aglomerado.</p>
+            </div>
+            <div class="eu-side">
+              <span class="label good">Estándar Europeo</span>
+              <p>Paredes de yeso sólido, puertas de madera maciza, piedra natural/cerámica, gabinetes de contrachapado/madera dura.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Insulation -->
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Aislamiento y Eficiencia</h3>
+          <div class="vs-container">
+            <div class="us-side">
+              <span class="label bad">Estándar EE.UU.</span>
+              <p>Aislamiento mínimo, ventanas de un solo panel, fugas de aire, facturas de energía altas.</p>
+            </div>
+            <div class="eu-side">
+              <span class="label good">Estándar Europeo</span>
+              <p>Aislamiento continuo grueso, ventanas de triple acristalamiento, sellado hermético, principios de casa pasiva.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Structural Integrity -->
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+          </div>
+          <h3>Integridad Estructural</h3>
+          <div class="vs-container">
+            <div class="us-side">
+              <span class="label bad">Estándar EE.UU.</span>
+              <p>Estructura de madera propensa a pudrición/moho, clavadoras sobre tornillos, ensamblaje rápido con menos precisión.</p>
+            </div>
+            <div class="eu-side">
+              <span class="label good">Estándar Europeo</span>
+              <p>Hormigón armado con acero o madera de alta calidad, fijado con tornillos, uniones diseñadas con precisión.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Finishes -->
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Acabados y Detalles</h3>
+          <div class="vs-container">
+            <div class="us-side">
+              <span class="label bad">Estándar EE.UU.</span>
+              <p>Agujeros de clavos visibles, pintura desigual, espacios en molduras, accesorios de plástico.</p>
+            </div>
+            <div class="eu-side">
+              <span class="label good">Estándar Europeo</span>
+              <p>Acabados al ras, superficies lijadas a mano, ebanistería personalizada, accesorios de metal/vidrio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="benefits-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Los Beneficios Tangibles</h2>
+        <p class="section-subtitle">Lo que ganas al elegir el enfoque europeo para tu hogar en Houston.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Facturas de Energía Más Bajas</h4>
+          <p>El aislamiento superior y la construcción hermética pueden reducir los costos de calefacción/refrigeración hasta en un 40%.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Aire Interior Más Saludable</h4>
+          <p>Mejores sistemas de ventilación y materiales no tóxicos previenen el moho y mejoran la calidad del aire.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Reducción de Ruido</h4>
+          <p>Materiales más densos y mejor sellado crean un santuario tranquilo en medio del ruido de la ciudad.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Mayor Valor de Reventa</h4>
+          <p>Las casas construidas con estándares más altos retienen su valor por más tiempo y atraen compradores exigentes.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Resistencia a Desastres</h4>
+          <p>La construcción robusta resiste las tormentas y la humedad de Houston mucho mejor que las construcciones estándar.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="check-icon">✓</div>
+          <h4>Estética Atemporal</h4>
+          <p>Las proporciones clásicas y los materiales de calidad nunca pasan de moda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL SHOWCASE -->
+  <section class="showcase-section section-padding bg-dark text-white">
+    <div class="container">
+      <div class="grid-2-col align-center">
+        <div class="image-col">
+          <div class="image-wrapper">
+            <img src="/images/katy-hero.jpg" alt="Detalle de Acabado de Alta Calidad" loading="lazy" />
+          </div>
+        </div>
+        <div class="content-col">
+          <h2 class="text-gold">Artesanía Que Puedes Ver y Sentir</h2>
+          <p>La diferencia no es solo técnica; es visible. Desde la suavidad de las paredes hasta el peso de las puertas, cada detalle grita calidad.</p>
+          <ul class="feature-list">
+            <li><span class="gold-bullet">•</span> Paredes de yeso acabadas a mano (sin textura de drywall)</li>
+            <li><span class="gold-bullet">•</span> Ebanistería personalizada con uniones de cola de milano</li>
+            <li><span class="gold-bullet">•</span> Piedra natural instalada con espaciado de precisión</li>
+            <li><span class="gold-bullet">•</span> Herrajes ocultos y transiciones perfectas</li>
+          </ul>
+          <a href="/es/proyectos" class="btn btn-primary mt-4">Ver Nuestros Proyectos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section section-padding">
+    <div class="container text-center">
+      <h2 class="section-title">¿Listo para Elevar Tu Estándar?</h2>
+      <p class="section-subtitle max-w-2xl mx-auto">No te conformes con la construcción estadounidense típica. Experimenta la diferencia de Reformat Houston, donde la precisión europea se encuentra con la hospitalidad texana.</p>
+      <div class="cta-buttons">
+        <a href="/es/contacto" class="btn btn-primary btn-lg">Solicitar Consulta Gratuita</a>
+        <a href="tel:+18329560797" class="btn btn-outline btn-lg">Llamar (832) 956-0797</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-section {
+      position: relative;
+      height: 70vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      overflow: hidden;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .section-padding {
+      padding: 5rem 1.5rem;
+    }
+    .grid-2-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0a0a0a;
+      margin-bottom: 1rem;
+    }
+    .bg-light .section-title, .bg-dark .section-title {
+      color: white;
+    }
+    .lead-text {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #4a4a4a;
+      margin-bottom: 1.5rem;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .stat-number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+    .image-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: #c9a961;
+      color: #0a0a0a;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .diff-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .diff-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .diff-icon {
+      margin-bottom: 1.5rem;
+    }
+    .diff-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #0a0a0a;
+    }
+    .vs-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .us-side, .eu-side {
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .us-side {
+      background: #f9f9f9;
+      border-left: 3px solid #ccc;
+    }
+    .eu-side {
+      background: #fdfcf5;
+      border-left: 3px solid #c9a961;
+    }
+    .label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .label.bad { color: #999; }
+    .label.good { color: #c9a961; }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .benefit-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .check-icon {
+      width: 40px;
+      height: 40px;
+      background: #c9a961;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .benefit-item h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #0a0a0a;
+    }
+    .benefit-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    .feature-list li {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: #e0e0e0;
+    }
+    .gold-bullet {
+      color: #c9a961;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #0a0a0a 0%, #2a2a2a 100%);
+      color: white;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.5rem; }
+      .grid-2-col { grid-template-columns: 1fr; gap: 2rem; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 2rem; }
+      .cta-buttons { flex-direction: column; }
+      .btn-lg { width: 100%; text-align: center; }
+    }
+  </style>
+</BaseLayout>
