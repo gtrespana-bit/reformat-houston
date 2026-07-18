@@ -2,19 +2,32 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Términos y Condiciones | ReformaT Houston" description="Términos y condiciones de uso de los servicios de ReformaT Houston." activePage="contacto">
-  <section class="legal-page">
-    <div class="container">
-      <h1 class="legal-title">Términos y <span class="gold">Condiciones</span></h1>
-      <p class="legal-updated">Última actualización: Junio 2026</p>
-
-      <div class="legal-content">
+<BaseLayout 
+  title="Términos y Condiciones | ReformaT Houston" 
+  description="Términos y condiciones de uso de los servicios de ReformaT Houston." 
+  activePage="contacto"
+>
+  <header class="page-hero">
+    <div class="hero-bg" style="background-image: url('/images/integrales-800.webp')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Legal</span>
+      <h1 class="page-title">Términos y <span class="gold">Condiciones</span></h1>
+      <p class="page-subtitle">Conoce los términos y condiciones que rigen nuestros servicios de remodelación.</p>
+    </div>
+  </header>
+  
+  <section class="section">
+    <div class="container content-max">
+      <div class="content-block">
         <h2>1. Aceptación de los Términos</h2>
         <p>Al utilizar los servicios de ReformaT Houston y navegar por nuestro sitio web, aceptas estos términos y condiciones en su totalidad. Si no estás de acuerdo con alguna parte, te recomendamos no utilizar nuestros servicios.</p>
+      </div>
 
+      <div class="content-block">
         <h2>2. Descripción de Servicios</h2>
         <p>ReformaT Houston ofrece servicios de reforma y remodelación de viviendas y negocios, incluyendo:</p>
-        <ul>
+        <ul class="check-list">
           <li>Reformas integrales de viviendas</li>
           <li>Reformas de cocinas y baños</li>
           <li>Servicios de electricidad y fontanería</li>
@@ -22,113 +35,170 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <li>Pintura y acabados</li>
           <li>Construcción y remodelación de piscinas</li>
         </ul>
+      </div>
 
+      <div class="content-block">
         <h2>3. Presupuestos y Contratación</h2>
         <p>Todos los presupuestos son detallados, cerrados y por escrito. El precio final se mantiene salvo modificaciones solicitadas por el cliente por escrito. La contratación se formaliza mediante contrato firmado por ambas partes.</p>
+      </div>
 
+      <div class="content-block">
         <h2>4. Forma de Pago</h2>
         <p>Los pagos se vinculan a hitos verificables del proyecto:</p>
-        <ul>
+        <ul class="check-list">
           <li>Firma e inicio: 10-15%</li>
           <li>Demolición y retirada: 15%</li>
           <li>Instalaciones certificadas: 25%</li>
           <li>Muebles y acabados: 30%</li>
           <li>Entrega final: 15-20%</li>
         </ul>
+      </div>
 
+      <div class="content-block">
         <h2>5. Garantía</h2>
         <p>Ofrecemos garantía de 2 años en instalaciones de fontanería y electricidad, y 1 año en revestimientos y acabados. La garantía cubre defectos de instalación, no daños por mal uso o mantenimiento inadecuado.</p>
+      </div>
 
+      <div class="content-block">
         <h2>6. Plazos de Ejecución</h2>
         <p>Los plazos se establecen por escrito en el contrato. Nos comprometemos a cumplir los plazos acordados, con penalizaciones en caso de retraso no justificado por causas de fuerza mayor.</p>
+      </div>
 
+      <div class="content-block">
         <h2>7. Propiedad Intelectual</h2>
         <p>Todos los contenidos del sitio web (textos, imágenes, logos, diseños) son propiedad de ReformaT Houston y están protegidos por las leyes de propiedad intelectual. Queda prohibida su reproducción sin autorización expresa.</p>
+      </div>
 
+      <div class="content-block">
         <h2>8. Limitación de Responsabilidad</h2>
         <p>ReformaT Houston no se hace responsable por:</p>
-        <ul>
+        <ul class="check-list">
           <li>Daños indirectos o consecuentes derivados del uso de nuestros servicios</li>
           <li>Interrupciones temporales del sitio web por mantenimiento técnico</li>
           <li>Contenido de sitios web de terceros enlazados desde nuestro sitio</li>
         </ul>
+      </div>
 
+      <div class="content-block">
         <h2>9. Legislación Aplicable</h2>
         <p>Estos términos se rigen por las leyes de la República Bolivariana de Houston Texas. Cualquier disputa será resuelta en los tribunales competentes de Houston, Texas.</p>
+      </div>
 
+      <div class="content-block">
         <h2>10. Contacto</h2>
         <p>Para cualquier consulta sobre estos términos:</p>
-        <ul>
-          <li>Email: info@reformat-houston.com</li>
-          <li>WhatsApp: +58 422-799-7043</li>
-        </ul>
+        <p><strong>Email:</strong> info@reformat-houston.com<br>
+        <strong>WhatsApp:</strong> +58 422-799-7043</p>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .legal-page {
-    padding: 180px 0 100px;
-    background: var(--white);
-    min-height: 100vh;
+  .page-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
-  .legal-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 16px;
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
+    color: white;
+    padding: 2rem;
   }
-  .gold { color: var(--gold); }
-  .legal-updated {
-    text-align: center;
-    color: var(--gray-text);
-    font-size: 0.95rem;
-    margin-bottom: 60px;
+  .hero-tag {
+    display: inline-block;
+    background: #c9a961;
+    color: #0a0a0a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
-  .legal-content {
-    max-width: 800px;
+  .page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .gold {
+    color: #c9a961;
+  }
+  .page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
     margin: 0 auto;
   }
-  .legal-content h2 {
-    font-family: var(--font-serif);
+  .content-max {
+    max-width: 800px;
+  }
+  .content-block {
+    margin-bottom: 2.5rem;
+  }
+  .content-block h2 {
     font-size: 1.8rem;
-    color: var(--text);
-    margin: 3rem 0 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #c9a961;
+    display: inline-block;
   }
-  .legal-content h2:first-child {
-    margin-top: 0;
-  }
-  .legal-content p {
-    font-size: 1.1rem;
+  .content-block p {
+    color: #555;
     line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
   }
-  .legal-content ul {
-    margin: 1rem 0 1.5rem 2rem;
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
   }
-  .legal-content li {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text);
-    margin-bottom: 0.6rem;
+  .check-list li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
   }
-  .legal-content a {
-    color: var(--gold);
+  .check-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #c9a961;
+    font-weight: 700;
+  }
+  .content-block a {
+    color: #c9a961;
     text-decoration: none;
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 1px solid #c9a961;
     transition: 0.3s;
   }
-  .legal-content a:hover {
+  .content-block a:hover {
     opacity: 0.8;
-  }
-  @media (max-width: 768px) {
-    .legal-page { padding: 140px 0 60px; }
-    .legal-content h2 { font-size: 1.5rem; }
-    .legal-content p, .legal-content li { font-size: 1rem; }
   }
 </style>
