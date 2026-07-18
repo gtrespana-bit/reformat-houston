@@ -66,9 +66,40 @@ const enToEsMap: Record<string, string> = {
   '/cypress/': '/es/cypress/',
   '/tomball/': '/es/tomball/',
 };
-const esToEnMap: Record<string, string> = Object.fromEntries(
-  Object.entries(enToEsMap).map(([es, en]) => [en, es])
-);
+
+const esToEnMap: Record<string, string> = {
+  '/es/': '/',
+  '/es/servicios/': '/services/',
+  '/es/servicios/cocinas/': '/services/kitchens/',
+  '/es/servicios/banos/': '/services/bathrooms/',
+  '/es/servicios/electricidad/': '/services/electrical/',
+  '/es/servicios/fontaneria/': '/services/plumbing/',
+  '/es/servicios/revestimientos/': '/services/wall-coverings/',
+  '/es/servicios/suelos/': '/services/flooring/',
+  '/es/servicios/piscinas/': '/services/pools/',
+  '/es/servicios/integrales/': '/services/whole-home/',
+  '/es/servicios/pintura-acabados/': '/services/painting/',
+  '/es/contacto/': '/contact/',
+  '/es/proyectos/': '/projects/',
+  '/es/blog/': '/blog/',
+  '/es/sobre-nosotros/': '/about-us/',
+  '/es/privacidad/': '/privacy/',
+  '/es/terminos/': '/terms/',
+  // Location Pages
+  '/es/the-woodlands/': '/the-woodlands/',
+  '/es/sugar-land/': '/sugar-land/',
+  '/es/river-oaks/': '/river-oaks/',
+  '/es/houston-heights/': '/houston-heights/',
+  '/es/montrose/': '/montrose/',
+  '/es/memorial/': '/memorial/',
+  '/es/katy/': '/katy/',
+  '/es/pearland/': '/pearland/',
+  '/es/spring/': '/spring/',
+  '/es/conroe/': '/conroe/',
+  '/es/cypress/': '/cypress/',
+  '/es/tomball/': '/tomball/',
+};
+
 const siteBase = 'https://reformat-houston.com';
 const enHref = isSpanish ? `${siteBase}${esToEnMap[currentPath] || '/'}` : `${siteBase}${currentPath}`;
 const esHref = isSpanish ? `${siteBase}${currentPath}` : `${siteBase}${enToEsMap[currentPath] || '/es/'}`;
