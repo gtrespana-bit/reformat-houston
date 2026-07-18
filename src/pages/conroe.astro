@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const city = 'Conroe';
+const state = 'TX';
+const zipCode = '77301';
+const phone = '(832) 456-7890';
+const years = '2004';
+const pageUrl = 'https://reformat-houston.com/conroe';
+const pageTitle = `Kitchen Remodeling in ${city}, ${state} | Expert Cabinet Refacing`;
+const pageDescription = `Transform your kitchen with professional cabinet refacing and remodeling services in ${city}, ${state}. Free estimates. Call ${phone}`;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} currentLang="en" currentUrl={pageUrl}>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">Serving {city} Since {years}</span>
+        <h1>Kitchen Remodeling in {city}, {state}</h1>
+        <p class="hero-subtitle">Expert Cabinet Refacing & Custom Kitchens - Transform Your Home in 3-5 Days</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary">Get Free Estimate</a>
+          <a href={`tel:${phone.replace(/[^\d]/g, '')}`} class="btn btn-outline">Call {phone}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <div class="container grid-2">
+        <div class="intro-content">
+          <h2>Professional Kitchen Remodeling Services in {city}</h2>
+          <p>Upgrade your kitchen with our expert cabinet refacing and remodeling services. We serve homeowners throughout {city}, {state} {zipCode} with quality craftsmanship and attention to detail.</p>
+          <ul class="highlights">
+            <li><span class="checkmark">✓</span> 20+ Years of Experience</li>
+            <li><span class="checkmark">✓</span> Premium Quality Materials</li>
+            <li><span class="checkmark">✓</span> Fast 3-5 Day Completion</li>
+            <li><span class="checkmark">✓</span> Licensed & Insured Professionals</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="/images/hero-lcp.webp" alt="Kitchen remodeling project in {city}, {state}" loading="lazy" width="600" height="400" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <h2>Our Kitchen Remodeling Services</h2>
+        <p class="section-subtitle">Comprehensive solutions for your dream kitchen</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Cabinet Refacing</h3>
+            <p>Transform your existing cabinets with new doors, drawer fronts, and veneer. Save up to 50% compared to full replacement.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Cabinet Painting</h3>
+            <p>Professional spray painting service that gives your cabinets a factory-like finish in any color you choose.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Custom Cabinets</h3>
+            <p>Built-to-order cabinets designed specifically for your space, style, and storage needs.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Kitchen Installation</h3>
+            <p>Complete kitchen installation services including countertops, backsplash, and hardware installation.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚿</div>
+            <h3>Bath Remodeling</h3>
+            <p>Full bathroom remodeling services including vanities, showers, tubs, and complete renovations.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📐</div>
+            <h3>Design Consultation</h3>
+            <p>Free design consultation to help you plan your perfect kitchen layout and material selection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+      <div class="container">
+        <h2>Why Choose Us for Your {city} Kitchen Remodel?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>20+ Years Experience</h3>
+            <p>Two decades of serving {city} homeowners with quality craftsmanship and reliable service.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Licensed & Insured</h3>
+            <p>Fully licensed and insured professionals for your peace of mind and protection.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Fast Completion</h3>
+            <p>Most kitchen refacing projects completed in just 3-5 days with minimal disruption.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💯</div>
+            <h3>Satisfaction Guaranteed</h3>
+            <p>We stand behind our work with comprehensive warranties and satisfaction guarantees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Transform Your Kitchen?</h2>
+        <p>Contact us today for a free, no-obligation estimate on your kitchen remodeling project.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary btn-large">Get Free Estimate</a>
+          <a href={`tel:${phone.replace(/[^\d]/g, '')}`} class="btn btn-outline btn-large">Call {phone}</a>
+        </div>
+      </div>
+    </section>
+
+    <ServiceSchema 
+      serviceType="Kitchen Remodeling"
+      areaServed="{city}, {state}"
+      priceRange="$$"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-lcp.webp') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    color: #0a0a0a;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Intro Section */
+  .intro {
+    padding: 100px 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .intro h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .highlights {
+    list-style: none;
+    padding: 0;
+  }
+
+  .highlights li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: #333333;
+  }
+
+  .checkmark {
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Services Section */
+  .services {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .services h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 60px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 16px;
+  }
+
+  .service-card p {
+    color: #666666;
+    line-height: 1.7;
+  }
+
+  /* Why Choose Us Section */
+  .why-us {
+    padding: 100px 0;
+    background: #ffffff;
+  }
+
+  .why-us h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 60px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 12px;
+  }
+
+  .feature-card p {
+    color: #666666;
+    line-height: 1.7;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    color: #0a0a0a;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #c9a961;
+    border-color: #c9a961;
+  }
+
+  .btn-outline:hover {
+    background: #c9a961;
+    color: #0a0a0a;
+  }
+
+  .btn-large {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 100px 20px 60px;
+      min-height: 550px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-buttons .btn {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+</style>
