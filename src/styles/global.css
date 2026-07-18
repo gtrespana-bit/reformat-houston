@@ -113,10 +113,74 @@ img { max-width: 100%; display: block; }
 .bg-light { background: var(--gray); }
 
 /* === FOOTER === */
-.footer { background: var(--bg); color: rgba(255,255,255,0.6); padding: 60px 0 30px; text-align: center; }
-.footer-logo { font-family: var(--font-serif); font-size: 2rem; color: var(--white); font-weight: 600; margin-bottom: 15px; }
-.footer-desc { max-width: 400px; margin: 0 auto 25px; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; font-size: 0.85rem; }
+.footer { background: var(--bg); color: rgba(255,255,255,0.6); }
+
+/* Top Trust Bar */
+.footer-trust-bar { background: #0f0f0f; border-bottom: 1px solid rgba(201,169,97,0.15); padding: 20px 0; }
+.trust-container { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.8); }
+.trust-item svg { flex-shrink: 0; }
+
+/* Main Footer Content */
+.footer-main { padding: 70px 0 50px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 50px; }
+
+/* Column 1: Brand */
+.brand-col .footer-logo-img { margin-bottom: 20px; max-width: 200px; }
+.footer-brand-desc { font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; color: rgba(255,255,255,0.7); }
+.footer-badges { display: flex; gap: 15px; flex-wrap: wrap; }
+.badge-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); }
+.badge-icon { color: var(--gold); font-size: 1rem; }
+
+/* Column Titles */
+.footer-title { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Footer Links */
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 14px; }
+.footer-links a { font-size: 0.95rem; color: rgba(255,255,255,0.7); transition: 0.3s; display: inline-block; }
+.footer-links a:hover { color: var(--gold); transform: translateX(5px); }
+.footer-links .highlight-link { color: var(--gold); font-weight: 600; }
+
+/* Contact Column */
+.footer-contact-info { margin-bottom: 25px; }
+.contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+.contact-item svg { flex-shrink: 0; }
+.contact-item a { transition: 0.3s; }
+.contact-item a:hover { color: var(--gold); }
+
+/* Social Links */
+.footer-social { display: flex; gap: 12px; }
+.social-link { width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); transition: 0.3s; }
+.social-link:hover { background: var(--gold); color: var(--bg); transform: translateY(-3px); }
+
+/* Bottom Legal Bar */
+.footer-legal { background: #0f0f0f; border-top: 1px solid rgba(255,255,255,0.08); padding: 25px 0; }
+.legal-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.copyright { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin: 0; }
+.legal-links { display: flex; gap: 25px; }
+.legal-links a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: 0.3s; }
+.legal-links a:hover { color: var(--gold); }
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .trust-container { gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  .footer-main { padding: 50px 0 30px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 35px; text-align: center; }
+  .brand-col { display: flex; flex-direction: column; align-items: center; }
+  .footer-badges { justify-content: center; }
+  .footer-contact-info { display: flex; flex-direction: column; align-items: center; }
+  .contact-item { justify-content: center; }
+  .footer-social { justify-content: center; }
+  .legal-container { flex-direction: column; text-align: center; }
+  .legal-links { justify-content: center; }
+  .trust-container { gap: 20px; }
+  .trust-item { font-size: 0.85rem; }
+}
 
 /* === CTA SECTION (GLOBAL) === */
 .cta-section { background: var(--bg); color: var(--white); text-align: center; padding: 110px 24px; width: 100%; }

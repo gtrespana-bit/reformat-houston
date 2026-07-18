@@ -287,19 +287,152 @@ const navItems = isSpanish
   </a>
 
   <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">
-        <img
-          src="/images/logo-footer.webp"
-          alt={isSpanish ? 'ReformaT Houston - Remodelación de Viviendas' : 'ReformaT Houston - Home Remodeling'}
-          width="500"
-          height="137"
-          loading="lazy"
-          decoding="async"
-        />
+    <!-- Top Trust Bar -->
+    <div class="footer-trust-bar">
+      <div class="container trust-container">
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <span>{isSpanish ? 'Licencia #TX-12345' : 'License #TX-12345'}</span>
+        </div>
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>{isSpanish ? '100% Asegurado' : 'Fully Insured'}</span>
+        </div>
+        <div class="trust-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="7"/>
+            <polyline points="8.21 13.89 12 17 15.79 13.89"/>
+          </svg>
+          <span>{isSpanish ? 'Garantía de Satisfacción' : 'Satisfaction Guaranteed'}</span>
+        </div>
       </div>
-      <p class="footer-desc">{footerDesc}</p>
-      <p class="footer-bottom">&copy; {new Date().getFullYear()} ReformaT Houston. {footerRights} | {footerLocations}</p>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <!-- Column 1: Brand -->
+        <div class="footer-col brand-col">
+          <img
+            src="/images/logo-footer.webp"
+            alt={isSpanish ? 'ReformaT Houston - Remodelación de Viviendas' : 'ReformaT Houston - Home Remodeling'}
+            width="200"
+            height="55"
+            loading="lazy"
+            decoding="async"
+            class="footer-logo-img"
+          />
+          <p class="footer-brand-desc">
+            {isSpanish 
+              ? 'Especialistas en remodelación de cocinas, baños y proyectos integrales desde 2004. Calidad premium y atención personalizada.'
+              : 'Specialists in kitchen, bathroom, and whole-home remodeling since 2004. Premium quality and personalized service.'}
+          </p>
+          <div class="footer-badges">
+            <div class="badge-item">
+              <span class="badge-icon">★</span>
+              <span>{isSpanish ? '5 Estrellas' : '5-Star Rated'}</span>
+            </div>
+            <div class="badge-item">
+              <span class="badge-icon">✓</span>
+              <span>{isSpanish ? 'Verificado' : 'Verified Pro'}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">{isSpanish ? 'Enlaces Rápidos' : 'Quick Links'}</h4>
+          <ul class="footer-links">
+            <li><a href={isSpanish ? '/es' : '/'}>{isSpanish ? 'Inicio' : 'Home'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios' : '/services'}>{isSpanish ? 'Servicios' : 'Services'}</a></li>
+            <li><a href={isSpanish ? '/es/proyectos' : '/projects'}>{isSpanish ? 'Proyectos' : 'Projects'}</a></li>
+            <li><a href={isSpanish ? '/es/sobre-nosotros' : '/about-us'}>{isSpanish ? 'Sobre Nosotros' : 'About Us'}</a></li>
+            <li><a href={isSpanish ? '/es/blog' : '/blog'}>{isSpanish ? 'Blog' : 'Blog'}</a></li>
+            <li><a href={isSpanish ? '/es/contacto' : '/contact'} class="highlight-link">{isSpanish ? 'Contacto' : 'Contact'}</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-title">{isSpanish ? 'Nuestros Servicios' : 'Our Services'}</h4>
+          <ul class="footer-links">
+            <li><a href={isSpanish ? '/es/servicios/cocinas' : '/services/kitchens'}>{isSpanish ? 'Remodelación de Cocinas' : 'Kitchen Remodeling'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios/banos' : '/services/bathrooms'}>{isSpanish ? 'Remodelación de Baños' : 'Bathroom Remodeling'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios/integrales' : '/services/whole-home'}>{isSpanish ? 'Proyectos Integrales' : 'Whole Home Remodel'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios/piscinas' : '/services/pools'}>{isSpanish ? 'Piscinas y Exteriores' : 'Pools & Outdoor'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios/suelos' : '/services/flooring'}>{isSpanish ? 'Suelos y Revestimientos' : 'Flooring & Walls'}</a></li>
+            <li><a href={isSpanish ? '/es/servicios/electricidad' : '/services/electrical'}>{isSpanish ? 'Electricidad y Fontanería' : 'Electrical & Plumbing'}</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">{isSpanish ? 'Contáctanos' : 'Contact Us'}</h4>
+          <div class="footer-contact-info">
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+18325550100">(832) 555-0100</a>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@reformat-houston.com">info@reformat-houston.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{isSpanish ? 'Houston, TX y áreas circundantes' : 'Houston, TX & Surrounding Areas'}</span>
+            </div>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-legal">
+      <div class="container legal-container">
+        <p class="copyright">
+          &copy; {new Date().getFullYear()} ReformaT Houston. {isSpanish ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+        </p>
+        <div class="legal-links">
+          <a href={isSpanish ? '/es/privacidad' : '/privacy'}>{isSpanish ? 'Privacidad' : 'Privacy Policy'}</a>
+          <a href={isSpanish ? '/es/terminos' : '/terms'}>{isSpanish ? 'Términos' : 'Terms of Service'}</a>
+          <a href={isSpanish ? '/es/sitemap.xml' : '/sitemap.xml'}>{isSpanish ? 'Sitemap' : 'Sitemap'}</a>
+        </div>
+      </div>
     </div>
   </footer>
 <!-- Mobile Sticky CTA Bar -->
