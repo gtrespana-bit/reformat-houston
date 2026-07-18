@@ -1,229 +1,707 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const getSrcSet = (baseName: string, widths: number[], ext = 'webp') => {
+  return widths.map(w => `/images/${baseName}-${w}.${ext} ${w}w`).join(', ');
+};
 ---
 
 <BaseLayout
-  title="About Us | Premium Home Remodeling Houston"
-  description="Learn about our team of expert home remodeling contractors serving Houston, TX since 2004. Licensed, insured, and committed to excellence."
+  title="About Us | ReformaT Houston — European Experience, Local Execution"
+  description="ReformaT was founded in Spain with over 20 years of experience. For 2 years we have been operating in Houston Texas applying European standards in comprehensive renovations, kitchens and bathrooms in Houston, The Woodlands, Sugar Land and Katy."
   activePage="about-us"
 >
-  <header class="page-hero">
-    <div class="hero-bg" style="background-image: url('/images/integrales-800.webp')"></div>
-    <div class="hero-overlay"></div>
+
+<!-- HERO -->
+<header class="page-hero">
+  <img
+    src="/images/integrales-800.webp"
+    srcset="/images/integrales-400.webp 400w, /images/integrales-800.webp 800w"
+    sizes="100vw"
+    alt="Comprehensive renovation with European standards in Houston Texas"
+    class="hero-img"
+    width="1200" height="600"
+    fetchpriority="high"
+  />
+  <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">Our Story</span>
-      <h1 class="page-title">About <span class="gold">Us</span></h1>
-      <p class="page-subtitle">Transforming homes in Houston and surrounding areas with quality craftsmanship and dedication since 2004.</p>
-    </div>
-  </header>
+    <span class="tag">About Us</span>
+    <h1 class="hero-title">European Experience,<br/><span class="gold">Local Execution</span></h1>
+    <p class="hero-subtitle">Over 20 years of experience in Spain. For 2 years we have been operating in Houston Texas applying European standards in comprehensive renovations, transforming homes with luxury finishes and certified techniques.</p>
+  </div>
+</header>
 
-  <section class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content">
-          <h2 class="section-title">Who We Are</h2>
-          <p>We are a family-owned home remodeling company dedicated to transforming houses into dream homes. With over 20 years of experience serving the Greater Houston area, we have built a reputation for excellence, integrity, and customer satisfaction.</p>
-          
-          <h3>Our Mission</h3>
-          <p>To provide exceptional home remodeling services that exceed our clients' expectations while maintaining the highest standards of quality and professionalism.</p>
-
-          <h3>Why Choose Us</h3>
-          <ul class="check-list">
-            <li>Licensed and fully insured contractor</li>
-            <li>Over 20 years of industry experience</li>
-            <li>Transparent pricing with no hidden fees</li>
-            <li>Dedicated project managers for every job</li>
-            <li>Premium materials and workmanship</li>
-            <li>On-time completion guarantee</li>
-          </ul>
-        </div>
-        <div class="about-image">
-          <img src="/images/cocina-800.webp" alt="Our team at work" />
+<!-- HISTORY + IMAGE -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <span class="section-tag">Our Story</span>
+        <h2>From Spain to Houston Texas:<br/>Excellence Without Borders</h2>
+        <p>ReformaT was born in Spain as a company specialized in high-quality comprehensive renovations. For more than two decades, we built a reputation based on precision, compliance and impeccable finishes that characterize United States construction.</p>
+        <p>Almost 2 years ago we decided to expand our experience to the Venezuelan market, detecting a real need: the lack of companies that apply United States regulations, respect deadlines and deliver luxury finishes with total transparency.</p>
+        <p>Today we operate in <strong>Houston, The Woodlands, Sugar Land and Katy</strong>, adapting advanced United States construction techniques to local architecture, without sacrificing the quality that defines us.</p>
+      </div>
+      <div class="story-image">
+        <img
+          src="/images/cocina-800.webp"
+          alt="Kitchen renovated with European finishes in Houston Texas"
+          width="600" height="450"
+          loading="lazy"
+        />
+        <div class="image-badge">
+          <span class="badge-number">20+</span>
+          <span class="badge-text">Years of<br/>Experience</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section bg-light">
-    <div class="container">
-      <h2 class="section-title text-center">Our Values</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">★</div>
-          <h3>Quality</h3>
-          <p>We never compromise on the quality of our work or materials.</p>
+<!-- DIFFERENTIATION -->
+<section class="difference-section">
+  <div class="container">
+    <span class="section-tag light">Why Choose Us</span>
+    <h2 class="section-title">European Standards in Houston Texas</h2>
+    <p class="section-subtitle">The construction and renovation market in Houston Texas is known for informality, non-compliance and poor finishes. ReformaT breaks that pattern.</p>
+
+    <div class="difference-grid">
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
         </div>
-        <div class="value-card">
-          <div class="value-icon">✓</div>
-          <h3>Integrity</h3>
-          <p>Honest communication and transparent pricing always.</p>
+        <h3>European Regulations</h3>
+        <p>We apply Texas and United States regulations in every project: certified electrical installations, standard plumbing, professional waterproofing and approved materials.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
         </div>
-        <div class="value-card">
-          <div class="value-icon">♥</div>
-          <h3>Customer Focus</h3>
-          <p>Your satisfaction is our top priority on every project.</p>
+        <h3>Deadline Compliance</h3>
+        <p>Every project has a defined and contractual schedule. We deliver on time because we plan with precision and supervise every phase. No excuses, no unjustified delays.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
         </div>
-        <div class="value-card">
-          <div class="value-icon">⚡</div>
-          <h3>Reliability</h3>
-          <p>We complete projects on time and within budget.</p>
+        <h3>Transparent Budgets</h3>
+        <p>Detailed and itemized budgets from day one. No hidden costs or surprises. Every dollar and every bolivar is justified and documented.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3>Luxury Finishes</h3>
+        <p>Large format porcelain tiles, premium faucets, custom carpentry, professional LED lighting. Every detail reflects the quality that only United States experience can offer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+    <span class="section-tag">Our Work</span>
+    <h2 class="section-title">Projects That Speak for Us</h2>
+    <p class="section-subtitle">Each project is a demonstration of our commitment to excellence. Perfect finishes, premium materials and attention to detail.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item large">
+        <img
+          src="/images/cocina.webp"
+          srcset={getSrcSet('cocina', [400, 800])}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="Renovated kitchen with luxury finishes"
+          width="800" height="600"
+          loading="lazy"
+        />
+        <div class="gallery-caption">
+          <span>Kitchen Renovation</span>
+          <p>Modern design with premium materials</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/images/bano-terminado-final.webp"
+          alt="Renovated bathroom with porcelain tiles and premium faucets"
+          width="400" height="300"
+          loading="lazy"
+        />
+        <div class="gallery-caption">
+          <span>Complete Bathroom</span>
+          <p>XL porcelain tiles and walk-in shower</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/images/cocina2.webp"
+          alt="Modern kitchen with European design"
+          width="400" height="300"
+          loading="lazy"
+        />
+        <div class="gallery-caption">
+          <span>Comprehensive Renovation</span>
+          <p>Complete space transformation</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/images/revestimiento-wall-panels.webp"
+          alt="Wall covering with wall panels"
+          width="400" height="300"
+          loading="lazy"
+        />
+        <div class="gallery-caption">
+          <span>Wall Coverings</span>
+          <p>Wall panels and decorative finishes</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img
+          src="/images/suelo-porcelanato.webp"
+          alt="Large format porcelain tile floor"
+          width="400" height="300"
+          loading="lazy"
+        />
+        <div class="gallery-caption">
+          <span>Premium Floors</span>
+          <p>Large format porcelain tiles</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <span class="section-tag">How We Work</span>
+    <h2 class="section-title">Our Process</h2>
+    <p class="section-subtitle">Methodology tested in over 500 projects in Spain. Adapted to the Venezuelan market without losing any rigor.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <span class="step-number">01</span>
+        <div class="step-content">
+          <h3>Free Technical Visit</h3>
+          <p>We visit your home, listen to your needs, evaluate the space and take measurements. No cost or obligation.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">02</span>
+        <div class="step-content">
+          <h3>Detailed Design and Budget</h3>
+          <p>We create 3D renders, itemized budget with each item and defined schedule. Total transparency.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">03</span>
+        <div class="step-content">
+          <h3>Supervised Execution</h3>
+          <p>Professional team with dedicated supervisor. Weekly progress reports and quality control at each phase.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-number">04</span>
+        <div class="step-content">
+          <h3>Delivery and Warranty</h3>
+          <p>Final joint inspection, complete documentation and 2-year warranty on all workmanship.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Projects in Spain</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">2</span>
+        <span class="stat-label">Years in Houston Texas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">European Regulations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready for a Renovation with European Standards?</h2>
+      <p>Schedule a free technical visit. We will analyze your space and prepare a detailed proposal with transparent budgets and guaranteed deadlines.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-premium btn-primary-premium">Request Quote</a>
+        <a href="https://wa.me/584227997043?text=Hello%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20renovation%20services" target="_blank" rel="noopener" class="btn-premium btn-outline-premium">Direct WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </BaseLayout>
 
 <style>
-  .page-hero {
-    position: relative;
-    height: 400px;
-    display: flex;
+/* === HERO === */
+.page-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 140px 24px 80px;
+}
+.tag {
+  display: inline-block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold, #c9a961);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.hero-title .gold { color: var(--gold, #c9a961); }
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* === STORY SECTION === */
+.story-section {
+  background: #fff;
+  padding: 90px 24px;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-sans, 'Manrope', sans-serif);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold, #c9a961);
+  margin-bottom: 16px;
+}
+.section-tag.light { color: var(--gold, #c9a961); }
+.story-text h2 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  color: var(--text, #2a2a2a);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+.story-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light, #555);
+  margin-bottom: 16px;
+}
+.story-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.image-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gold, #c9a961);
+  color: #0a0a0a;
+  padding: 16px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.badge-number {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === DIFFERENCE SECTION === */
+.difference-section {
+  background: var(--bg, #0a0a0a);
+  padding: 90px 24px;
+}
+.difference-section .section-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.difference-section .section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 700px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+.difference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.diff-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 36px 32px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.diff-card:hover {
+  border-color: var(--gold, #c9a961);
+  transform: translateY(-4px);
+}
+.diff-icon {
+  color: var(--gold, #c9a961);
+  margin-bottom: 16px;
+}
+.diff-card h3 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.diff-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+}
+
+/* === GALLERY SECTION === */
+.gallery-section {
+  background: #f8f7f4;
+  padding: 90px 24px;
+}
+.gallery-section .section-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text, #2a2a2a);
+  margin-bottom: 12px;
+}
+.gallery-section .section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-light, #555);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: 1;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.9) 100%);
+  padding: 20px;
+  color: #fff;
+}
+.gallery-caption span {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.gallery-caption p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* === PROCESS SECTION === */
+.process-section {
+  background: #fff;
+  padding: 90px 24px;
+}
+.process-section .section-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text, #2a2a2a);
+  margin-bottom: 12px;
+}
+.process-section .section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text-light, #555);
+  max-width: 600px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.step-number {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold, #c9a961);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.step-content h3 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text, #2a2a2a);
+  margin-bottom: 8px;
+}
+.step-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-light, #555);
+}
+
+/* === STATS SECTION === */
+.stats-section {
+  background: var(--bg, #0a0a0a);
+  padding: 90px 24px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-number {
+  display: block;
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--gold, #c9a961);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+/* === CTA SECTION === */
+.cta-section {
+  background: #f8f7f4;
+  padding: 90px 24px;
+}
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-content h2 {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: var(--text, #2a2a2a);
+  margin-bottom: 16px;
+}
+.cta-content p {
+  font-size: 1.05rem;
+  color: var(--text-light, #555);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === BUTTONS === */
+.btn-premium {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.btn-primary-premium {
+  background: var(--gold, #c9a961);
+  color: #0a0a0a;
+}
+.btn-primary-premium:hover {
+  background: #b8964e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+}
+.btn-outline-premium {
+  background: transparent;
+  color: var(--text, #2a2a2a);
+  border-color: var(--text, #2a2a2a);
+}
+.btn-outline-premium:hover {
+  background: var(--text, #2a2a2a);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 968px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .story-image {
+    order: -1;
+  }
+  .story-image img {
+    height: 300px;
+  }
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-item.large {
+    grid-column: span 1;
+    grid-row: span 1;
+    aspect-ratio: 4/3;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .process-steps {
+    gap: 24px;
+  }
+  .step {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.85) 100%);
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
-    padding: 2rem;
-  }
-  .hero-tag {
-    display: inline-block;
-    background: #c9a961;
-    color: #0a0a0a;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .page-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-  }
-  .gold {
-    color: #c9a961;
-  }
-  .page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #0a0a0a;
-    margin-bottom: 1.5rem;
-  }
-  .about-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #0a0a0a;
-    margin: 2rem 0 1rem;
-  }
-  .about-content p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
-  .check-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-  .check-list li {
-    padding: 0.5rem 0 0.5rem 2rem;
-    position: relative;
-    color: #555;
-    line-height: 1.6;
-  }
-  .check-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #c9a961;
-    font-weight: 700;
-  }
-  .about-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-  }
-  .text-center {
     text-align: center;
   }
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
   }
-  .value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
+  .btn-premium {
+    width: 100%;
     text-align: center;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
   }
-  .value-card:hover {
-    transform: translateY(-5px);
-  }
-  .value-icon {
-    font-size: 3rem;
-    color: #c9a961;
-    margin-bottom: 1rem;
-  }
-  .value-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #0a0a0a;
-    margin-bottom: 0.5rem;
-  }
-  .value-card p {
-    color: #555;
-    line-height: 1.6;
-  }
-  @media (max-width: 968px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .values-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .page-title {
-      font-size: 2.5rem;
-    }
-  }
+}
 </style>
