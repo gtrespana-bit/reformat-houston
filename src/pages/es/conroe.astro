@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceSchema from '../components/ServiceSchema.astro';
+
+const city = 'Conroe';
+const state = 'TX';
+const zipCode = '77301';
+const phone = '(832) 456-7890';
+const years = '2004';
+const pageUrl = 'https://reformat-houston.com/conroe';
+const pageTitle = `Remodelación de Cocinas en ${city}, ${state} | Expert Revestimiento de Gabinetes`;
+const pageDescription = `Transform your kitchen with professional cabinet refacing and remodeling services in ${city}, ${state}. Free estimates. Llama al ${phone}`;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} currentLang="es" currentUrl={pageUrl}>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">Serving {city} Since {years}</span>
+        <h1>Remodelación de Cocinas en {city}, {state}</h1>
+        <p class="hero-subtitle">Expertos en Revestimiento de Gabinetes y Cocinas Personalizadas - Transformamos Tu Hogar en 3-5 Días</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary">Obtén Presupuesto Gratis</a>
+          <a href={`tel:${phone.replace(/[^\d]/g, '')}`} class="btn btn-outline">Llama al {phone}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <div class="container grid-2">
+        <div class="intro-content">
+          <h2>Servicios Profesionales de Remodelación de Cocinas in {city}</h2>
+          <p>Mejora tu cocina con nuestros servicios expertos de revestimiento de gabinetes y remodelación. Servimos a propietarios en todo {city}, {state} {zipCode} con artesanía de calidad y atención al detalle.</p>
+          <ul class="highlights">
+            <li><span class="checkmark">✓</span> 20+ Años de Experiencia</li>
+            <li><span class="checkmark">✓</span> Materiales de Calidad Premium</li>
+            <li><span class="checkmark">✓</span> Completación Rápida en 3-5 Días</li>
+            <li><span class="checkmark">✓</span> Profesionales con Licencia y Seguro</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="/images/hero-lcp.webp" alt="Proyecto de remodelación de cocina en {city}, {state}" loading="lazy" width="600" height="400" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <h2>Nuestros Servicios de Remodelación de Cocinas</h2>
+        <p class="section-subtitle">Soluciones integrales para la cocina de tus sueños</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Revestimiento de Gabinetes</h3>
+            <p>Transforma tus gabinetes existentes con nuevas puertas, frentes de cajones y enchapado. Ahorra hasta 50% comparado con reemplazo completo.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Pintura de Gabinetes</h3>
+            <p>Servicio profesional de pintura con spray que da a tus gabinetes un acabado tipo fábrica en cualquier color que elijas.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Gabinetes Personalizados</h3>
+            <p>Gabinetes hechos a orden diseñados específicamente para tu espacio, estilo y necesidades de almacenamiento.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Instalación de Cocinas</h3>
+            <p>Servicios completos de instalación de cocinas incluyendo encimeras, salpicaderos e instalación de herrajes.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚿</div>
+            <h3>Remodelación de Baños</h3>
+            <p>Servicios completos de remodelación de baños incluyendo vanities, duchas, tinas y renovaciones completas.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📐</div>
+            <h3>Consultoría de Diseño</h3>
+            <p>Consultoría gratuita de diseño para ayudarte a planificar el diseño perfecto de tu cocina y selección de materiales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+      <div class="container">
+        <h2>¿Por Qué Elegirnos Para Tu {city} Remodelación de Cocina?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⭐</div>
+            <h3>20+ Years Experience</h3>
+            <p>Dos décadas sirviendo a {city} propietarios con artesanía de calidad y servicio confiable.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Con Licencia y Seguro</h3>
+            <p>Profesionales completamente licenciados y asegurados para tu tranquilidad y protección.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Completación Rápida</h3>
+            <p>La mayoría de proyectos de revestimiento de cocinas completados en solo 3-5 días con mínima interrupción.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💯</div>
+            <h3>Satisfacción Garantizada</h3>
+            <p>Respaldamos nuestro trabajo con garantías integrales y garantías de satisfacción.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>¿Listo para Transformar Tu Cocina?</h2>
+        <p>Contáctanos hoy para un estimado gratuito y sin obligación en tu proyecto de remodelación de cocina.</p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary btn-large">Obtén Presupuesto Gratis</a>
+          <a href={`tel:${phone.replace(/[^\d]/g, '')}`} class="btn btn-outline btn-large">Llama al {phone}</a>
+        </div>
+      </div>
+    </section>
+
+    <ServiceSchema 
+      serviceType="Remodelación de Cocinaing"
+      areaServed="{city}, {state}"
+      priceRange="$$"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-lcp.webp') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    color: #0a0a0a;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Intro Section */
+  .intro {
+    padding: 100px 0;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .intro h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .intro p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+
+  .highlights {
+    list-style: none;
+    padding: 0;
+  }
+
+  .highlights li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+    color: #333333;
+  }
+
+  .checkmark {
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Services Section */
+  .services {
+    padding: 100px 0;
+    background: #f8f9fa;
+  }
+
+  .services h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666666;
+    margin-bottom: 60px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-icon {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 16px;
+  }
+
+  .service-card p {
+    color: #666666;
+    line-height: 1.7;
+  }
+
+  /* Why Choose Us Section */
+  .why-us {
+    padding: 100px 0;
+    background: #ffffff;
+  }
+
+  .why-us h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 60px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 12px;
+  }
+
+  .feature-card p {
+    color: #666666;
+    line-height: 1.7;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    color: #0a0a0a;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #c9a961;
+    border-color: #c9a961;
+  }
+
+  .btn-outline:hover {
+    background: #c9a961;
+    color: #0a0a0a;
+  }
+
+  .btn-large {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 100px 20px 60px;
+      min-height: 550px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-buttons .btn {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-buttons .btn {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }
+</style>
