@@ -1,126 +1,160 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ServiceSchema from '../components/ServiceSchema.astro';
-
-const pageTitle = "The European Standard: Why Quality Beats Speed";
-const pageDescription = "Discover why the European construction model delivers superior quality, energy efficiency, and longevity compared to the US standard.";
+layout: ../layouts/BaseLayout.astro
+title: The European Standard | Reformat Houston
+description: Discover why the European construction model offers superior durability, energy efficiency, and storm resistance for Texas homes.
+lang: en
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} lang="en">
-  <ServiceSchema serviceName="European Construction Standards" serviceType="Construction Methodology" description="Comparing European and US construction standards." />
-
-  <!-- HERO SECTION WITH REAL IMAGE -->
-  <section class="hero-section">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="badge-gold">Quality Over Speed</span>
-      <h1 class="hero-title">
-        The <span class="gold-text">European Standard</span><br/>
-        Why Quality Beats Speed
-      </h1>
-      <p class="hero-subtitle">
-        While American construction prioritizes fast completion, European building methods focus on longevity, 
-        energy efficiency, and superior craftsmanship. Discover why the European approach delivers 
-        3x better performance and 50+ years of durability.
-      </p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn-primary">Request Free Consultation</a>
-        <a href="tel:8329560797" class="btn-secondary">Call (832) 956-0797</a>
+<section class="euro-page">
+  <div class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero-lcp.webp'); background-size: cover; background-position: center; padding: 150px 0 100px; color: white;">
+    <div class="container" style="max-width: 900px; text-align: center;">
+      <span style="background: #c9a961; color: #000; padding: 8px 20px; border-radius: 4px; font-weight: 600; display: inline-block; margin-bottom: 20px;">Building for Generations</span>
+      <h1 style="font-size: 3rem; margin-bottom: 20px; line-height: 1.2;">The European Standard: <span style="color: #c9a961;">Durability Meets Efficiency</span></h1>
+      <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">While American construction prioritizes speed, the European model focuses on longevity and resilience. Discover how centuries-old techniques protect your home from hurricanes, heat, and time.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="/contact" style="background: #c9a961; color: #000; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 600;">Request Free Consultation</a>
+        <a href="tel:8329560797" style="border: 2px solid white; color: white; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-weight: 600;">Call (832) 956-0797</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <style>
-    .hero-section {
-      position: relative;
-      height: 700px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('/images/hero-lcp.webp') center/cover no-repeat;
-      z-index: 1;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.85) 50%, rgba(201,169,97,0.3) 100%);
-      z-index: 2;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      max-width: 900px;
-      color: white;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .badge-gold {
-      display: inline-block;
-      background: linear-gradient(135deg, #c9a961 0%, #b8960f 100%);
-      color: #0a0a0a;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-    }
-    .hero-title {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      color: white;
-    }
-    .gold-text { color: #c9a961 !important; }
-    .hero-subtitle {
-      font-size: clamp(18px, 2vw, 22px);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 40px;
-      max-width: 700px;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #c9a961 0%, #b8960f 100%);
-      color: #0a0a0a;
-      padding: 16px 36px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(201,169,97,0.4);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid #c9a961;
-      padding: 14px 34px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .btn-secondary:hover {
-      background: #c9a961;
-      color: #0a0a0a;
-    }
-  </style>
-</BaseLayout>
+  <div class="container" style="padding: 80px 20px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px;">
+      <div>
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Two Philosophies, One Goal: <span style="color: #c9a961;">Your Home</span></h2>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">In the United States, wood framing was born from a need for rapid expansion. It served well. But in an era of extreme weather, is "fast and cheap" still best?</p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">In Europe, buildings stand for centuries. By integrating masonry, concrete, and thermal technologies, we create homes that are legacies, not just shelters.</p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0; font-weight: bold;">✓</span> <strong>Resilience:</strong> Withstands storms</li>
+          <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0; font-weight: bold;">✓</span> <strong>Efficiency:</strong> Lower energy bills</li>
+          <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0; font-weight: bold;">✓</span> <strong>Longevity:</strong> Materials that don't decay</li>
+        </ul>
+      </div>
+      <img src="/images/hero-lcp.webp" alt="Masonry home" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);"/>
+    </div>
+  </div>
+
+  <div style="background: #f9f9f9; padding: 80px 20px;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">The Backbone: <span style="color: #c9a961;">Masonry vs Wood</span></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto 50px;">
+        <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+          <h3 style="margin-bottom: 20px; color: #333;">Traditional US Model</h3>
+          <ul style="list-style: none; padding: 0; color: #555;">
+            <li style="margin-bottom: 12px;">• Wood Studs (2x4 or 2x6)</li>
+            <li style="margin-bottom: 12px;">• Vinyl Siding or Stucco</li>
+            <li style="margin-bottom: 12px;">• Lifespan: 30-50 years</li>
+            <li style="margin-bottom: 12px;">• Vulnerable to termites, rot</li>
+            <li style="margin-bottom: 12px;">• Moderate storm resistance</li>
+          </ul>
+        </div>
+        <div style="background: #fffcf5; padding: 40px; border-radius: 8px; border: 2px solid #c9a961; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+          <h3 style="margin-bottom: 20px; color: #333;">European Model</h3>
+          <ul style="list-style: none; padding: 0; color: #555;">
+            <li style="margin-bottom: 12px;">• Clay Brick, Concrete Block</li>
+            <li style="margin-bottom: 12px;">• Natural Stone or Cement</li>
+            <li style="margin-bottom: 12px;">• Lifespan: 100+ years</li>
+            <li style="margin-bottom: 12px;">• Fireproof, termite-proof</li>
+            <li style="margin-bottom: 12px;">• High storm resistance</li>
+          </ul>
+        </div>
+      </div>
+      <div style="background: white; padding: 40px; border-left: 4px solid #c9a961; max-width: 900px; margin: 0 auto;">
+        <h3 style="margin-top: 0;">Why Masonry Wins in Texas</h3>
+        <p style="line-height: 1.8; color: #444;">Wood breathes and contracts, leading to moisture and mold. Masonry is inert—it doesn't rot or feed termites. It provides <em>thermal mass</em>, absorbing heat by day and releasing it at night, stabilizing temperatures and reducing AC costs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding: 80px 20px;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Windows: <span style="color: #c9a961;">Thermal Break Technology</span></h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px;">
+      <div>
+        <h3 style="margin-bottom: 20px;">The Magic of Thermal Break</h3>
+        <p style="line-height: 1.8; color: #444; margin-bottom: 20px;">Standard aluminum conducts heat. A thermal break inserts a polyamide barrier between inner and outer profiles, breaking heat transfer.</p>
+        <div style="display: flex; gap: 40px; margin-top: 30px;">
+          <div><span style="font-size: 2.5rem; font-weight: 700; color: #c9a961;">40%</span><br/><span style="color: #666;">Energy Savings</span></div>
+          <div><span style="font-size: 2.5rem; font-weight: 700; color: #c9a961;">50%</span><br/><span style="color: #666;">Noise Reduction</span></div>
+        </div>
+      </div>
+      <div style="background: #f4f4f4; padding: 30px; border-radius: 8px; text-align: center;">
+        <div style="background: #555; color: white; padding: 10px; margin-bottom: 5px;">Outside Heat</div>
+        <div style="background: #888; color: white; padding: 10px; margin-bottom: 5px;">Aluminum Exterior</div>
+        <div style="background: #c9a961; color: white; padding: 15px; margin-bottom: 5px; font-weight: bold;">THERMAL BREAK BARRIER</div>
+        <div style="background: #aaa; color: white; padding: 10px; margin-bottom: 5px;">Aluminum Interior</div>
+        <div style="background: #ddd; color: #333; padding: 10px;">Inside Cool</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div style="background: #f9f9f9; padding: 30px; border-radius: 8px;">
+        <h4 style="color: #c9a961; margin-top: 0;">Tilt & Turn Mechanism</h4>
+        <p style="color: #555; line-height: 1.6;">Unlike sliders, these tilt for ventilation or swing in fully. Multi-point locking creates an airtight seal.</p>
+      </div>
+      <div style="background: #f9f9f9; padding: 30px; border-radius: 8px;">
+        <h4 style="color: #c9a961; margin-top: 0;">Triple Glazing</h4>
+        <p style="color: #555; line-height: 1.6;">Triple-pane with Argon gas achieves U-values far superior to typical US windows.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #111; color: white; padding: 80px 20px;">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Finishes: <span style="color: #c9a961;">Beauty that Endures</span></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+        <div>
+          <h3 style="margin-bottom: 20px;">Natural Stone vs Veneer</h3>
+          <p style="line-height: 1.8; opacity: 0.9; margin-bottom: 20px;">US homes use thin veneer glued to wood. Water gets behind, causing rot. European full-depth stone bonds chemically with masonry.</p>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0;">✓</span> UV Resistant</li>
+            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0;">✓</span> Impact Resistant</li>
+            <li style="margin-bottom: 10px; padding-left: 25px; position: relative;"><span style="color: #c9a961; position: absolute; left: 0;">✓</span> Zero Maintenance</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 20px;">Cement Plaster vs Drywall</h3>
+          <p style="line-height: 1.8; opacity: 0.9;">American drywall dents, molds when wet. European cement plaster is hard as rock, immune to humidity, lasting the building's lifetime.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding: 80px 20px;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">By The <span style="color: #c9a961;">Numbers</span></h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+      <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <h4 style="margin-top: 0;">Lifespan</h4>
+        <div style="margin-bottom: 15px;"><span style="font-size: 0.9rem; font-weight: 600;">US Wood Frame</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #999; width: 40%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">40-50 Yrs</div></div></div>
+        <div><span style="font-size: 0.9rem; font-weight: 600;">Euro Masonry</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #c9a961; width: 95%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">100+ Yrs</div></div></div>
+      </div>
+      <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <h4 style="margin-top: 0;">Energy Efficiency</h4>
+        <div style="margin-bottom: 15px;"><span style="font-size: 0.9rem; font-weight: 600;">US Standard</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #999; width: 50%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">Moderate</div></div></div>
+        <div><span style="font-size: 0.9rem; font-weight: 600;">Euro Thermal</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #c9a961; width: 90%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">Excellent</div></div></div>
+      </div>
+      <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+        <h4 style="margin-top: 0;">Storm Resistance</h4>
+        <div style="margin-bottom: 15px;"><span style="font-size: 0.9rem; font-weight: 600;">Vinyl Siding</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #999; width: 30%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">Low</div></div></div>
+        <div><span style="font-size: 0.9rem; font-weight: 600;">Brick/Stone</span><div style="background: #eee; height: 20px; border-radius: 10px; overflow: hidden;"><div style="background: #c9a961; width: 95%; height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-size: 0.75rem;">High</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #0a0a0a, #2a2a2a); color: white; padding: 80px 20px; text-align: center;">
+    <div class="container" style="max-width: 700px;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Build a Legacy?</h2>
+      <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px; line-height: 1.6;">Don't settle for temporary. Choose a home designed to protect your family for generations. Experience European precision meets Texas hospitality.</p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="/contact" style="background: #c9a961; color: #000; padding: 18px 35px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">Request Free Consultation</a>
+        <a href="tel:8329560797" style="border: 2px solid white; color: white; padding: 18px 35px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">Call (832) 956-0797</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem !important; }
+    [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    [style*="display: flex"] { flex-direction: column !important; }
+  }
+</style>
