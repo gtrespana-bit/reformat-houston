@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Terms of Service | Premium Home Remodeling Houston"
+  description="Terms and conditions for our home remodeling services in Houston, TX."
+  activePage="terms"
+>
+  <header class="page-hero">
+    <div class="hero-bg" style="background-image: url('/images/integrales-800.webp')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Legal</span>
+      <h1 class="page-title">Terms of <span class="gold">Service</span></h1>
+      <p class="page-subtitle">Please read these terms carefully before using our services.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container content-max">
+      <div class="content-block">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using our services, you accept and agree to be bound by the terms and provision of this agreement.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>2. Services Description</h2>
+        <p>We provide professional home remodeling services including kitchen remodeling, bathroom remodeling, whole home renovations, room additions, and exterior remodeling.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>3. Estimates and Pricing</h2>
+        <p>All estimates are provided free of charge and are valid for 30 days. Final pricing may vary based on material selections and scope changes approved by the client.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>4. Payment Terms</h2>
+        <p>A deposit is required to begin work. Progress payments are due at specified milestones. Final payment is due upon completion and client approval.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>5. Timeline and Completion</h2>
+        <p>We strive to complete all projects within the agreed timeline. Delays due to weather, material availability, or change orders may affect the completion date.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>6. Warranty</h2>
+        <p>We provide a warranty on workmanship. Specific warranty terms will be outlined in your contract. Manufacturer warranties apply to materials and appliances.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>7. Changes and Modifications</h2>
+        <p>Any changes to the scope of work must be requested in writing and may result in additional charges and timeline adjustments.</p>
+      </div>
+
+      <div class="content-block">
+        <h2>8. Contact Information</h2>
+        <p>For questions about these Terms of Service, please contact us at:</p>
+        <p><strong>Email:</strong> info@reformat-houston.com<br>
+        <strong>Phone:</strong> +1 (832) 555-0100</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: #c9a961;
+    color: #0a0a0a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .gold {
+    color: #c9a961;
+  }
+  .page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .content-max {
+    max-width: 800px;
+  }
+  .content-block {
+    margin-bottom: 2.5rem;
+  }
+  .content-block h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #c9a961;
+    display: inline-block;
+  }
+  .content-block p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+  }
+</style>

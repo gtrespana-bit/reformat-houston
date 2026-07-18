@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Us | Premium Home Remodeling Houston"
+  description="Learn about our team of expert home remodeling contractors serving Houston, TX since 2004. Licensed, insured, and committed to excellence."
+  activePage="about-us"
+>
+  <header class="page-hero">
+    <div class="hero-bg" style="background-image: url('/images/integrales-800.webp')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Our Story</span>
+      <h1 class="page-title">About <span class="gold">Us</span></h1>
+      <p class="page-subtitle">Transforming homes in Houston and surrounding areas with quality craftsmanship and dedication since 2004.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="section-title">Who We Are</h2>
+          <p>We are a family-owned home remodeling company dedicated to transforming houses into dream homes. With over 20 years of experience serving the Greater Houston area, we have built a reputation for excellence, integrity, and customer satisfaction.</p>
+          
+          <h3>Our Mission</h3>
+          <p>To provide exceptional home remodeling services that exceed our clients' expectations while maintaining the highest standards of quality and professionalism.</p>
+
+          <h3>Why Choose Us</h3>
+          <ul class="check-list">
+            <li>Licensed and fully insured contractor</li>
+            <li>Over 20 years of industry experience</li>
+            <li>Transparent pricing with no hidden fees</li>
+            <li>Dedicated project managers for every job</li>
+            <li>Premium materials and workmanship</li>
+            <li>On-time completion guarantee</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="/images/cocina-800.webp" alt="Our team at work" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">★</div>
+          <h3>Quality</h3>
+          <p>We never compromise on the quality of our work or materials.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✓</div>
+          <h3>Integrity</h3>
+          <p>Honest communication and transparent pricing always.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">♥</div>
+          <h3>Customer Focus</h3>
+          <p>Your satisfaction is our top priority on every project.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Reliability</h3>
+          <p>We complete projects on time and within budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: #c9a961;
+    color: #0a0a0a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .gold {
+    color: #c9a961;
+  }
+  .page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0a0a0a;
+    margin-bottom: 1.5rem;
+  }
+  .about-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin: 2rem 0 1rem;
+  }
+  .about-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .check-list li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+  }
+  .check-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #c9a961;
+    font-weight: 700;
+  }
+  .about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+  }
+  .value-card:hover {
+    transform: translateY(-5px);
+  }
+  .value-icon {
+    font-size: 3rem;
+    color: #c9a961;
+    margin-bottom: 1rem;
+  }
+  .value-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 0.5rem;
+  }
+  .value-card p {
+    color: #555;
+    line-height: 1.6;
+  }
+  @media (max-width: 968px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .page-title {
+      font-size: 2.5rem;
+    }
+  }
+</style>

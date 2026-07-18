@@ -2,123 +2,286 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout 
-  title="Contact | Premium Home Remodeling in Houston, TX" 
-  description="Request your free consultation for home remodeling in Houston, The Woodlands, Sugar Land & Katy. Licensed & insured contractor. No-obligation quote." 
+<BaseLayout
+  title="Contacto | Remodelación de Casas Premium en Houston, TX"
+  description="Solicita tu consulta gratuita para remodelación de casas en Houston, The Woodlands, Sugar Land y Katy. Contratista con licencia y asegurado. Cotización sin compromiso."
   activePage="contacto"
 >
   <header class="page-hero">
     <div class="hero-bg" style="background-image: url('/images/integrales-800.webp')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag">Let's Talk</span>
-      <h1 class="page-title">Contact <span class="gold">Us</span></h1>
-      <p class="page-subtitle">Guaranteed response within 2 business hours. Serving Greater Houston and surrounding areas.</p>
+      <span class="hero-tag">Hablemos</span>
+      <h1 class="page-title">Contáct<span class="gold">anos</span></h1>
+      <p class="page-subtitle">Respuesta garantizada en menos de 2 horas hábiles. Sirviendo al Gran Houston y áreas circundantes.</p>
     </div>
   </header>
 
   <section class="section bg-light">
     <div class="container contact-full-grid">
       <div class="contact-info-panel">
-        <h2 class="section-title">Contact Information</h2>
-        <p>We're ready to discuss your remodeling project. Write to us or call directly. We serve Houston, The Woodlands, Sugar Land, Katy and all surrounding communities.</p>
-        
+        <h2 class="section-title">Información de Contacto</h2>
+        <p>Estamos listos para discutir tu proyecto de remodelación. Escríbenos o llama directamente. Servimos a Houston, The Woodlands, Sugar Land, Katy y todas las comunidades circundantes.</p>
+
         <div class="contact-detail">
-          <h4>📍 Service Area</h4>
-          <p>Houston, The Woodlands, Sugar Land, Katy & Surrounding Areas</p>
+          <h4>📍 Área de Servicio</h4>
+          <p>Houston, The Woodlands, Sugar Land, Katy y Áreas Circundantes</p>
         </div>
         <div class="contact-detail">
-          <h4>📞 Phone / WhatsApp</h4>
+          <h4>📞 Teléfono / WhatsApp</h4>
           <p><a href="https://wa.me/18325550100" class="gold-link">+1 (832) 555-0100</a></p>
         </div>
         <div class="contact-detail">
-          <h4>⏰ Business Hours</h4>
-          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+          <h4>⏰ Horario de Atención</h4>
+          <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
         </div>
       </div>
 
       <form class="contact-form-large" action="https://formsubmit.co/info@reformat-houston.com" method="POST">
-        <input type="hidden" name="_subject" value="New inquiry from contact page">
+        <input type="hidden" name="_subject" value="Nueva consulta desde página de contacto">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        
+
         <div class="form-row">
           <div class="form-group">
-            <label for="nombre-c">Full Name</label>
-            <input type="text" id="nombre-c" name="nombre" required placeholder="Your name" />
+            <label for="nombre-c">Nombre Completo</label>
+            <input type="text" id="nombre-c" name="nombre" required placeholder="Tu nombre" />
           </div>
           <div class="form-group">
-            <label for="telefono-c">Phone</label>
+            <label for="telefono-c">Teléfono</label>
             <input type="tel" id="telefono-c" name="telefono" required placeholder="(XXX) XXX-XXXX" />
           </div>
         </div>
         <div class="form-group">
-          <label for="email-c">Email Address</label>
-          <input type="email" id="email-c" name="email" required placeholder="your@email.com" />
+          <label for="email-c">Correo Electrónico</label>
+          <input type="email" id="email-c" name="email" required placeholder="tu@email.com" />
         </div>
         <div class="form-group">
-          <label for="proyecto-c">Project Type</label>
+          <label for="proyecto-c">Tipo de Proyecto</label>
           <select id="proyecto-c" name="proyecto" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="cocina">Kitchen Remodel</option>
-            <option value="bano">Bathroom Remodel</option>
-            <option value="integral">Whole Home Remodel</option>
-            <option value="electricidad">Electrical Services</option>
-            <option value="fontaneria">Plumbing Services</option>
-            <option value="otro">Other</option>
+            <option value="">Selecciona una opción</option>
+            <option value="cocina">Remodelación de Cocina</option>
+            <option value="bano">Remodelación de Baño</option>
+            <option value="completo">Remodelación Completa de Casa</option>
+            <option value="adiccion">Adición de Habitaciones</option>
+            <option value="exterior">Remodelación de Exterior</option>
+            <option value="otro">Otro</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="mensaje-c">Tell Us the Details</label>
-          <textarea id="mensaje-c" name="mensaje" rows="5" required placeholder="Briefly describe what you need to remodel and your location..."></textarea>
+          <label for="mensaje-c">Cuéntanos sobre tu proyecto</label>
+          <textarea id="mensaje-c" name="mensaje" rows="5" required placeholder="Describe brevemente tu proyecto, ideas o necesidades..."></textarea>
         </div>
-        <button type="submit" class="btn-premium btn-primary-premium full-width">
-          <span class="btn-content">Send Inquiry</span>
-          <span class="btn-border"></span>
-          <span class="btn-shine"></span>
-          <span class="btn-arrow">→</span>
-        </button>
+        <button type="submit" class="btn btn-primary btn-large">Enviar Mensaje</button>
       </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">¿Listo para comenzar?</h2>
+      <p class="section-subtitle">Llámanos ahora mismo o envíanos un mensaje. Estamos aquí para ayudarte.</p>
+      <div class="cta-buttons-inline">
+        <a href="https://wa.me/18325550100" class="btn btn-gold">WhatsApp</a>
+        <a href="tel:+18325550100" class="btn btn-outline">Llamar Ahora</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .page-hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); overflow: hidden; padding: 120px 20px 60px; }
-  .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 1; }
-  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)); z-index: 2; }
-  .hero-content { position: relative; z-index: 3; max-width: 800px; }
-  .hero-tag { display: block; color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-weight: 600; }
-  .page-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; margin-bottom: 20px; }
-  .page-subtitle { font-size: 1.2rem; color: rgba(255,255,255,0.9); }
-  
-  .contact-full-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
-  .contact-info-panel h2 { margin-bottom: 25px; }
-  .contact-detail { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
-  .contact-detail:last-child { border-bottom: none; }
-  .contact-detail h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text); }
-  .contact-detail p { color: var(--gray-text); font-size: 1rem; line-height: 1.6; }
-  .gold-link { color: var(--gold); text-decoration: none; font-weight: 600; transition: 0.3s; }
-  .gold-link:hover { text-decoration: underline; }
-  
-  .contact-form-large { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-  .form-group { margin-bottom: 25px; }
-  .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text); font-size: 0.95rem; }
-  .contact-form-large input, .contact-form-large select, .contact-form-large textarea { width: 100%; padding: 16px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; background: #fafafa; transition: 0.3s; }
-  .contact-form-large input:focus, .contact-form-large select:focus, .contact-form-large textarea:focus { outline: none; border-color: var(--gold); background: #fff; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  
-  .btn-premium { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 35px; background: var(--gold); color: var(--bg); font-weight: 600; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden; }
-  .btn-border { position: absolute; inset: 0; border: 2px solid rgba(255,255,255,0.3); border-radius: inherit; }
-  .btn-shine { position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: 0.5s; }
-  .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4); }
-  .btn-premium:hover .btn-shine { left: 150%; }
-  .full-width { width: 100%; justify-content: center; }
-  
-  @media (max-width: 900px) {
-    .contact-full-grid { grid-template-columns: 1fr; gap: 40px; }
-    .contact-info-panel { order: 2; }
-    .contact-form-large { order: 1; padding: 25px; }
-    .form-row { grid-template-columns: 1fr; }
+  .page-hero {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: #c9a961;
+    color: #0a0a0a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .page-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .gold {
+    color: #c9a961;
+  }
+  .page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact-full-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .contact-info-panel {
+    background: #f8f8f8;
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #c9a961;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0a0a0a;
+    margin-bottom: 1.5rem;
+  }
+  .contact-detail {
+    margin-top: 2rem;
+  }
+  .contact-detail h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 0.5rem;
+  }
+  .contact-detail p {
+    color: #555;
+    line-height: 1.6;
+  }
+  .gold-link {
+    color: #c9a961;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .gold-link:hover {
+    text-decoration: underline;
+  }
+  .contact-form-large {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #c9a961;
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+  }
+  .form-group textarea {
+    resize: vertical;
+  }
+  .btn-large {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .cta-buttons-inline {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+  }
+  .btn-gold {
+    background: #c9a961;
+    color: #0a0a0a;
+  }
+  .btn-gold:hover {
+    background: #b8964d;
+    transform: translateY(-2px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: #0a0a0a;
+    border: 2px solid #0a0a0a;
+  }
+  .btn-outline:hover {
+    background: #0a0a0a;
+    color: white;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 968px) {
+    .contact-full-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .page-title {
+      font-size: 2.5rem;
+    }
   }
 </style>
