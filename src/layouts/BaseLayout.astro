@@ -101,8 +101,64 @@ const esToEnMap: Record<string, string> = {
 };
 
 const siteBase = 'https://reformat-houston.com';
-const enHref = isSpanish ? `${siteBase}${esToEnMap[currentPath] || '/'}` : `${siteBase}${currentPath}`;
-const esHref = isSpanish ? `${siteBase}${currentPath}` : `${siteBase}${enToEsMap[currentPath] || '/es/'}`;
+
+// Función auxiliar para normalizar paths (quitar/add trailing slash consistentemente)
+const normalizePath = (path: string) => {
+  if (path === '/') return '/';
+  return path.endsWith('/') ? path.slice(0, -1) : path;
+};
+
+const normalizedCurrentPath = normalizePath(currentPath);
+
+// Función para obtener el href de cambio de idioma
+const getLanguageHref = (path: string, toSpanish: boolean): string => {
+  const normalized = normalizePath(path);
+  
+  if (toSpanish) {
+    // De inglés a español
+    if (normalized === '/') return `${siteBase}/es/`;
+    
+    // Verificar mapa explícito primero
+    if (enToEsMap[normalized + '/']) {
+      return `${siteBase}${enToEsMap[normalized + '/']}`;
+    }
+    if (enToEsMap[normalized]) {
+      return `${siteBase}${enToEsMap[normalized]}`;
+    }
+    
+    // Si es una ruta de ciudad genérica no mapeada
+    const cityMatch = normalized.match(/^\/([a-z]+(?:-[a-z]+)*)$/);
+    if (cityMatch && !normalized.includes('/services/') && !normalized.includes('/es/')) {
+      return `${siteBase}/es/${normalized.slice(1)}/`;
+    }
+    
+    // Default: añadir /es
+    return `${siteBase}/es${normalized}/`;
+  } else {
+    // De español a inglés
+    if (normalized === '/es' || normalized === '/es/') return `${siteBase}/`;
+    
+    // Verificar mapa explícito primero
+    if (esToEnMap[normalized + '/']) {
+      return `${siteBase}${esToEnMap[normalized + '/']}`;
+    }
+    if (esToEnMap[normalized]) {
+      return `${siteBase}${esToEnMap[normalized]}`;
+    }
+    
+    // Si es una ruta de ciudad genérica en español no mapeada
+    const cityMatch = normalized.match(/^\/es\/([a-z]+(?:-[a-z]+)*)$/);
+    if (cityMatch && !normalized.includes('/servicios/')) {
+      return `${siteBase}/${normalized.replace('/es/', '')}/`;
+    }
+    
+    // Default: quitar /es
+    return `${siteBase}${normalized.replace('/es', '')}/`;
+  }
+};
+
+const enHref = isSpanish ? getLanguageHref(currentPath, false) : `${siteBase}${currentPath}`;
+const esHref = isSpanish ? `${siteBase}${currentPath}` : getLanguageHref(currentPath, true);
 
 const whatsappText = isSpanish
   ? 'Hola,%20me%20interesa%20una%20consulta%20para%20mi%20proyecto'
