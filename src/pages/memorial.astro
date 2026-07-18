@@ -3,91 +3,238 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 
 const pageData = {
-  title: "Home Remodeling in Memorial Houston | Reformat Houston",
-  description: "Expert remodeling contractor serving Memorial area, Houston. Specializing in luxury home renovations, kitchen upgrades, and bathroom remodels for established neighborhoods.",
-  keywords: "Memorial remodeling, home renovation Memorial Houston, kitchen remodel Memorial, bathroom renovation Memorial TX, contractor Memorial Village",
+  title: "Kitchen & Bathroom Remodeling in Memorial, Houston | Reformat Houston",
+  description: "Expert home remodeling services in Memorial, Houston. Specializing in luxury kitchen renovations, spa bathrooms, and high-end home improvements for prestigious homes.",
+  keywords: "Kitchen Remodeling Memorial Houston, Bathroom Renovation Memorial, Home Remodeler Memorial TX, Luxury Remodeling Houston, Reformat Houston",
   canonical: "/memorial/",
   lang: "en",
-  image: "/images/memorial-remodeling.jpg",
+  image: "/images/memorial-hero.jpg",
   activePage: "areas"
 };
 
 const areaInfo = {
   name: "Memorial",
-  type: "Neighborhood",
-  description: "The Memorial area is one of Houston's most desirable communities, known for its excellent schools, parks, and spacious family homes. We specialize in updating classic homes while maintaining their timeless appeal.",
+  type: "Prestigious Neighborhood",
+  description: "Memorial is one of Houston's most prestigious neighborhoods, known for its tree-lined streets, excellent schools, and elegant homes. Residents value quality craftsmanship and sophisticated design.",
   highlights: [
-    "Top-rated schools and family-friendly environment",
-    "Spacious lots with mature trees and green spaces",
-    "Mix of traditional and contemporary architecture",
-    "Close proximity to Memorial Park and downtown"
+    "Top-rated schools in Houston ISD",
+    "Luxury homes with large lots",
+    "Close proximity to Memorial Park",
+    "Upscale shopping and dining"
   ],
   services: [
-    "Whole Home Renovations",
-    "Gourmet Kitchen Remodels",
-    "Luxury Bathroom Additions",
-    "Family Room Expansions",
-    "Outdoor Living and Pool Areas"
+    "Custom Kitchen Renovations",
+    "Luxury Spa Bathrooms",
+    "Whole Home Transformations",
+    "Flooring Installation",
+    "Painting & Fine Finishes",
+    "Outdoor Living Spaces"
   ]
 };
 ---
 
 <BaseLayout {...pageData}>
   <main class="area-page">
-    <section class="hero-area">
-      <div class="container">
-        <h1>Expert Home Remodeling in Memorial, Houston</h1>
-        <p class="lead">Transforming family homes in Houston's most sought-after school district.</p>
-        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-badge">Serving Memorial Since 2004</span>
+        <h1>Premier Kitchen & Bathroom Remodeling in Memorial, TX</h1>
+        <p class="hero-lead">Transform your home with expert craftsmanship tailored to Memorial's prestigious homes and luxury standards.</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">Get Your Free Estimate</a>
+          <a href="tel:+13463979026" class="btn btn-outline-light btn-lg">(346) 397-9026</a>
+        </div>
       </div>
     </section>
 
-    <section class="area-content">
+    <!-- Intro Section -->
+    <section class="intro-section">
       <div class="container">
-        <div class="content-grid">
-          <div class="text-content">
-            <h2>Remodeling Memorial Homes for Modern Families</h2>
-            <p>At Reformat Houston, we understand what makes Memorial homes special. With top-rated schools and a strong sense of community, families choose Memorial for its quality of life. Our renovations help you maximize your investment while creating spaces that work for today's lifestyle.</p>
+        <div class="intro-grid">
+          <div class="intro-content">
+            <h2>Expert Remodeling in Memorial, Texas</h2>
+            <p class="intro-text">Memorial is a prestigious master-planned community known for its lush forests, top-rated schools, and elegant homes. Residents value quality, sustainability, and sophisticated design.</p>
+            <p>We understand the specific needs of Woodlands homeowners, from managing humidity to preserving the natural aesthetic of the area. Our team has been serving this community for over two decades, delivering exceptional results that exceed expectations.</p>
             
-            <p>Whether you're updating a 1970s ranch to open concept living, adding a master suite expansion, or creating a chef's kitchen for family gatherings, our team brings expertise in both structural improvements and design aesthetics. We work efficiently to minimize disruption to your family's routine.</p>
-
-            <h3>Our Memorial Services</h3>
-            <ul class="services-list">
-              {areaInfo.services.map((service) => (
-                <li>{service}</li>
-              ))}
-            </ul>
-
-            <h3>Why Choose Reformat Houston?</h3>
-            <ul class="features-list">
-              <li><strong>Family-Focused:</strong> Renovations designed for how families actually live.</li>
-              <li><strong>School District Knowledge:</strong> Understanding what adds value in Memorial ISD.</li>
-              <li><strong>Quality Materials:</strong> Durable solutions that stand up to family life.</li>
-              <li><strong>Project Management:</strong> Clean, efficient work with minimal disruption.</li>
-            </ul>
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Top-rated schools in Montgomery County</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Luxury homes with forest preserves</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Upscale shopping at Market Street</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Award-winning restaurants and entertainment</span>
+              </div>
+            </div>
           </div>
           
-          <div class="sidebar">
-            <div class="cta-box">
-              <h3>Ready to Update Your Memorial Home?</h3>
-              <p>Schedule a consultation with our family home specialists.</p>
-              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
-            </div>
-            
-            <div class="local-info">
-              <h4>Serving Memorial & Surrounding Areas</h4>
-              <p>We proudly serve homeowners in Memorial, Memorial Village, Spring Branch, and nearby family communities.</p>
-            </div>
+          <div class="intro-image">
+            <img src="/images/cocina-800.webp" alt="Luxury kitchen remodeling in Memorial" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="projects-teaser">
+    <!-- Services Section -->
+    <section class="services-section">
       <div class="container">
-        <h2>Recent Projects in Memorial</h2>
-        <p>See how we've helped Memorial families create their dream homes.</p>
-        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+        <div class="section-header">
+          <span class="section-badge">Our Services</span>
+          <h2>Premium Remodeling Services</h2>
+          <p>Comprehensive solutions for your luxury home</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="20" width="48" height="36" rx="2" fill="currentColor" opacity="0.1"/>
+                <path d="M12 28h40M12 36h40M20 44h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 8v12M28 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Custom Kitchen Renovations</h3>
+            <p>Bespoke kitchens with premium cabinetry, quartz countertops, and high-end appliances tailored to your lifestyle.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" rx="2" fill="currentColor" opacity="0.1"/>
+                <circle cx="32" cy="28" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 40h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Luxury Spa Bathrooms</h3>
+            <p>Transform your bathroom into a personal spa with frameless glass showers, freestanding tubs, and premium fixtures.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20v24h32V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 28h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Whole Home Transformations</h3>
+            <p>Complete home renovations that seamlessly blend functionality with elegant design throughout your entire property.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 32h32M32 16v32" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Flooring Installation</h3>
+            <p>Premium hardwood, tile, and luxury vinyl flooring installed with precision for lasting beauty and durability.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20l24 24M44 20L20 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <rect x="16" y="16" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Painting & Fine Finishes</h3>
+            <p>Professional painting and detailed finishes that elevate your home's aesthetic with flawless execution.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 44V28l20-12 20 12v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 44v-8h24v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Outdoor Living Spaces</h3>
+            <p>Custom patios, outdoor kitchens, and entertainment areas designed for the Texas climate and lifestyle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Why Choose Us</span>
+          <h2>The Reformat Houston Difference</h2>
+          <p>What sets us apart from other contractors in Memorial</p>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">20+</div>
+            <h3>Years of Excellence</h3>
+            <p>Serving Memorial community with dedication and expertise for over two decades.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3>Luxury Expertise</h3>
+            <p>Specialized in high-end custom renovations with attention to every detail.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3>HOA Knowledge</h3>
+            <p>Deep understanding of local building codes and HOA requirements in Memorial.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3>Dedicated Management</h3>
+            <p>Personal project managers ensure seamless communication from start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Home?</h2>
+          <p>Schedule your free consultation with our expert team serving Memorial, Conroe, Shenandoah, and surrounding Montgomery County areas.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-white btn-lg">Get Free Estimate</a>
+            <a href="tel:+13463979026" class="btn btn-outline-white btn-lg">Call (346) 397-9026</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -97,32 +244,469 @@ const areaInfo = {
     areaServed={areaInfo.name}
     description={areaInfo.description}
     priceRange="$$$"
-    latitude={29.7833}
-    longitude={-95.5167}
+    latitude={30.1658}
+    longitude={-95.4613}
   />
 </BaseLayout>
 
 <style>
-  .area-page { padding-top: 80px; }
-  .hero-area {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/memorial-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+  /* Base Styles */
+  .area-page { 
+    padding-top: 0;
+  }
+
+  /* Hero Section - Full viewport height, no overlap */
+  .hero-section {
+    position: relative;
+    height: 650px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-lcp.webp') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-section h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-lead {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-primary:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .intro-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .intro-content p {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 3px solid #38a169;
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    color: #38a169;
+    flex-shrink: 0;
+  }
+
+  .highlight-item span {
+    font-size: 15px;
+    color: #2d3748;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .intro-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 80px 0;
+    background: #f7fafc;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(201, 169, 97, 0.1);
+    color: #c9a961;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: #718096;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #bee3f8;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #0a0a0a;
+  }
+
+  .service-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Why Choose Us Section */
+  .why-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 32px 24px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border-color: #bee3f8;
+  }
+
+  .why-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #0a0a0a;
+  }
+
+  .why-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
     padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     text-align: center;
   }
-  .hero-area h1 { font-size: 3rem; margin-bottom: 20px; }
-  .area-content { padding: 80px 0; }
-  .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-  @media (max-width: 768px) {
-    .content-grid { grid-template-columns: 1fr; }
-    .hero-area h1 { font-size: 2rem; }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
   }
-  .services-list, .features-list { list-style: none; padding: 0; }
-  .services-list li, .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
-  .features-list li strong { color: #2c3e50; }
-  .cta-box { background: #f8f9fa; padding: 30px; border-radius: 8px; margin-bottom: 30px; }
-  .local-info { background: #fff; padding: 20px; border: 1px solid #e9ecef; border-radius: 8px; }
-  .projects-teaser { background: #2c3e50; color: white; padding: 60px 0; text-align: center; }
+
+  .cta-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-white:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      order: -1;
+    }
+
+    .intro-image img {
+      height: 350px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 500px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-lg {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 </style>

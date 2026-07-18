@@ -4,101 +4,709 @@ import ServiceSchema from '../components/ServiceSchema.astro';
 
 const pageData = {
   title: "Kitchen & Bathroom Remodeling in Sugar Land, TX | Reformat Houston",
-  description: "Expert home remodeling services in Sugar Land, TX. Specializing in kitchen renovations, bathroom upgrades, and whole-home transformations for modern families.",
+  description: "Expert home remodeling services in Sugar Land, TX. Specializing in luxury kitchens, spa bathrooms, and whole-home renovations. Serving Montgomery County for over 20 years.",
   keywords: "Kitchen Remodeling Sugar Land, Bathroom Renovation Sugar Land, Home Remodeler Sugar Land, Luxury Remodeling Texas, Reformat Houston",
   canonical: "/sugar-land/",
-  locale: "en",
-  area: "Sugar Land"
+  lang: "en",
+  image: "/images/woodlands-remodeling.jpg",
+  activePage: "areas"
 };
 
-const serviceDetails = {
-  name: "Reformat Houston - Sugar Land",
-  areaServed: "Sugar Land, TX",
-  description: "Premium remodeling services tailored for Sugar Land families. We understand the diverse community and modern architectural styles of this thriving suburb.",
-  address: {
-    streetAddress: "Serving Sugar Land Area",
-    addressLocality: "Sugar Land",
-    addressRegion: "TX",
-    postalCode: "77478",
-    addressCountry: "US"
-  },
-  geo: {
-    latitude: "29.6196",
-    longitude: "-95.6349"
-  }
+const areaInfo = {
+  name: "Sugar Land",
+  type: "Master-Planned Community",
+  description: "Sugar Land is a prestigious master-planned community known for its lush forests, top-rated schools, and elegant homes. Residents value quality, sustainability, and sophisticated design.",
+  highlights: [
+    "Top-rated schools in Montgomery County",
+    "Luxury homes with forest preserves",
+    "Upscale shopping at Market Street",
+    "Award-winning restaurants and entertainment"
+  ],
+  services: [
+    "Custom Kitchen Renovations",
+    "Luxury Spa Bathrooms",
+    "Whole Home Transformations",
+    "Flooring Installation",
+    "Painting & Fine Finishes",
+    "Outdoor Living Spaces"
+  ]
 };
 ---
 
-<BaseLayout title={pageData.title} description={pageData.description} keywords={pageData.keywords} canonical={pageData.canonical} locale={pageData.locale}>
-  <main class="py-12 bg-gray-50">
-    <div class="container mx-auto px-4">
+<BaseLayout {...pageData}>
+  <main class="area-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-badge">Serving Sugar Land Since 2004</span>
+        <h1>Premier Kitchen & Bathroom Remodeling in Sugar Land, TX</h1>
+        <p class="hero-lead">Transform your home with expert craftsmanship tailored to Sugar Land' unique architectural style and luxury standards.</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">Get Your Free Estimate</a>
+          <a href="tel:+13463979026" class="btn btn-outline-light btn-lg">(346) 397-9026</a>
+        </div>
+      </div>
+    </section>
 
-      <!-- Hero Section -->
-      <section class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Expert Remodeling in <span class="text-blue-600">Sugar Land</span>
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Transform your home with premium renovation services designed for the vibrant and diverse community of Sugar Land.
-        </p>
-      </section>
-
-      <!-- Content Section -->
-      <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose Reformat Houston for Your Sugar Land Home?</h2>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          Sugar Land is known for its excellent schools, safe neighborhoods, and diverse culture. Your home deserves a remodeling partner who understands the unique needs of families in this dynamic suburb.
-        </p>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          From open-concept kitchen renovations perfect for family gatherings to luxurious bathroom upgrades that provide a personal spa experience, our team delivers quality craftsmanship that enhances your lifestyle. We handle all permits and ensure compliance with local Fort Bend County regulations.
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-8 mt-8">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Local Expertise</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-              <li>Experience with Sugar Land's diverse architectural styles</li>
-              <li>Familiarity with Fort Bend County building codes</li>
-              <li>Materials suited for Texas climate conditions</li>
-              <li>Family-focused design solutions</li>
-            </ul>
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-content">
+            <h2>Expert Remodeling in Sugar Land, Texas</h2>
+            <p class="intro-text">Sugar Land is a prestigious master-planned community known for its lush forests, top-rated schools, and elegant homes. Residents value quality, sustainability, and sophisticated design.</p>
+            <p>We understand the specific needs of Woodlands homeowners, from managing humidity to preserving the natural aesthetic of the area. Our team has been serving this community for over two decades, delivering exceptional results that exceed expectations.</p>
+            
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Top-rated schools in Montgomery County</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Luxury homes with forest preserves</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Upscale shopping at Market Street</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Award-winning restaurants and entertainment</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-3">Services Offered</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-              <li>Modern Kitchen Remodeling</li>
-              <li>Luxury Bathroom Renovations</li>
-              <li>Whole Home Upgrades</li>
-              <li>Custom Flooring Solutions</li>
-            </ul>
+          
+          <div class="intro-image">
+            <img src="/images/cocina-800.webp" alt="Luxury kitchen remodeling in Sugar Land" loading="lazy" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CTA Section -->
-      <section class="text-center bg-blue-600 text-white rounded-lg p-8 mb-12">
-        <h2 class="text-3xl font-bold mb-4">Ready to Upgrade Your Sugar Land Home?</h2>
-        <p class="text-lg mb-8 opacity-90">
-          Schedule your free consultation today and discover how we can transform your space.
-        </p>
-        <a href="/contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
-          Get Your Free Estimate
-        </a>
-      </section>
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Our Services</span>
+          <h2>Premium Remodeling Services</h2>
+          <p>Comprehensive solutions for your luxury home</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="20" width="48" height="36" rx="2" fill="currentColor" opacity="0.1"/>
+                <path d="M12 28h40M12 36h40M20 44h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 8v12M28 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Custom Kitchen Renovations</h3>
+            <p>Bespoke kitchens with premium cabinetry, quartz countertops, and high-end appliances tailored to your lifestyle.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" rx="2" fill="currentColor" opacity="0.1"/>
+                <circle cx="32" cy="28" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 40h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Luxury Spa Bathrooms</h3>
+            <p>Transform your bathroom into a personal spa with frameless glass showers, freestanding tubs, and premium fixtures.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20v24h32V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 28h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="16" r="4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Whole Home Transformations</h3>
+            <p>Complete home renovations that seamlessly blend functionality with elegant design throughout your entire property.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" stroke="currentColor" stroke-width="2"/>
+                <path d="M16 32h32M32 16v32" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Flooring Installation</h3>
+            <p>Premium hardwood, tile, and luxury vinyl flooring installed with precision for lasting beauty and durability.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20l24 24M44 20L20 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <rect x="16" y="16" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Painting & Fine Finishes</h3>
+            <p>Professional painting and detailed finishes that elevate your home's aesthetic with flawless execution.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 44V28l20-12 20 12v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 44v-8h24v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Outdoor Living Spaces</h3>
+            <p>Custom patios, outdoor kitchens, and entertainment areas designed for the Texas climate and lifestyle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    </div>
+    <!-- Why Choose Us Section -->
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Why Choose Us</span>
+          <h2>The Reformat Houston Difference</h2>
+          <p>What sets us apart from other contractors in Sugar Land</p>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">20+</div>
+            <h3>Years of Excellence</h3>
+            <p>Serving Sugar Land community with dedication and expertise for over two decades.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3>Luxury Expertise</h3>
+            <p>Specialized in high-end custom renovations with attention to every detail.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3>HOA Knowledge</h3>
+            <p>Deep understanding of local building codes and HOA requirements in Sugar Land.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3>Dedicated Management</h3>
+            <p>Personal project managers ensure seamless communication from start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Home?</h2>
+          <p>Schedule your free consultation with our expert team serving Sugar Land, Conroe, Shenandoah, and surrounding Montgomery County areas.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-white btn-lg">Get Free Estimate</a>
+            <a href="tel:+13463979026" class="btn btn-outline-white btn-lg">Call (346) 397-9026</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <ServiceSchema
-    name={serviceDetails.name}
-    areaServed={serviceDetails.areaServed}
-    description={serviceDetails.description}
-    streetAddress={serviceDetails.address.streetAddress}
-    addressLocality={serviceDetails.address.addressLocality}
-    addressRegion={serviceDetails.address.addressRegion}
-    postalCode={serviceDetails.address.postalCode}
-    addressCountry={serviceDetails.address.addressCountry}
-    latitude={serviceDetails.geo.latitude}
-    longitude={serviceDetails.geo.longitude}
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={30.1658}
+    longitude={-95.4613}
   />
 </BaseLayout>
+
+<style>
+  /* Base Styles */
+  .area-page { 
+    padding-top: 0;
+  }
+
+  /* Hero Section - Full viewport height, no overlap */
+  .hero-section {
+    position: relative;
+    height: 650px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-lcp.webp') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-section h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-lead {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-primary:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .intro-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .intro-content p {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 3px solid #38a169;
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    color: #38a169;
+    flex-shrink: 0;
+  }
+
+  .highlight-item span {
+    font-size: 15px;
+    color: #2d3748;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .intro-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 80px 0;
+    background: #f7fafc;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(201, 169, 97, 0.1);
+    color: #c9a961;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: #718096;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #bee3f8;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #0a0a0a;
+  }
+
+  .service-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Why Choose Us Section */
+  .why-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 32px 24px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border-color: #bee3f8;
+  }
+
+  .why-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #0a0a0a;
+  }
+
+  .why-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-white:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      order: -1;
+    }
+
+    .intro-image img {
+      height: 350px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 500px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-lg {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
