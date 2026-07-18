@@ -3,18 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceSchema from '../components/ServiceSchema.astro';
 
 const pageData = {
-  title: "Home Remodeling in Houston Heights | Reformat Houston",
-  description: "Expert remodeling contractor serving Houston Heights. Specializing in historic home renovations, modern kitchen upgrades, and bathroom remodels that respect Victorian charm.",
+  title: "Kitchen & Bathroom Remodeling in Houston Heights | Reformat Houston",
+  description: "Expert home remodeling services in Houston Heights. Specializing in historic home renovations, modern kitchen upgrades, and bathroom remodels that respect Victorian charm.",
   keywords: "Houston Heights remodeling, historic home renovation Houston, kitchen remodel Heights, bathroom renovation Houston Heights, contractor Heights TX",
   canonical: "/houston-heights/",
   lang: "en",
-  image: "/images/houston-heights-remodeling.jpg",
+  image: "/images/houston-heights-hero.jpg",
   activePage: "areas"
 };
 
 const areaInfo = {
   name: "Houston Heights",
-  type: "Neighborhood",
+  type: "Historic Neighborhood",
   description: "The Houston Heights is one of Houston's most historic and vibrant neighborhoods, known for its Victorian architecture, tree-lined streets, and strong community spirit. We specialize in preserving historic character while adding modern functionality.",
   highlights: [
     "Historic Victorian and Craftsman homes",
@@ -23,71 +23,217 @@ const areaInfo = {
     "Strong neighborhood association and community pride"
   ],
   services: [
-    "Historic Home Restoration and Renovation",
-    "Modern Kitchen Upgrades in Period Homes",
+    "Historic Home Restoration",
+    "Modern Kitchen Upgrades",
     "Bathroom Remodels with Vintage Fixtures",
-    "Foundation Repair and Structural Updates",
-    "Energy Efficiency Improvements for Older Homes"
+    "Foundation Repair & Structural Updates",
+    "Energy Efficiency Improvements",
+    "Period-Appropriate Finishes"
   ]
 };
 ---
 
 <BaseLayout {...pageData}>
   <main class="area-page">
-    <section class="hero-area">
-      <div class="container">
-        <h1>Expert Home Remodeling in Houston Heights</h1>
-        <p class="lead">Preserving historic charm while creating modern living spaces in Houston's most beloved neighborhood.</p>
-        <a href="/contact" class="btn btn-primary">Get Your Free Estimate</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <span class="hero-badge">Serving Houston Heights Since 2004</span>
+        <h1>Expert Kitchen & Bathroom Remodeling in Houston Heights</h1>
+        <p class="hero-lead">Preserving historic charm while creating modern living spaces in Houston's most beloved neighborhood.</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary btn-lg">Get Your Free Estimate</a>
+          <a href="tel:+13463979026" class="btn btn-outline-light btn-lg">(346) 397-9026</a>
+        </div>
       </div>
     </section>
 
-    <section class="area-content">
+    <!-- Intro Section -->
+    <section class="intro-section">
       <div class="container">
-        <div class="content-grid">
-          <div class="text-content">
+        <div class="intro-grid">
+          <div class="intro-content">
             <h2>Remodeling Houston Heights Homes with Care</h2>
+            <p class="intro-text">The Houston Heights is one of Houston's most historic and vibrant neighborhoods, known for its Victorian architecture, tree-lined streets, and strong community spirit. We specialize in preserving historic character while adding modern functionality.</p>
             <p>At Reformat Houston, we understand the unique character of Houston Heights homes. With over 20 years of experience working on historic properties, we know how to balance preservation with modernization, ensuring your home maintains its Victorian charm while meeting today's lifestyle needs.</p>
             
-            <p>We work closely with the Houston Heights Association and navigate historic preservation requirements to ensure your renovation meets all guidelines. From restoring original hardwood floors to installing modern kitchens that complement period architecture, our team has the expertise to handle every detail.</p>
-
-            <h3>Our Houston Heights Services</h3>
-            <ul class="services-list">
-              {areaInfo.services.map((service) => (
-                <li>{service}</li>
-              ))}
-            </ul>
-
-            <h3>Why Choose Reformat Houston?</h3>
-            <ul class="features-list">
-              <li><strong>Historic Expertise:</strong> Deep knowledge of Victorian, Craftsman, and bungalow architecture.</li>
-              <li><strong>Preservation Focus:</strong> Commitment to maintaining original character and details.</li>
-              <li><strong>Local Knowledge:</strong> Understanding of Heights-specific regulations and community standards.</li>
-              <li><strong>Quality Craftsmanship:</strong> Traditional techniques combined with modern materials.</li>
-            </ul>
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Historic Victorian and Craftsman homes</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Strict historic preservation guidelines</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Walkable community with local shops</span>
+              </div>
+              <div class="highlight-item">
+                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Strong neighborhood association</span>
+              </div>
+            </div>
           </div>
           
-          <div class="sidebar">
-            <div class="cta-box">
-              <h3>Ready to Renovate Your Heights Home?</h3>
-              <p>Schedule a consultation with our historic renovation specialists.</p>
-              <a href="/contact" class="btn btn-secondary">Contact Us Today</a>
-            </div>
-            
-            <div class="local-info">
-              <h4>Serving Houston Heights & Surrounding Areas</h4>
-              <p>We proudly serve homeowners in Houston Heights, Garden Oaks, Oak Forest, and nearby historic neighborhoods.</p>
-            </div>
+          <div class="intro-image">
+            <img src="/images/cocina-800.webp" alt="Historic home remodeling in Houston Heights" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="projects-teaser">
+    <!-- Services Section -->
+    <section class="services-section">
       <div class="container">
-        <h2>Recent Projects in Houston Heights</h2>
-        <p>See how we've helped Heights homeowners blend historic charm with modern living.</p>
-        <a href="/projects" class="btn btn-outline">View Our Portfolio</a>
+        <div class="section-header">
+          <span class="section-badge">Our Services</span>
+          <h2>Premium Remodeling Services</h2>
+          <p>Comprehensive solutions for your historic home</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8L8 24v28l24 8 24-8V24L32 8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M32 8v16M20 20l12 4 12-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Historic Home Restoration</h3>
+            <p>Careful restoration of Victorian and Craftsman homes, preserving original details while updating for modern living.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="20" width="48" height="36" rx="2" fill="currentColor" opacity="0.1"/>
+                <path d="M12 28h40M12 36h40M20 44h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 8v12M28 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Modern Kitchen Upgrades</h3>
+            <p>Contemporary kitchens designed to complement historic architecture with period-appropriate finishes.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" rx="2" fill="currentColor" opacity="0.1"/>
+                <circle cx="32" cy="28" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M20 40h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Bathroom Remodels</h3>
+            <p>Vintage-inspired bathrooms with clawfoot tubs, subway tile, and classic fixtures that honor the home's era.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 48V24l16-8 16 8v24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M24 48V32h16v16" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Foundation & Structural</h3>
+            <p>Essential structural updates and foundation repair to ensure your historic home stands strong for generations.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 20v12l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Energy Efficiency</h3>
+            <p>Modern insulation, windows, and HVAC improvements that maintain historic appearance while reducing energy costs.</p>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20l24 24M44 20L20 44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <rect x="16" y="16" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Period-Appropriate Finishes</h3>
+            <p>Authentic moldings, hardware, and finishes sourced to match your home's original architectural style.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Why Choose Us</span>
+          <h2>The Reformat Houston Difference</h2>
+          <p>What sets us apart as Houston Heights remodeling experts</p>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">20+</div>
+            <h3>Years of Experience</h3>
+            <p>Two decades of specialized experience renovating historic homes in the Houston Heights area.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3>Historic Expertise</h3>
+            <p>Deep knowledge of historic preservation guidelines and period-appropriate construction techniques.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <h3>Quality Craftsmanship</h3>
+            <p>Meticulous attention to detail ensuring every renovation honors your home's historic character.</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3>Local Knowledge</h3>
+            <p>Familiar with Heights-specific requirements, permits, and neighborhood expectations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Restore Your Historic Home?</h2>
+          <p>Schedule your free consultation with our team of historic home specialists serving Houston Heights and surrounding areas.</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-white btn-lg">Get Free Estimate</a>
+            <a href="tel:+13463979026" class="btn btn-outline-white btn-lg">Call (346) 397-9026</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -98,69 +244,486 @@ const areaInfo = {
     description={areaInfo.description}
     priceRange="$$$"
     latitude={29.7994}
-    longitude={-95.4016}
+    longitude={-95.4066}
+  />
+</BaseLayout>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn btn-white btn-lg">Get Free Estimate</a>
+            <a href="tel:+13463979026" class="btn btn-outline-white btn-lg">Call (346) 397-9026</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ServiceSchema
+    serviceType="Home Remodeling"
+    areaServed={areaInfo.name}
+    description={areaInfo.description}
+    priceRange="$$$"
+    latitude={30.1658}
+    longitude={-95.4613}
   />
 </BaseLayout>
 
 <style>
-  .area-page {
-    padding-top: 80px;
+  /* Base Styles */
+  .area-page { 
+    padding-top: 0;
   }
-  .hero-area {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/houston-heights-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 100px 0;
+
+  /* Hero Section - Full viewport height, no overlap */
+  .hero-section {
+    position: relative;
+    height: 650px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    overflow: hidden;
+    margin-top: 0;
   }
-  .hero-area h1 {
-    font-size: 3rem;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/hero-lcp.webp') center/cover no-repeat;
+    opacity: 0.15;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hero-section h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-lead {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-primary:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Intro Section */
+  .intro-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .intro-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    color: #4a5568;
+    line-height: 1.7;
     margin-bottom: 20px;
   }
-  .area-content {
-    padding: 80px 0;
+
+  .intro-content p {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
-  .content-grid {
+
+  .highlights-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
   }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 3px solid #38a169;
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    color: #38a169;
+    flex-shrink: 0;
+  }
+
+  .highlight-item span {
+    font-size: 15px;
+    color: #2d3748;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .intro-image {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 80px 0;
+    background: #f7fafc;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(201, 169, 97, 0.1);
+    color: #c9a961;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: #718096;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #bee3f8;
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #0a0a0a;
+  }
+
+  .service-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Why Choose Us Section */
+  .why-section {
+    padding: 80px 0;
+    background: #fff;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 32px 24px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border-color: #bee3f8;
+  }
+
+  .why-number {
+    font-size: 48px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .why-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #c9a961 0%, #b8964e 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #0a0a0a;
+  }
+
+  .why-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 12px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: #c9a961;
+    color: #0a0a0a;
+    border: 2px solid #c9a961;
+  }
+
+  .btn-white:hover {
+    background: #b8964e;
+    border-color: #b8964e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      order: -1;
+    }
+
+    .intro-image img {
+      height: 350px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
-    .content-grid {
+    .hero-section {
+      height: 500px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-lg {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .highlights-grid {
       grid-template-columns: 1fr;
     }
-    .hero-area h1 {
-      font-size: 2rem;
+
+    .services-grid {
+      grid-template-columns: 1fr;
     }
-  }
-  .services-list, .features-list {
-    list-style: none;
-    padding: 0;
-  }
-  .services-list li, .features-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-  .features-list li strong {
-    color: #2c3e50;
-  }
-  .cta-box {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
-  .local-info {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
-  }
-  .projects-teaser {
-    background: #2c3e50;
-    color: white;
-    padding: 60px 0;
-    text-align: center;
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
